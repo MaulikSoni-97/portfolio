@@ -1,198 +1,1245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maulik Soni, Personal Portfolio</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/97f2aedd83.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-  </head>
-  <body>
-    <main>
-      <!-- ***********************  Navigation  *********************** -->
-      <!-- <section class="navi"> -->
-        <!-- <div class="navi-content"> -->
-          <nav>
-            <!--  Nav will have two parts -> 1) for Logo(with logo we'll have menu icon for mobile as well but it'll be hidden on desktop) 2) Nav list  -->
-        
-            <!--  Logo and menu div item  -->
-            <div class="logo">
-              <h2>Maulik Soni</h2>
-              <!--   This will only be visible on small devices   -->
-              <div class="menu-icon">
-                  <!--    Used this icon from Font awesome whose script is at last    -->
-                  <i class="fas fa-bars"></i>
-              </div>
-            </div>
-              <!--  This is second item of the nav which we use to display navList  -->
-              <!-- <ul>
-              <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Blogs</a></li>
-              </ul> -->
-            <ul class="topmenu" >
-              
-              <li ><a data-scroll class="nav-links" href="#page-1">About</a></li>
-              <li ><a data-scroll class="nav-links" href="#page-2">Projects</a></li>
-              <li ><a data-scroll class="nav-links" href="#page-3">Education</a></li>
-              <li ><a data-scroll class="nav-links" href="#page-4">Contact</a></li>
-            </ul>
-          </nav>
-         <!-- </div> -->
-      <!-- </section> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!-- ***********************  ABOUT / PROFILE  *********************** -->
-      <section id="page-1" class="top">
-        <div class="content-wrap resume">
-          <h2>About</h2>
-          
-          <p>Hi! My name is Maulik Soni. I am from India. I am very passionate about Artificial Intelligence and Machine Learning. I did my master in specilasation with Machine Learning. Furthermore, I also passionate to build and deploy end to end solution of real-world problems using different AI tools.</p>
-          <p>Checkout my  <a href="https://mauliksoni-97.github.io/portfolio/pdf/Maulik_Resume.pdf" target="_blank"><strong>Resume</strong></a></p>
+  <title>A Little Surprise 💌</title>
+
+  <!-- Cute handwritten font + clean UI font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: "Nunito", sans-serif;
+      color: #5c4a55;
+      background:
+        radial-gradient(circle at 10% 20%, #fff7fb 0%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #f7ecff 0%, transparent 25%),
+        linear-gradient(135deg, #ffeef5, #f5edff, #eaf8ff);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
+
+    .background-decoration {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .floating-item {
+      position: absolute;
+      animation: floatAround linear infinite;
+      opacity: 0.7;
+      user-select: none;
+    }
+
+    .floating-item:nth-child(1) {
+      left: 8%;
+      top: 12%;
+      animation-duration: 9s;
+      font-size: 24px;
+    }
+
+    .floating-item:nth-child(2) {
+      right: 8%;
+      top: 18%;
+      animation-duration: 12s;
+      font-size: 18px;
+    }
+
+    .floating-item:nth-child(3) {
+      left: 15%;
+      bottom: 14%;
+      animation-duration: 10s;
+      font-size: 20px;
+    }
+
+    .floating-item:nth-child(4) {
+      right: 12%;
+      bottom: 10%;
+      animation-duration: 13s;
+      font-size: 25px;
+    }
+
+    .floating-item:nth-child(5) {
+      left: 50%;
+      top: 8%;
+      animation-duration: 11s;
+      font-size: 18px;
+    }
+
+    @keyframes floatAround {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(12deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    /* =========================================================
+       APP
+    ========================================================= */
+
+    .app {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+    }
+
+    .screen {
+      display: none;
+      min-height: 100vh;
+      width: 100%;
+      padding: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    /* =========================================================
+       LOADING SCREEN
+    ========================================================= */
+
+    .terminal-card {
+      width: min(620px, 100%);
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 20px 60px rgba(130, 90, 120, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #f3a6b8;
+    }
+
+    .dot:nth-child(2) {
+      background: #f5d38a;
+    }
+
+    .dot:nth-child(3) {
+      background: #a8d8ba;
+    }
+
+    .terminal-content {
+      min-height: 240px;
+      font-family: monospace;
+      line-height: 1.8;
+      font-size: 15px;
+      color: #6a5664;
+    }
+
+    .terminal-line {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: showLine 0.4s forwards;
+    }
+
+    .terminal-line.success {
+      color: #6ca984;
+    }
+
+    .terminal-line.highlight {
+      color: #d06f91;
+      font-weight: bold;
+    }
+
+    @keyframes showLine {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 10px;
+      margin: 14px 0 20px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: rgba(190, 150, 175, 0.2);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f39ab4, #c9a7ed, #8fcfe6);
+      transition: width 0.3s ease;
+    }
+
+    .open-surprise-btn {
+      display: none;
+      margin-top: 24px;
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f49ab5, #d8a7ef);
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+      box-shadow: 0 10px 25px rgba(200, 110, 150, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .open-surprise-btn.show {
+      display: block;
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .open-surprise-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* =========================================================
+       ENVELOPE SCREEN
+    ========================================================= */
+
+    .envelope-container {
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .tiny-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .envelope-title {
+      margin: 8px 0;
+      font-family: "Caveat", cursive;
+      font-size: clamp(42px, 10vw, 70px);
+      line-height: 1;
+      color: #6d5562;
+    }
+
+    .envelope-subtitle {
+      margin: 0 0 35px;
+      font-size: 16px;
+      opacity: 0.75;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: min(330px, 85vw);
+      height: 225px;
+      margin: 0 auto 30px;
+      cursor: pointer;
+      perspective: 1000px;
+      transition: transform 0.25s ease;
+    }
+
+    .envelope-wrapper:hover {
+      transform: translateY(-5px);
+    }
+
+    .envelope {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: #f4a9bd;
+      box-shadow: 0 22px 35px rgba(151, 91, 115, 0.22);
+      overflow: hidden;
+    }
+
+    .letter-preview {
+      position: absolute;
+      width: 86%;
+      height: 88%;
+      left: 7%;
+      top: 8%;
+      padding: 20px;
+      border-radius: 8px;
+      background:
+        linear-gradient(transparent 95%, rgba(190, 140, 150, 0.08) 95%);
+      background-color: #fffdf9;
+      background-size: 100% 28px;
+      z-index: 1;
+      transition: transform 1s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .preview-heart {
+      font-size: 30px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .envelope-front {
+      position: absolute;
+      inset: auto 0 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    .envelope-front::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 165px solid transparent;
+      border-right: 165px solid transparent;
+      border-bottom: 115px solid #f7b8c8;
+    }
+
+    .envelope-front::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 112px solid transparent;
+      border-bottom: 112px solid transparent;
+      border-left: 165px solid #f0a0b8;
+    }
+
+    .envelope-right {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 112px solid transparent;
+      border-bottom: 112px solid transparent;
+      border-right: 165px solid #efa1b7;
+      z-index: 4;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 165px solid transparent;
+      border-right: 165px solid transparent;
+      border-top: 120px solid #f6b2c5;
+      transform-origin: top;
+      z-index: 5;
+      transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .seal {
+      position: absolute;
+      top: 94px;
+      left: 50%;
+      z-index: 6;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff2f6;
+      box-shadow: 0 4px 12px rgba(130, 70, 90, 0.12);
+      transition: opacity 0.3s ease;
+    }
+
+    .envelope-wrapper.open .envelope-flap {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    .envelope-wrapper.open .letter-preview {
+      transform: translateY(-115px);
+    }
+
+    .envelope-wrapper.open .seal {
+      opacity: 0;
+    }
+
+    .tap-text {
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0.7;
+      animation: bounceText 1.5s infinite;
+    }
+
+    @keyframes bounceText {
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* =========================================================
+       MESSAGE SCREEN
+    ========================================================= */
+
+    .message-container {
+      width: min(560px, 100%);
+      text-align: center;
+    }
+
+    .message-counter {
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+
+    .paper-stack {
+      position: relative;
+      min-height: 470px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paper {
+      position: relative;
+      width: 100%;
+      min-height: 410px;
+      padding: 42px 30px 35px;
+      border-radius: 8px;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 32px,
+          rgba(218, 181, 188, 0.18) 33px
+        ),
+        #fffefa;
+      box-shadow:
+        0 22px 50px rgba(100, 70, 85, 0.2),
+        inset 0 0 40px rgba(255, 230, 235, 0.25);
+      transform: rotate(-1deg) scale(0.92);
+      opacity: 0;
+      animation: paperAppear 0.65s cubic-bezier(.2,.9,.2,1) forwards;
+    }
+
+    .paper::before,
+    .paper::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 20px;
+      top: -8px;
+      background: rgba(248, 204, 215, 0.55);
+      transform: rotate(-6deg);
+    }
+
+    .paper::before {
+      left: 25px;
+    }
+
+    .paper::after {
+      right: 25px;
+      transform: rotate(6deg);
+    }
+
+    @keyframes paperAppear {
+      to {
+        opacity: 1;
+        transform: rotate(-1deg) scale(1);
+      }
+    }
+
+    .paper-number {
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #d4879e;
+    }
+
+    .paper-title {
+      margin: 0 0 24px;
+      font-family: "Caveat", cursive;
+      font-size: clamp(38px, 9vw, 58px);
+      line-height: 1;
+      color: #725967;
+    }
+
+    .paper-message {
+      max-width: 450px;
+      margin: auto;
+      white-space: pre-line;
+      font-family: "Caveat", cursive;
+      font-size: clamp(25px, 6vw, 34px);
+      line-height: 1.35;
+      color: #634f59;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #fff1f5;
+      color: #c56e8d;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(170, 100, 125, 0.12);
+      transition: transform 0.2s ease;
+    }
+
+    .next-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* =========================================================
+       FINAL SCREEN
+    ========================================================= */
+
+    .final-card {
+      width: min(620px, 100%);
+      padding: 42px 28px;
+      text-align: center;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 25px 70px rgba(130, 80, 110, 0.18);
+      backdrop-filter: blur(12px);
+      animation: popIn 0.8s cubic-bezier(.2,.9,.2,1);
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85) translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .cake {
+      font-size: 60px;
+      animation: bounceCake 2s infinite;
+    }
+
+    @keyframes bounceCake {
+      50% {
+        transform: translateY(-8px) rotate(2deg);
+      }
+    }
+
+    .final-title {
+      margin: 16px 0 12px;
+      font-family: "Caveat", cursive;
+      font-size: clamp(52px, 11vw, 76px);
+      line-height: 0.95;
+      color: #6c5561;
+    }
+
+    .final-message {
+      margin: 25px auto;
+      max-width: 500px;
+      white-space: pre-line;
+      font-family: "Caveat", cursive;
+      font-size: clamp(26px, 6vw, 36px);
+      line-height: 1.35;
+    }
+
+    .status-box {
+      margin-top: 30px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff8fb;
+      text-align: left;
+      font-family: monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #78626e;
+    }
+
+    .success-text {
+      color: #6aa37e;
+      font-weight: bold;
+    }
+
+    .restart-btn {
+      margin-top: 24px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #bd7590;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       CONFETTI
+    ========================================================= */
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -20px;
+      z-index: 50;
+      pointer-events: none;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 480px) {
+      .screen {
+        padding: 18px;
+      }
+
+      .terminal-card {
+        padding: 20px;
+      }
+
+      .terminal-content {
+        font-size: 13px;
+      }
+
+      .paper {
+        min-height: 430px;
+        padding: 40px 22px 30px;
+      }
+
+      .envelope-wrapper {
+        height: 200px;
+        transform: scale(0.92);
+        margin-bottom: 15px;
+      }
+
+      .envelope-wrapper:hover {
+        transform: scale(0.92);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background decorations -->
+  <div class="background-decoration">
+    <div class="floating-item">💗</div>
+    <div class="floating-item">✨</div>
+    <div class="floating-item">🌸</div>
+    <div class="floating-item">💫</div>
+    <div class="floating-item">♡</div>
+  </div>
+
+  <main class="app">
+
+    <!-- =====================================================
+         SCREEN 1 — LOADING
+    ====================================================== -->
+
+    <section class="screen active" id="loadingScreen">
+      <div class="terminal-card">
+
+        <div class="terminal-top">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
-      </section>
 
-      <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
-      <section class="projects" id="page-2">
-        <div class="content-wrap divider">
-          <h2>Featured Projects</h2>
-          <!-- <p>View selected projects below. More information can be found at <a href="http://christinatruong.com">christinatruong.com</a>.</p> -->
+        <div class="terminal-content" id="terminalContent"></div>
 
-          <!-- Project 1 -->
-          <section class="project-item">
-            <img src="images/alina-grubnyak-unsplash.jpg" alt="description of image">
-            <h3><a href="https://github.com/MaulikSoni-97/VGAE" target="_blank">VARIATIONAL GRAPH AUTO ENCODER(VGAE)</a></h3>
-            <p>This model useful to find new links between new nodes generated in the graph & previously present in it.I
-              trained & tested this network on the CORA data set(A data set which contains Research papers categorized in one of the seven different categories. .e.g. genetic algorithms, Reinforcement Learning, etc). This model can also be useful for the recommendation task on social media platforms.</p>
-            <!-- <a class="btn" href="https://github.com/MaulikSoni-97/VGAE" target="_blank">Link</a> -->
-            <!-- <a class="btn" href="https://www.lynda.com/Christina-Truong/7842227-1.html">Lynda.com</a> -->
-          </section>
-
-          <!-- Project 2 -->
-          <section class="project-item">
-            <img src="images/fusion-medical-animation-unsplash.jpg" alt="description of image">
-            <h3><a href="https://github.com/MaulikSoni-97/Epidemic_Intelligence" target="_blank">EPIDEMIC INTELLIGENCE MODEL</a></h3>
-            <p>This is multi-label classification model which is able to extract multiple disease symptoms presents in
-              Social media text(e.g Twitter). It is first stage of two stage epidemic intelligence model which is useful for
-              the prediction of the epidemic before it occurs.</p>
-            <!-- <a class="btn" href="https://github.com/MaulikSoni-97/Epidemic_Intelligence" target="_blank">Link</a> -->
-          </section>
-
-          <!-- Project 3 -->
-          <section class="project-item">           
-            <img src="images/nana-dua-unsplash.jpg" alt="description of image">
-            <h3><a href="https://github.com/MaulikSoni-97/K-means-clustering" target="_blank">PARALLEL IMPLEMENTATION OF K MEANS CLUSTERING</a></h3>
-            <p>This is a parallel implementation of unsupervised machine learning technique for the clustering of the data in which a maximum speedup of 128(GPU time/CPU time) & maximum throughput around 0.3 Tera Flops per Second is being measured. This project is implemented through the CUDA C programming language.</p>
-            <!-- <a class="btn" href="https://github.com/MaulikSoni-97/K-means-clustering" target="_blank">Link</a> -->
-          </section>
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
         </div>
-      </section>
 
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-    
-      <!-- <section class="work-experience">
-        <div class="content-wrap item-details divider">
-          <h2>Work Experience</h2>
-          <p>See my complete work history on <a href="https://www.linkedin.com/in/christinatruong/">LinkedIn</a>.</p> -->
+        <button
+          class="open-surprise-btn"
+          id="openSurpriseBtn"
+        >
+          Open the surprise 💌
+        </button>
 
-          <!-- Job 1 -->
-          <!-- <section class="job-item">
-            <div class="job-detail">
-              <h3>Front-end Developer & Educator</h3>
-              <p>Christina Truong Consulting Inc.</p>
-              <p>January 2012-Present</p>
-            </div>
-            <div class="job-summary">
-              <p>Provides various front-end related services ranging from development work, speaking engagements, instructor training, workshops, and curriculum development. See more at  <a href="http://christinatruong.com">christinatruong.com</a>.</p>
-            </div>
-          </section> -->
+      </div>
+    </section>
 
-          <!-- Job 2 -->
-          <!-- <section class="job-item">
-            <div class="job-detail">
-              <h3>Director of Curriculum</h3>
-              <p>Ladies Learning Code</p>
-              <p>July 2014 - February 2016</p>
-            </div>
-            <div class="job-summary">
-              <p>Managed all curriculum for the adult programs. Created teaching materials and implemented instructor training across 20+ Canadian chapters.</p>
-              <p>Key contributions:</p>
-              <ul>
-                <li>Overhauled the curriculum and standardized the content and delivery.
-                  <ul>
-                    <li>Created 9 new workshops focusing on HTML, CSS, JavaScript, jQuery, Wordpress and Responsive Web Design.</li>
-                    <li>Created all Hackapalooza content (2 day conference style event) consisting of 2-4 hour workshop sessions.</li>
-                    <li>Created interactive slide deck template for consistent national workshop branding.</li>
-                    <li>Developed the Digital Skills part-time program curriculum.</li>
-                  </ul>
-                </li>
-                <li>Provided training for all instructors focusing on creating an inclusive and engaging learning environment.</li>
-                <li>Maintained the ladieslearningcode.com website.</li>
-                <li>Volunteer lead instructor from 2011-2014 for Toronto workshops and several chapter launches.</li>
-              </ul>
-            </div>
-          </section> -->
 
-          <!-- Job 3 -->
-          <!-- <section class="job-item">
-            <div class="job-detail">
-              <h3>Lead Front-End Developer</h3>
-              <p>Field iD</p>
-              <p>March 2013 - February 2014</p>
-            </div>
-            <div class="job-summary">
-              <p>Lead the front-end development for the in-house safety inspection software.</p>
-              <p>Key contributions:</p>
-              <ul>
-                <li>Responsible for setting code standards for the front-end development.</li>
-                <li>Created a fully customized front-end framework, including the UI/UX design.</li>
-                <li>Standardized the site architecture and design.</li>
-              </ul>
-            </div>
-          </section>
+    <!-- =====================================================
+         SCREEN 2 — ENVELOPE
+    ====================================================== -->
+
+    <section class="screen" id="envelopeScreen">
+
+      <div class="envelope-container">
+
+        <div class="tiny-label">
+          ✨ A tiny surprise has arrived
         </div>
-      </section>  -->
 
-      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
-      <section class="education" id="page-3">
-        <div class="content-wrap item-details">
-          <h2>Education</h2>
+        <h1 class="envelope-title">
+          Hey <span id="recipientName"></span>! 👀
+        </h1>
 
-          <section>
-            <h3>DAIICT Gandhinagar</h3>
-            <p>M.Tech, 2019-2021</p>
-            <p>Specialisation in Machine Learning.</p>
-          </section>
+        <p class="envelope-subtitle">
+          Someone left something for you...
+        </p>
 
-          <section>
-            <h3>GEC Gandhinagar</h3>
-            <p>B.E., 2014-2018</p>
-            <p>Major in Electronics & Communications.</p>
-          </section>
+        <div
+          class="envelope-wrapper"
+          id="envelopeWrapper"
+          role="button"
+          tabindex="0"
+          aria-label="Open birthday letter"
+        >
 
-      
+          <div class="envelope">
+
+            <div class="letter-preview">
+              <div class="preview-heart">💌</div>
+            </div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-right"></div>
+
+            <div class="seal">💗</div>
+
+          </div>
+
         </div>
-      </section>
 
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer id="page-4">
-        <div class="content-wrap">
-          <h2>Let's Keep in Touch!</h2>
-
-          <!-- Social media and contact links. Add or remove any networks. -->
-          <ul class="contact-list">
-             <li><a href="mailto:mauliksoni1997@gmail.com" ><i class="fas fa-envelope"></i> E-mail</a></li>
-            <li><a href="https://github.com/MaulikSoni-97" target="_blank"><i class="fab fa-github"></i>  GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/maulik-soni-799573160" target="_blank"><i class="fab fa-linkedin-in"></i>  LinkedIn</a></li> 
-            <li><a href="https://twitter.com/mauliksoni97" target="_blank"><i class="fab fa-twitter"></i>  Twitter</a></li>
-          </ul>   
+        <div class="tap-text">
+          Tap the envelope to open it 🌸
         </div>
-      </footer>
-    </main>
-  </body>
-  <script src="script/navi.js"></script>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCREEN 3 — MESSAGE PAPERS
+    ====================================================== -->
+
+    <section class="screen" id="messageScreen">
+
+      <div class="message-container">
+
+        <div class="message-counter" id="messageCounter">
+          Note 1 of 3
+        </div>
+
+        <div class="paper-stack">
+
+          <article class="paper" id="paper">
+
+            <div class="paper-number" id="paperNumber">
+              PAPER_01 💌
+            </div>
+
+            <h2 class="paper-title" id="paperTitle">
+              Hey!
+            </h2>
+
+            <div class="paper-message" id="paperMessage">
+              Your message goes here.
+            </div>
+
+            <button class="next-btn" id="nextMessageBtn">
+              Next little note → 🌸
+            </button>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCREEN 4 — FINAL
+    ====================================================== -->
+
+    <section class="screen" id="finalScreen">
+
+      <div class="final-card">
+
+        <div class="cake">🎂</div>
+
+        <h1 class="final-title">
+          Happy Birthday,<br>
+          <span id="finalName"></span>! ✨
+        </h1>
+
+        <div class="final-message" id="finalMessage"></div>
+
+        <div class="status-box">
+          <div>
+            &gt; Checking age...
+          </div>
+
+          <div>
+            &gt; +1 year successfully installed 😂
+          </div>
+
+          <div>
+            &gt; Happiness level: increasing...
+          </div>
+
+          <div class="success-text">
+            &gt; Birthday wishes deployed successfully! 🚀
+          </div>
+
+          <div>
+            &gt; Status: {{NAME}} is officially one year more awesome. ✨
+          </div>
+        </div>
+
+        <button class="restart-btn" id="restartBtn">
+          Read it again 💌
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /* =========================================================
+       🎨 CONFIGURATION
+
+       EDIT ONLY THIS SECTION TO PERSONALIZE THE WEBSITE
+    ========================================================= */
+
+    const CONFIG = {
+
+      // Change this later
+      name: "{{NAME}}",
+
+      messages: [
+
+        {
+          title: "Hey {{NAME}}! 🌸",
+          message: `{{MESSAGE_1}}`
+        },
+
+        {
+          title: "A small thing... 🫣",
+          message: `{{MESSAGE_2}}`
+        },
+
+        {
+          title: "Since it's your birthday... 🎂",
+          message: `{{MESSAGE_3}}`
+        }
+
+      ],
+
+      finalMessage: `{{FINAL_MESSAGE}}
+
+Keep being awesome, keep writing questionable code,
+and please remember to take breaks from debugging life too. 😂💻🌸
+
+P.S. I'm really glad our codebases crossed paths. 🫶`
+
+    };
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const loadingScreen = document.getElementById("loadingScreen");
+    const envelopeScreen = document.getElementById("envelopeScreen");
+    const messageScreen = document.getElementById("messageScreen");
+    const finalScreen = document.getElementById("finalScreen");
+
+    const terminalContent = document.getElementById("terminalContent");
+    const progressBar = document.getElementById("progressBar");
+    const openSurpriseBtn = document.getElementById("openSurpriseBtn");
+
+    const envelopeWrapper = document.getElementById("envelopeWrapper");
+
+    const recipientName = document.getElementById("recipientName");
+
+    const messageCounter = document.getElementById("messageCounter");
+    const paper = document.getElementById("paper");
+    const paperNumber = document.getElementById("paperNumber");
+    const paperTitle = document.getElementById("paperTitle");
+    const paperMessage = document.getElementById("paperMessage");
+    const nextMessageBtn = document.getElementById("nextMessageBtn");
+
+    const finalName = document.getElementById("finalName");
+    const finalMessage = document.getElementById("finalMessage");
+
+    const restartBtn = document.getElementById("restartBtn");
+
+
+    /* =========================================================
+       PERSONALIZE NAME
+    ========================================================= */
+
+    recipientName.textContent = CONFIG.name;
+    finalName.textContent = CONFIG.name;
+
+    document.title = `A Little Surprise for ${CONFIG.name} 💌`;
+
+
+    /* =========================================================
+       SCREEN HELPER
+    ========================================================= */
+
+    function showScreen(screen) {
+
+      document.querySelectorAll(".screen").forEach(item => {
+        item.classList.remove("active");
+      });
+
+      screen.classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    /* =========================================================
+       LOADING ANIMATION
+    ========================================================= */
+
+    const loadingLines = [
+
+      "Initializing surprise... 💫",
+
+      "Loading cute animations... ✓",
+
+      "Compiling birthday wishes... 100%",
+
+      `Checking recipient... ${CONFIG.name} ✓`,
+
+      "Injecting happiness... ✓",
+
+      "Searching for bugs...",
+
+      "Too many. Ignoring them. 😂",
+
+      "Build successful! 🚀"
+
+    ];
+
+
+    function runLoadingScreen() {
+
+      terminalContent.innerHTML = "";
+      progressBar.style.width = "0%";
+
+      loadingLines.forEach((line, index) => {
+
+        setTimeout(() => {
+
+          const lineElement = document.createElement("div");
+
+          lineElement.className = "terminal-line";
+
+          if (line.includes("✓") || line.includes("successful")) {
+            lineElement.classList.add("success");
+          }
+
+          if (line.includes("Compiling")) {
+            lineElement.classList.add("highlight");
+          }
+
+          lineElement.textContent = "> " + line;
+
+          terminalContent.appendChild(lineElement);
+
+          const progress =
+            ((index + 1) / loadingLines.length) * 100;
+
+          progressBar.style.width = progress + "%";
+
+          if (index === loadingLines.length - 1) {
+
+            setTimeout(() => {
+              openSurpriseBtn.classList.add("show");
+            }, 500);
+
+          }
+
+        }, index * 650);
+
+      });
+
+    }
+
+
+    /* =========================================================
+       OPEN SURPRISE
+    ========================================================= */
+
+    openSurpriseBtn.addEventListener("click", () => {
+
+      showScreen(envelopeScreen);
+
+    });
+
+
+    /* =========================================================
+       ENVELOPE
+    ========================================================= */
+
+    function openEnvelope() {
+
+      if (envelopeWrapper.classList.contains("open")) {
+        return;
+      }
+
+      envelopeWrapper.classList.add("open");
+
+      setTimeout(() => {
+
+        showScreen(messageScreen);
+
+        currentMessage = 0;
+
+        renderMessage();
+
+      }, 1300);
+
+    }
+
+
+    envelopeWrapper.addEventListener("click", openEnvelope);
+
+
+    envelopeWrapper.addEventListener("keydown", event => {
+
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
+        openEnvelope();
+      }
+
+    });
+
+
+    /* =========================================================
+       MESSAGE PAPERS
+    ========================================================= */
+
+    let currentMessage = 0;
+
+
+    function replaceName(text) {
+
+      return text.replaceAll(
+        "{{NAME}}",
+        CONFIG.name
+      );
+
+    }
+
+
+    function renderMessage() {
+
+      const item =
+        CONFIG.messages[currentMessage];
+
+      messageCounter.textContent =
+        `Note ${currentMessage + 1} of ${CONFIG.messages.length}`;
+
+      paperNumber.textContent =
+        `PAPER_${String(currentMessage + 1).padStart(2, "0")} 💌`;
+
+      paperTitle.textContent =
+        replaceName(item.title);
+
+      paperMessage.textContent =
+        replaceName(item.message);
+
+      paper.style.animation = "none";
+
+      void paper.offsetWidth;
+
+      paper.style.animation =
+        "paperAppear 0.65s cubic-bezier(.2,.9,.2,1) forwards";
+
+
+      const isLastMessage =
+        currentMessage === CONFIG.messages.length - 1;
+
+      nextMessageBtn.textContent =
+        isLastMessage
+          ? "One last thing... 🎂"
+          : "Next little note → 🌸";
+
+    }
+
+
+    nextMessageBtn.addEventListener("click", () => {
+
+      const isLastMessage =
+        currentMessage === CONFIG.messages.length - 1;
+
+      if (isLastMessage) {
+
+        showFinalScreen();
+
+        return;
+      }
+
+      currentMessage++;
+
+      renderMessage();
+
+    });
+
+
+    /* =========================================================
+       FINAL SCREEN
+    ========================================================= */
+
+    function showFinalScreen() {
+
+      finalMessage.textContent =
+        replaceName(CONFIG.finalMessage);
+
+      showScreen(finalScreen);
+
+      createConfetti();
+
+    }
+
+
+    /* =========================================================
+       CONFETTI
+    ========================================================= */
+
+    function createConfetti() {
+
+      const emojis = [
+        "🎉",
+        "✨",
+        "💗",
+        "🌸",
+        "🎂",
+        "💫"
+      ];
+
+      for (let i = 0; i < 55; i++) {
+
+        const item =
+          document.createElement("div");
+
+        item.className = "confetti";
+
+        item.textContent =
+          emojis[Math.floor(
+            Math.random() * emojis.length
+          )];
+
+        item.style.left =
+          Math.random() * 100 + "vw";
+
+        item.style.animationDuration =
+          3 + Math.random() * 3 + "s";
+
+        item.style.fontSize =
+          14 + Math.random() * 16 + "px";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => {
+          item.remove();
+        }, 6500);
+
+      }
+
+    }
+
+
+    /* =========================================================
+       RESTART
+    ========================================================= */
+
+    restartBtn.addEventListener("click", () => {
+
+      envelopeWrapper.classList.remove("open");
+
+      showScreen(envelopeScreen);
+
+    });
+
+
+    /* =========================================================
+       START
+    ========================================================= */
+
+    runLoadingScreen();
+
+  </script>
+
+</body>
 </html>
