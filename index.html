@@ -1,14 +1,19 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <title>A Little Surprise 💌</title>
+  <title>A Little Birthday Surprise 💌</title>
 
-  <!-- Fonts -->
+  <!-- Cute handwritten + clean font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
     rel="stylesheet"
@@ -33,12 +38,22 @@
 
     body {
       overflow-x: hidden;
+
       font-family: "Nunito", sans-serif;
+
       color: #5c4a55;
 
       background:
-        radial-gradient(circle at 10% 20%, #fff7fb 0%, transparent 25%),
-        radial-gradient(circle at 90% 10%, #f7ecff 0%, transparent 25%),
+        radial-gradient(
+          circle at 10% 20%,
+          #fff7fb 0%,
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 90% 10%,
+          #f7ecff 0%,
+          transparent 27%
+        ),
         linear-gradient(
           135deg,
           #ffeef5,
@@ -52,22 +67,31 @@
     }
 
     /* =========================================================
-       BACKGROUND
+       FLOATING BACKGROUND
     ========================================================= */
 
     .background-decoration {
       position: fixed;
       inset: 0;
-      pointer-events: none;
+
       overflow: hidden;
+
+      pointer-events: none;
+
       z-index: 0;
     }
 
     .floating-item {
       position: absolute;
+
       opacity: 0.65;
+
       user-select: none;
-      animation: floatAround linear infinite;
+
+      animation:
+        floatAround
+        linear
+        infinite;
     }
 
     .floating-item:nth-child(1) {
@@ -108,17 +132,22 @@
     @keyframes floatAround {
 
       0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
       }
 
       50% {
-        transform: translateY(-25px) rotate(12deg);
+        transform:
+          translateY(-25px)
+          rotate(12deg);
       }
 
       100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
       }
-
     }
 
     /* =========================================================
@@ -128,6 +157,7 @@
     .app {
       position: relative;
       z-index: 1;
+
       min-height: 100vh;
     }
 
@@ -153,9 +183,11 @@
 
     .primary-btn {
       border: none;
+
       cursor: pointer;
 
-      padding: 15px 25px;
+      padding:
+        15px 25px;
 
       border-radius: 999px;
 
@@ -172,7 +204,8 @@
         );
 
       box-shadow:
-        0 12px 28px rgba(200, 110, 150, 0.25);
+        0 12px 28px
+        rgba(200, 110, 150, 0.25);
 
       transition:
         transform 0.2s ease,
@@ -180,131 +213,149 @@
     }
 
     .primary-btn:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
     .primary-btn:active {
-      transform: scale(0.96);
+      transform:
+        scale(0.96);
     }
 
     /* =========================================================
-       SCREEN 1
-       FAKE COMPILATION
+       01 — COMPILATION
     ========================================================= */
 
     .terminal-card {
+      width:
+        min(620px, 100%);
 
-      width: min(620px, 100%);
+      padding:
+        26px;
 
-      padding: 26px;
-
-      border-radius: 24px;
+      border-radius:
+        24px;
 
       background:
         rgba(255, 255, 255, 0.68);
 
       border:
-        1px solid rgba(255, 255, 255, 0.8);
+        1px solid
+        rgba(255, 255, 255, 0.8);
 
       box-shadow:
-        0 20px 60px rgba(130, 90, 120, 0.15);
+        0 20px 60px
+        rgba(130, 90, 120, 0.15);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter:
+        blur(12px);
     }
 
     .terminal-top {
-
       display: flex;
+
       gap: 8px;
 
-      margin-bottom: 24px;
+      margin-bottom:
+        24px;
     }
 
     .dot {
-
       width: 11px;
       height: 11px;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      background: #f3a6b8;
+      background:
+        #f3a6b8;
     }
 
     .dot:nth-child(2) {
-      background: #f5d38a;
+      background:
+        #f5d38a;
     }
 
     .dot:nth-child(3) {
-      background: #a8d8ba;
+      background:
+        #a8d8ba;
     }
 
     .terminal-content {
+      min-height:
+        240px;
 
-      min-height: 240px;
+      font-family:
+        monospace;
 
-      font-family: monospace;
+      line-height:
+        1.8;
 
-      line-height: 1.8;
+      font-size:
+        15px;
 
-      font-size: 15px;
-
-      color: #6a5664;
+      color:
+        #6a5664;
     }
 
     .terminal-line {
-
       opacity: 0;
 
-      transform: translateY(8px);
+      transform:
+        translateY(8px);
 
       animation:
-        showLine 0.4s forwards;
+        showLine
+        0.4s
+        forwards;
     }
 
     .terminal-line.success {
-      color: #6ca984;
+      color:
+        #6ca984;
     }
 
     .terminal-line.highlight {
+      color:
+        #d06f91;
 
-      color: #d06f91;
-
-      font-weight: bold;
+      font-weight:
+        bold;
     }
 
     @keyframes showLine {
 
       to {
-
         opacity: 1;
 
         transform:
           translateY(0);
       }
-
     }
 
     .progress-container {
-
       width: 100%;
       height: 10px;
 
-      margin: 14px 0 20px;
+      margin:
+        14px 0 20px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
-      border-radius: 20px;
+      border-radius:
+        20px;
 
       background:
         rgba(190, 150, 175, 0.2);
     }
 
     .progress-bar {
-
       width: 0%;
       height: 100%;
 
-      border-radius: inherit;
+      border-radius:
+        inherit;
 
       background:
         linear-gradient(
@@ -319,20 +370,24 @@
     }
 
     .open-surprise-btn {
-
       display: none;
 
       width: 100%;
 
-      margin-top: 24px;
+      margin-top:
+        24px;
 
-      padding: 16px 20px;
+      padding:
+        16px 20px;
 
-      border: none;
+      border:
+        none;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       background:
         linear-gradient(
@@ -341,11 +396,14 @@
           #d8a7ef
         );
 
-      color: white;
+      color:
+        white;
 
-      font-weight: 800;
+      font-weight:
+        800;
 
-      font-size: 16px;
+      font-size:
+        16px;
 
       box-shadow:
         0 10px 25px
@@ -353,45 +411,51 @@
     }
 
     .open-surprise-btn.show {
-
       display: block;
 
       animation:
-        popIn 0.5s ease forwards;
+        popIn
+        0.5s
+        ease
+        forwards;
     }
 
     /* =========================================================
-       SCREEN 2
-       CAKE CREATION
+       02 — CAKE
     ========================================================= */
 
     .cake-screen {
+      text-align:
+        center;
 
-      text-align: center;
-
-      width: min(650px, 100%);
+      width:
+        min(650px, 100%);
     }
 
     .cake-label {
+      display:
+        inline-block;
 
-      display: inline-block;
+      padding:
+        7px 14px;
 
-      padding: 7px 14px;
-
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         rgba(255,255,255,0.55);
 
-      font-size: 13px;
+      font-size:
+        13px;
 
-      font-weight: 800;
+      font-weight:
+        800;
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
     }
 
     .cake-title {
-
       margin: 0;
 
       font-family:
@@ -401,66 +465,100 @@
       font-size:
         clamp(48px, 11vw, 76px);
 
-      line-height: 0.95;
+      line-height:
+        0.95;
 
-      color: #6d5562;
+      color:
+        #6d5562;
     }
 
     .cake-subtitle {
-
       margin:
         14px 0 35px;
 
-      opacity: 0.7;
+      opacity:
+        0.7;
 
-      font-size: 15px;
+      font-size:
+        15px;
     }
 
-    /* =========================================================
-       CSS CAKE
-    ========================================================= */
-
     .cake-area {
+      position:
+        relative;
 
-      position: relative;
+      width:
+        330px;
 
-      width: 330px;
-      height: 300px;
+      height:
+        300px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: flex-end;
+      align-items:
+        flex-end;
 
-      justify-content: center;
+      justify-content:
+        center;
     }
 
     .cake-shadow {
+      position:
+        absolute;
 
-      position: absolute;
+      bottom:
+        20px;
 
-      bottom: 20px;
+      width:
+        260px;
 
-      width: 260px;
-      height: 35px;
+      height:
+        35px;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       background:
         rgba(130, 90, 120, 0.12);
 
-      filter: blur(7px);
+      filter:
+        blur(7px);
+    }
+
+    .cake-base,
+    .cake-middle,
+    .cake-top {
+      position:
+        absolute;
+
+      border-radius:
+        15px;
+
+      opacity:
+        0;
+
+      transform:
+        translateY(50px)
+        scale(0.8);
+
+      transition:
+        all 0.8s
+        cubic-bezier(.2,.9,.2,1);
     }
 
     .cake-base {
+      bottom:
+        40px;
 
-      position: absolute;
+      width:
+        250px;
 
-      bottom: 40px;
-
-      width: 250px;
-      height: 105px;
+      height:
+        105px;
 
       border-radius:
         15px 15px 22px 22px;
@@ -475,28 +573,17 @@
       box-shadow:
         0 15px 25px
         rgba(130, 70, 100, 0.18);
-
-      opacity: 0;
-
-      transform:
-        translateY(50px)
-        scale(0.8);
-
-      transition:
-        all 0.8s
-        cubic-bezier(.2,.9,.2,1);
     }
 
     .cake-middle {
+      bottom:
+        125px;
 
-      position: absolute;
+      width:
+        215px;
 
-      bottom: 125px;
-
-      width: 215px;
-      height: 72px;
-
-      border-radius: 15px;
+      height:
+        72px;
 
       background:
         linear-gradient(
@@ -508,28 +595,20 @@
       box-shadow:
         0 12px 20px
         rgba(130, 70, 100, 0.13);
-
-      opacity: 0;
-
-      transform:
-        translateY(50px)
-        scale(0.8);
-
-      transition:
-        all 0.8s
-        cubic-bezier(.2,.9,.2,1);
     }
 
     .cake-top {
+      bottom:
+        190px;
 
-      position: absolute;
+      width:
+        180px;
 
-      bottom: 190px;
+      height:
+        58px;
 
-      width: 180px;
-      height: 58px;
-
-      border-radius: 18px;
+      border-radius:
+        18px;
 
       background:
         linear-gradient(
@@ -541,53 +620,52 @@
       box-shadow:
         0 10px 20px
         rgba(130, 70, 100, 0.12);
-
-      opacity: 0;
-
-      transform:
-        translateY(50px)
-        scale(0.8);
-
-      transition:
-        all 0.8s
-        cubic-bezier(.2,.9,.2,1);
     }
 
     .icing {
+      position:
+        absolute;
 
-      position: absolute;
+      bottom:
+        184px;
 
-      bottom: 184px;
+      width:
+        190px;
 
-      width: 190px;
-      height: 25px;
+      height:
+        25px;
 
       border-radius:
         50% 50% 12px 12px;
 
-      background: #fff8fb;
+      background:
+        #fff8fb;
 
-      opacity: 0;
+      opacity:
+        0;
 
-      transform: scaleX(0.6);
+      transform:
+        scaleX(0.6);
 
       transition:
         all 0.7s ease;
     }
 
-    /* Candles */
-
     .candles {
+      position:
+        absolute;
 
-      position: absolute;
+      bottom:
+        235px;
 
-      bottom: 235px;
+      display:
+        flex;
 
-      display: flex;
+      gap:
+        28px;
 
-      gap: 28px;
-
-      opacity: 0;
+      opacity:
+        0;
 
       transform:
         translateY(20px);
@@ -597,13 +675,17 @@
     }
 
     .candle {
+      position:
+        relative;
 
-      position: relative;
+      width:
+        12px;
 
-      width: 12px;
-      height: 55px;
+      height:
+        55px;
 
-      border-radius: 6px;
+      border-radius:
+        6px;
 
       background:
         repeating-linear-gradient(
@@ -616,34 +698,42 @@
     }
 
     .flame {
+      position:
+        absolute;
 
-      position: absolute;
+      left:
+        50%;
 
-      left: 50%;
+      top:
+        -25px;
 
-      top: -25px;
+      width:
+        15px;
 
-      width: 15px;
-      height: 23px;
+      height:
+        23px;
 
       transform:
         translateX(-50%);
 
       border-radius:
-        50% 50% 50% 50%;
+        50%;
 
       background:
         #ffd76a;
 
       box-shadow:
         0 0 15px
-        rgba(255, 190, 80, 0.8);
+        rgba(255,190,80,0.8);
 
-      opacity: 0;
+      opacity:
+        0;
 
       animation:
-        flame 0.8s
-        infinite alternate;
+        flame
+        0.8s
+        infinite
+        alternate;
     }
 
     @keyframes flame {
@@ -663,135 +753,166 @@
       }
     }
 
-    /* Cake assembly states */
-
-    .cake-area.build-1 .cake-base {
-
-      opacity: 1;
-
-      transform:
-        translateY(0)
-        scale(1);
-    }
-
-    .cake-area.build-2 .cake-middle {
-
-      opacity: 1;
+    .cake-area.build-1
+    .cake-base {
+      opacity:
+        1;
 
       transform:
         translateY(0)
         scale(1);
     }
 
-    .cake-area.build-3 .cake-top {
-
-      opacity: 1;
+    .cake-area.build-2
+    .cake-middle {
+      opacity:
+        1;
 
       transform:
         translateY(0)
         scale(1);
     }
 
-    .cake-area.build-4 .icing {
+    .cake-area.build-3
+    .cake-top {
+      opacity:
+        1;
 
-      opacity: 1;
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .cake-area.build-4
+    .icing {
+      opacity:
+        1;
 
       transform:
         scaleX(1);
     }
 
-    .cake-area.build-5 .candles {
-
-      opacity: 1;
+    .cake-area.build-5
+    .candles {
+      opacity:
+        1;
 
       transform:
         translateY(0);
     }
 
-    .cake-area.build-6 .flame {
-
-      opacity: 1;
+    .cake-area.build-6
+    .flame {
+      opacity:
+        1;
     }
 
-    /* Cake decorations */
-
     .cake-sprinkle {
+      position:
+        absolute;
 
-      position: absolute;
+      width:
+        8px;
 
-      width: 8px;
-      height: 4px;
+      height:
+        4px;
 
-      border-radius: 4px;
+      border-radius:
+        4px;
 
-      background: #d99ab4;
+      background:
+        #d99ab4;
     }
 
     .sprinkle-1 {
-      left: 34%;
-      bottom: 155px;
-      transform: rotate(20deg);
+      left:
+        34%;
+
+      bottom:
+        155px;
+
+      transform:
+        rotate(20deg);
     }
 
     .sprinkle-2 {
-      left: 55%;
-      bottom: 150px;
-      transform: rotate(-25deg);
+      left:
+        55%;
+
+      bottom:
+        150px;
+
+      transform:
+        rotate(-25deg);
     }
 
     .sprinkle-3 {
-      left: 45%;
-      bottom: 180px;
-      transform: rotate(10deg);
+      left:
+        45%;
+
+      bottom:
+        180px;
+
+      transform:
+        rotate(10deg);
     }
 
     .cake-complete {
-
-      margin-top: 12px;
+      margin-top:
+        12px;
 
       font-family:
         "Caveat",
         cursive;
 
-      font-size: 28px;
+      font-size:
+        28px;
 
-      color: #bf7892;
+      color:
+        #bf7892;
 
-      opacity: 0;
+      opacity:
+        0;
 
-      transform: translateY(10px);
+      transform:
+        translateY(10px);
 
-      transition: all 0.6s ease;
+      transition:
+        all 0.6s ease;
     }
 
     .cake-complete.show {
-
-      opacity: 1;
+      opacity:
+        1;
 
       transform:
         translateY(0);
     }
 
     .wish-btn {
+      display:
+        none;
 
-      display: none;
-
-      margin-top: 18px;
+      margin-top:
+        18px;
     }
 
     .wish-btn.show {
-
-      display: inline-block;
+      display:
+        inline-block;
 
       animation:
-        wishPop 0.7s
+        wishPop
+        0.7s
         cubic-bezier(.2,.9,.2,1);
     }
 
     @keyframes wishPop {
 
       0% {
-        opacity: 0;
+        opacity:
+          0;
+
         transform:
           scale(0.5)
           translateY(20px);
@@ -803,26 +924,30 @@
       }
 
       100% {
-        opacity: 1;
+        opacity:
+          1;
+
         transform:
           scale(1);
       }
     }
 
     /* =========================================================
-       SCREEN 3
-       GREETING
+       03 — GREETING
     ========================================================= */
 
     .greeting-card {
+      width:
+        min(600px, 100%);
 
-      width: min(600px, 100%);
+      padding:
+        45px 30px;
 
-      padding: 45px 30px;
+      text-align:
+        center;
 
-      text-align: center;
-
-      border-radius: 32px;
+      border-radius:
+        32px;
 
       background:
         rgba(255,255,255,0.72);
@@ -835,31 +960,35 @@
         blur(12px);
 
       animation:
-        popIn 0.8s
+        popIn
+        0.8s
         cubic-bezier(.2,.9,.2,1);
     }
 
     .greeting-icon {
-
-      font-size: 64px;
+      font-size:
+        64px;
 
       animation:
-        heartbeat 1.6s infinite;
+        heartbeat
+        1.6s
+        infinite;
     }
 
     @keyframes heartbeat {
 
       0%, 100% {
-        transform: scale(1);
+        transform:
+          scale(1);
       }
 
       50% {
-        transform: scale(1.12);
+        transform:
+          scale(1.12);
       }
     }
 
     .greeting-title {
-
       margin:
         18px 0 15px;
 
@@ -870,18 +999,22 @@
       font-size:
         clamp(48px, 11vw, 76px);
 
-      line-height: 0.95;
+      line-height:
+        0.95;
 
-      color: #6c5561;
+      color:
+        #6c5561;
     }
 
     .greeting-message {
+      max-width:
+        500px;
 
-      max-width: 500px;
+      margin:
+        25px auto;
 
-      margin: 25px auto;
-
-      white-space: pre-line;
+      white-space:
+        pre-line;
 
       font-family:
         "Caveat",
@@ -890,52 +1023,62 @@
       font-size:
         clamp(27px, 6vw, 37px);
 
-      line-height: 1.35;
+      line-height:
+        1.35;
     }
 
     .greeting-hint {
+      margin-top:
+        25px;
 
-      margin-top: 25px;
+      font-size:
+        14px;
 
-      font-size: 14px;
-
-      opacity: 0.65;
+      opacity:
+        0.65;
     }
 
     /* =========================================================
-       SCREEN 4
-       ENVELOPE
+       04 — ENVELOPE
     ========================================================= */
 
     .envelope-container {
+      width:
+        100%;
 
-      width: 100%;
-      max-width: 460px;
+      max-width:
+        460px;
 
-      text-align: center;
+      text-align:
+        center;
     }
 
     .tiny-label {
+      display:
+        inline-block;
 
-      display: inline-block;
+      margin-bottom:
+        10px;
 
-      margin-bottom: 10px;
+      padding:
+        7px 14px;
 
-      padding: 7px 14px;
-
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         rgba(255,255,255,0.55);
 
-      font-size: 13px;
+      font-size:
+        13px;
 
-      font-weight: 700;
+      font-weight:
+        700;
     }
 
     .envelope-title {
-
-      margin: 8px 0;
+      margin:
+        8px 0;
 
       font-family:
         "Caveat",
@@ -944,81 +1087,100 @@
       font-size:
         clamp(42px,10vw,70px);
 
-      line-height: 1;
+      line-height:
+        1;
 
-      color: #6d5562;
+      color:
+        #6d5562;
     }
 
     .envelope-subtitle {
-
       margin:
         0 0 35px;
 
-      font-size: 16px;
+      font-size:
+        16px;
 
-      opacity: 0.75;
+      opacity:
+        0.75;
     }
 
     .envelope-wrapper {
+      position:
+        relative;
 
-      position: relative;
+      width:
+        min(330px,85vw);
 
-      width: min(330px,85vw);
-
-      height: 225px;
+      height:
+        225px;
 
       margin:
         0 auto 30px;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
-      perspective: 1000px;
+      perspective:
+        1000px;
 
       transition:
         transform 0.25s ease;
     }
 
     .envelope-wrapper:hover {
-
       transform:
         translateY(-5px);
     }
 
     .envelope {
+      position:
+        absolute;
 
-      position: absolute;
+      inset:
+        0;
 
-      inset: 0;
+      border-radius:
+        10px;
 
-      border-radius: 10px;
-
-      background: #f4a9bd;
+      background:
+        #f4a9bd;
 
       box-shadow:
         0 22px 35px
         rgba(151,91,115,0.22);
 
-      overflow: hidden;
+      overflow:
+        hidden;
     }
 
     .letter-preview {
+      position:
+        absolute;
 
-      position: absolute;
+      width:
+        86%;
 
-      width: 86%;
-      height: 88%;
+      height:
+        88%;
 
-      left: 7%;
-      top: 8%;
+      left:
+        7%;
 
-      padding: 20px;
+      top:
+        8%;
 
-      border-radius: 8px;
+      padding:
+        20px;
 
-      background-color:
+      border-radius:
+        8px;
+
+      background:
         #fffdf9;
 
-      z-index: 1;
+      z-index:
+        1;
 
       transition:
         transform 1s
@@ -1026,36 +1188,50 @@
     }
 
     .preview-heart {
-
-      font-size: 30px;
+      font-size:
+        30px;
 
       animation:
-        heartbeat 1.5s infinite;
+        heartbeat
+        1.5s
+        infinite;
     }
 
     .envelope-front {
+      position:
+        absolute;
 
-      position: absolute;
+      inset:
+        auto 0 0;
 
-      inset: auto 0 0;
+      width:
+        100%;
 
-      width: 100%;
-      height: 100%;
+      height:
+        100%;
 
-      z-index: 3;
+      z-index:
+        3;
     }
 
     .envelope-front::before {
+      content:
+        "";
 
-      content: "";
+      position:
+        absolute;
 
-      position: absolute;
+      left:
+        0;
 
-      left: 0;
-      bottom: 0;
+      bottom:
+        0;
 
-      width: 0;
-      height: 0;
+      width:
+        0;
+
+      height:
+        0;
 
       border-left:
         165px solid transparent;
@@ -1068,16 +1244,23 @@
     }
 
     .envelope-front::after {
+      content:
+        "";
 
-      content: "";
+      position:
+        absolute;
 
-      position: absolute;
+      left:
+        0;
 
-      left: 0;
-      bottom: 0;
+      bottom:
+        0;
 
-      width: 0;
-      height: 0;
+      width:
+        0;
+
+      height:
+        0;
 
       border-top:
         112px solid transparent;
@@ -1090,14 +1273,20 @@
     }
 
     .envelope-right {
+      position:
+        absolute;
 
-      position: absolute;
+      right:
+        0;
 
-      right: 0;
-      bottom: 0;
+      bottom:
+        0;
 
-      width: 0;
-      height: 0;
+      width:
+        0;
+
+      height:
+        0;
 
       border-top:
         112px solid transparent;
@@ -1108,18 +1297,25 @@
       border-right:
         165px solid #efa1b7;
 
-      z-index: 4;
+      z-index:
+        4;
     }
 
     .envelope-flap {
+      position:
+        absolute;
 
-      position: absolute;
+      top:
+        0;
 
-      top: 0;
-      left: 0;
+      left:
+        0;
 
-      width: 0;
-      height: 0;
+      width:
+        0;
+
+      height:
+        0;
 
       border-left:
         165px solid transparent;
@@ -1130,9 +1326,11 @@
       border-top:
         120px solid #f6b2c5;
 
-      transform-origin: top;
+      transform-origin:
+        top;
 
-      z-index: 5;
+      z-index:
+        5;
 
       transition:
         transform 0.9s
@@ -1140,27 +1338,38 @@
     }
 
     .seal {
+      position:
+        absolute;
 
-      position: absolute;
+      top:
+        94px;
 
-      top: 94px;
-      left: 50%;
+      left:
+        50%;
 
-      z-index: 6;
+      z-index:
+        6;
 
       transform:
         translateX(-50%);
 
-      width: 48px;
-      height: 48px;
+      width:
+        48px;
 
-      display: grid;
+      height:
+        48px;
 
-      place-items: center;
+      display:
+        grid;
 
-      border-radius: 50%;
+      place-items:
+        center;
 
-      background: #fff2f6;
+      border-radius:
+        50%;
+
+      background:
+        #fff2f6;
 
       box-shadow:
         0 4px 12px
@@ -1172,36 +1381,39 @@
 
     .envelope-wrapper.open
     .envelope-flap {
-
       transform:
         rotateX(180deg);
 
-      z-index: 0;
+      z-index:
+        0;
     }
 
     .envelope-wrapper.open
     .letter-preview {
-
       transform:
         translateY(-115px);
     }
 
     .envelope-wrapper.open
     .seal {
-
-      opacity: 0;
+      opacity:
+        0;
     }
 
     .tap-text {
+      font-size:
+        14px;
 
-      font-size: 14px;
+      font-weight:
+        700;
 
-      font-weight: 700;
-
-      opacity: 0.7;
+      opacity:
+        0.7;
 
       animation:
-        bounceText 1.5s infinite;
+        bounceText
+        1.5s
+        infinite;
     }
 
     @keyframes bounceText {
@@ -1213,57 +1425,69 @@
     }
 
     /* =========================================================
-       SCREEN 5
-       PAPERS
+       05 — ONE PAPER NOTE
     ========================================================= */
 
     .message-container {
+      width:
+        min(560px,100%);
 
-      width: min(560px,100%);
-
-      text-align: center;
+      text-align:
+        center;
     }
 
     .message-counter {
+      margin-bottom:
+        14px;
 
-      margin-bottom: 14px;
+      font-size:
+        13px;
 
-      font-size: 13px;
+      font-weight:
+        800;
 
-      font-weight: 800;
+      letter-spacing:
+        1px;
 
-      letter-spacing: 1px;
+      opacity:
+        0.6;
 
-      opacity: 0.6;
-
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
 
     .paper-stack {
+      position:
+        relative;
 
-      position: relative;
+      min-height:
+        470px;
 
-      min-height: 470px;
+      display:
+        flex;
 
-      display: flex;
+      align-items:
+        center;
 
-      align-items: center;
-
-      justify-content: center;
+      justify-content:
+        center;
     }
 
     .paper {
+      position:
+        relative;
 
-      position: relative;
+      width:
+        100%;
 
-      width: 100%;
-
-      min-height: 410px;
+      min-height:
+        410px;
 
       padding:
         42px 30px 35px;
 
-      border-radius: 8px;
+      border-radius:
+        8px;
 
       background:
         repeating-linear-gradient(
@@ -1285,25 +1509,32 @@
         rotate(-1deg)
         scale(0.92);
 
-      opacity: 0;
+      opacity:
+        0;
 
       animation:
-        paperAppear 0.65s
+        paperAppear
+        0.65s
         cubic-bezier(.2,.9,.2,1)
         forwards;
     }
 
     .paper::before,
     .paper::after {
+      content:
+        "";
 
-      content: "";
+      position:
+        absolute;
 
-      position: absolute;
+      width:
+        60px;
 
-      width: 60px;
-      height: 20px;
+      height:
+        20px;
 
-      top: -8px;
+      top:
+        -8px;
 
       background:
         rgba(248,204,215,0.55);
@@ -1313,12 +1544,13 @@
     }
 
     .paper::before {
-      left: 25px;
+      left:
+        25px;
     }
 
     .paper::after {
-
-      right: 25px;
+      right:
+        25px;
 
       transform:
         rotate(6deg);
@@ -1327,8 +1559,8 @@
     @keyframes paperAppear {
 
       to {
-
-        opacity: 1;
+        opacity:
+          1;
 
         transform:
           rotate(-1deg)
@@ -1337,18 +1569,20 @@
     }
 
     .paper-number {
+      margin-bottom:
+        12px;
 
-      margin-bottom: 12px;
+      font-size:
+        13px;
 
-      font-size: 13px;
+      font-weight:
+        800;
 
-      font-weight: 800;
-
-      color: #d4879e;
+      color:
+        #d4879e;
     }
 
     .paper-title {
-
       margin:
         0 0 24px;
 
@@ -1359,18 +1593,22 @@
       font-size:
         clamp(38px,9vw,58px);
 
-      line-height: 1;
+      line-height:
+        1;
 
-      color: #725967;
+      color:
+        #725967;
     }
 
     .paper-message {
+      max-width:
+        450px;
 
-      max-width: 450px;
+      margin:
+        auto;
 
-      margin: auto;
-
-      white-space: pre-line;
+      white-space:
+        pre-line;
 
       font-family:
         "Caveat",
@@ -1379,29 +1617,37 @@
       font-size:
         clamp(25px,6vw,34px);
 
-      line-height: 1.35;
+      line-height:
+        1.35;
 
-      color: #634f59;
+      color:
+        #634f59;
     }
 
     .next-btn {
-
-      margin-top: 30px;
+      margin-top:
+        30px;
 
       padding:
         14px 24px;
 
-      border: none;
+      border:
+        none;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
-      background: #fff1f5;
+      background:
+        #fff1f5;
 
-      color: #c56e8d;
+      color:
+        #c56e8d;
 
-      font-weight: 800;
+      font-weight:
+        800;
 
       box-shadow:
         0 8px 20px
@@ -1409,20 +1655,21 @@
     }
 
     /* =========================================================
-       SCREEN 6
-       FINAL
+       06 — FINAL BIRTHDAY NOTE
     ========================================================= */
 
     .final-card {
-
-      width: min(620px,100%);
+      width:
+        min(620px,100%);
 
       padding:
         42px 28px;
 
-      text-align: center;
+      text-align:
+        center;
 
-      border-radius: 32px;
+      border-radius:
+        32px;
 
       background:
         rgba(255,255,255,0.72);
@@ -1435,43 +1682,23 @@
         blur(12px);
 
       animation:
-        popIn 0.8s
+        popIn
+        0.8s
         cubic-bezier(.2,.9,.2,1);
     }
 
-    @keyframes popIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          scale(0.85)
-          translateY(25px);
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1)
-          translateY(0);
-      }
-    }
-
     .final-cake {
-
-      font-size: 64px;
+      font-size:
+        64px;
 
       animation:
-        bounceCake 2s infinite;
+        bounceCake
+        2s infinite;
     }
 
     @keyframes bounceCake {
 
       50% {
-
         transform:
           translateY(-8px)
           rotate(2deg);
@@ -1479,7 +1706,6 @@
     }
 
     .final-title {
-
       margin:
         16px 0 12px;
 
@@ -1490,19 +1716,22 @@
       font-size:
         clamp(52px,11vw,76px);
 
-      line-height: 0.95;
+      line-height:
+        0.95;
 
-      color: #6c5561;
+      color:
+        #6c5561;
     }
 
     .final-message {
-
       margin:
         25px auto;
 
-      max-width: 500px;
+      max-width:
+        500px;
 
-      white-space: pre-line;
+      white-space:
+        pre-line;
 
       font-family:
         "Caveat",
@@ -1511,54 +1740,220 @@
       font-size:
         clamp(26px,6vw,36px);
 
-      line-height: 1.35;
+      line-height:
+        1.35;
     }
 
     .status-box {
+      margin-top:
+        30px;
 
-      margin-top: 30px;
+      padding:
+        18px;
 
-      padding: 18px;
-
-      border-radius: 18px;
+      border-radius:
+        18px;
 
       background:
         #fff8fb;
 
-      text-align: left;
+      text-align:
+        left;
 
       font-family:
         monospace;
 
-      font-size: 13px;
+      font-size:
+        13px;
 
-      line-height: 1.8;
+      line-height:
+        1.8;
 
-      color: #78626e;
+      color:
+        #78626e;
     }
 
     .success-text {
+      color:
+        #6aa37e;
 
-      color: #6aa37e;
-
-      font-weight: bold;
+      font-weight:
+        bold;
     }
 
-    .restart-btn {
+    /* =========================================================
+       07 — PIANO VIDEO
+    ========================================================= */
 
-      margin-top: 24px;
+    .video-card {
+      width:
+        min(760px,100%);
 
-      border: none;
+      padding:
+        30px 22px 28px;
 
-      background: transparent;
+      text-align:
+        center;
 
-      cursor: pointer;
+      border-radius:
+        32px;
 
-      color: #bd7590;
+      background:
+        rgba(255,255,255,0.74);
 
-      text-decoration: underline;
+      box-shadow:
+        0 25px 70px
+        rgba(130,80,110,0.18);
 
-      font-weight: 700;
+      backdrop-filter:
+        blur(12px);
+
+      animation:
+        popIn
+        0.8s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    .video-label {
+      display:
+        inline-block;
+
+      padding:
+        7px 14px;
+
+      margin-bottom:
+        10px;
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(255,240,247,0.8);
+
+      color:
+        #c27692;
+
+      font-size:
+        13px;
+
+      font-weight:
+        800;
+    }
+
+    .video-title {
+      margin:
+        5px 0 8px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(46px,10vw,70px);
+
+      line-height:
+        1;
+
+      color:
+        #6d5562;
+    }
+
+    .video-subtitle {
+      margin:
+        0 0 25px;
+
+      opacity:
+        0.7;
+
+      font-size:
+        15px;
+    }
+
+    .video-wrapper {
+      position:
+        relative;
+
+      width:
+        100%;
+
+      aspect-ratio:
+        16 / 9;
+
+      overflow:
+        hidden;
+
+      border-radius:
+        18px;
+
+      background:
+        #2c2430;
+
+      box-shadow:
+        0 18px 40px
+        rgba(90,55,75,0.2);
+    }
+
+    .video-wrapper iframe,
+    .video-wrapper video {
+      width:
+        100%;
+
+      height:
+        100%;
+
+      border:
+        none;
+
+      display:
+        block;
+    }
+
+    .video-note {
+      margin:
+        20px auto 0;
+
+      max-width:
+        520px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        27px;
+
+      line-height:
+        1.25;
+    }
+
+    .finish-btn {
+      margin-top:
+        22px;
+    }
+
+    /* =========================================================
+       POP IN
+    ========================================================= */
+
+    @keyframes popIn {
+
+      from {
+        opacity:
+          0;
+
+        transform:
+          scale(0.85)
+          translateY(25px);
+      }
+
+      to {
+        opacity:
+          1;
+
+        transform:
+          scale(1)
+          translateY(0);
+      }
     }
 
     /* =========================================================
@@ -1566,24 +1961,27 @@
     ========================================================= */
 
     .confetti {
+      position:
+        fixed;
 
-      position: fixed;
+      top:
+        -20px;
 
-      top: -20px;
+      z-index:
+        50;
 
-      z-index: 50;
-
-      pointer-events: none;
+      pointer-events:
+        none;
 
       animation:
         confettiFall
-        linear forwards;
+        linear
+        forwards;
     }
 
     @keyframes confettiFall {
 
       to {
-
         transform:
           translateY(110vh)
           rotate(720deg);
@@ -1597,47 +1995,55 @@
     @media (max-width: 480px) {
 
       .screen {
-        padding: 18px;
+        padding:
+          18px;
       }
 
       .terminal-card {
-        padding: 20px;
+        padding:
+          20px;
       }
 
       .terminal-content {
-        font-size: 13px;
+        font-size:
+          13px;
       }
 
       .cake-area {
-
         transform:
           scale(0.88);
 
-        margin-top: -10px;
+        margin-top:
+          -10px;
       }
 
       .paper {
-
-        min-height: 430px;
+        min-height:
+          430px;
 
         padding:
           40px 22px 30px;
       }
 
       .envelope-wrapper {
-
-        height: 200px;
+        height:
+          200px;
 
         transform:
           scale(0.92);
 
-        margin-bottom: 15px;
+        margin-bottom:
+          15px;
       }
 
       .envelope-wrapper:hover {
-
         transform:
           scale(0.92);
+      }
+
+      .video-card {
+        padding:
+          25px 14px;
       }
 
     }
@@ -1648,7 +2054,7 @@
 <body>
 
   <!-- =======================================================
-       FLOATING BACKGROUND
+       BACKGROUND
   ======================================================== -->
 
   <div class="background-decoration">
@@ -1711,7 +2117,7 @@
 
 
     <!-- =====================================================
-         02 — CAKE CREATION
+         02 — CAKE
     ====================================================== -->
 
     <section
@@ -1733,8 +2139,6 @@
           Please wait while your birthday cake is being assembled ✨
         </p>
 
-
-        <!-- CAKE -->
 
         <div
           class="cake-area"
@@ -1902,9 +2306,7 @@
 
 
         <div class="tap-text">
-
           Tap the envelope to open it 🌸
-
         </div>
 
       </div>
@@ -1913,7 +2315,7 @@
 
 
     <!-- =====================================================
-         05 — PAPER NOTES
+         05 — ONE HANDWRITTEN NOTE
     ====================================================== -->
 
     <section
@@ -1923,20 +2325,14 @@
 
       <div class="message-container">
 
-        <div
-          class="message-counter"
-          id="messageCounter"
-        >
-          Note 1 of 3
+        <div class="message-counter">
+          A little note for you 💌
         </div>
 
 
         <div class="paper-stack">
 
-          <article
-            class="paper"
-            id="paper"
-          >
+          <article class="paper">
 
             <div
               class="paper-number"
@@ -1949,21 +2345,19 @@
               class="paper-title"
               id="paperTitle"
             >
-              Hey!
+              A little something...
             </h2>
 
             <div
               class="paper-message"
               id="paperMessage"
-            >
-              Your message goes here.
-            </div>
+            ></div>
 
             <button
               class="next-btn"
               id="nextMessageBtn"
             >
-              Next little note → 🌸
+              One final thing... 💝
             </button>
 
           </article>
@@ -1976,7 +2370,7 @@
 
 
     <!-- =====================================================
-         06 — FINAL
+         06 — FINAL BIRTHDAY NOTE
     ====================================================== -->
 
     <section
@@ -2009,7 +2403,7 @@
         <div class="status-box">
 
           <div>
-            &gt; Checking age...
+            &gt; Checking birthday status...
           </div>
 
           <div>
@@ -2025,18 +2419,111 @@
           </div>
 
           <div>
-            &gt; Status: {{NAME}} is officially one year more awesome. ✨
+            &gt; Status: one year more awesome. ✨
           </div>
 
         </div>
 
 
         <button
-          class="restart-btn"
-          id="restartBtn"
+          class="primary-btn finish-btn"
+          id="watchPianoBtn"
         >
-          Experience it again 💌
+          🎹 One last little surprise...
         </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07 — PIANO VIDEO
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="videoScreen"
+    >
+
+      <div class="video-card">
+
+        <div class="video-label">
+          🎹 final.exe
+        </div>
+
+        <h1 class="video-title">
+          One last thing...
+        </h1>
+
+        <p class="video-subtitle">
+          Press play. This one is just for you. 💗
+        </p>
+
+
+        <div class="video-wrapper">
+
+          <!--
+            VIDEO OPTION 1 — GOOGLE DRIVE
+
+            Put your Google Drive FILE ID below.
+
+            Example:
+
+            https://drive.google.com/file/d/ABC123XYZ/view
+
+            The ID is:
+
+            ABC123XYZ
+
+            Then set:
+
+            VIDEO.driveId = "ABC123XYZ";
+
+            Make sure the file is:
+            Anyone with the link → Viewer
+          -->
+
+          <iframe
+            id="driveVideo"
+            allow="autoplay"
+            allowfullscreen
+          ></iframe>
+
+
+          <!--
+            VIDEO OPTION 2 — YOUTUBE
+
+            If you prefer YouTube, put the video ID below.
+
+            Example:
+
+            https://www.youtube.com/watch?v=ABC123
+
+            ID = ABC123
+
+            Then set:
+
+            VIDEO.youtubeId = "ABC123";
+
+            The JavaScript will automatically
+            use YouTube instead of Google Drive.
+          -->
+
+        </div>
+
+
+        <div class="video-note">
+
+          Hope this little surprise
+          made you smile. 🌸
+
+          <br><br>
+
+          Happy Birthday once again,
+          <span id="videoName"></span>! 🫶
+
+        </div>
 
       </div>
 
@@ -2050,58 +2537,100 @@
     /* =========================================================
        💗 PERSONALIZATION
        
-       EDIT ONLY THIS SECTION
+       EDIT THIS SECTION ONLY
     ========================================================= */
 
     const CONFIG = {
 
-      name: "{{NAME}}",
+      /* -------------------------------------------------------
+         NAME
+      ------------------------------------------------------- */
+
+      name:
+        "{{NAME}}",
 
 
-      /*
-       * This appears immediately after
-       * "Make a Wish"
-       */
+      /* -------------------------------------------------------
+         FIRST BIRTHDAY GREETING
+      ------------------------------------------------------- */
 
-      greeting: `{{GREETING_MESSAGE}}`,
-
-
-      /*
-       * These become the individual
-       * handwritten papers.
-       */
-
-      messages: [
-
-        {
-          title: "{{NOTE_1_TITLE}}",
-          message: `{{MESSAGE_1}}`
-        },
-
-        {
-          title: "{{NOTE_2_TITLE}}",
-          message: `{{MESSAGE_2}}`
-        },
-
-        {
-          title: "{{NOTE_3_TITLE}}",
-          message: `{{MESSAGE_3}}`
-        }
-
-      ],
+      greeting:
+        `{{GREETING_MESSAGE}}`,
 
 
-      /*
-       * Final emotional/cute message
-       */
+      /* -------------------------------------------------------
+         ONE SINGLE HANDWRITTEN NOTE
+      ------------------------------------------------------- */
 
-      finalMessage: `{{FINAL_MESSAGE}}
+      note: {
 
-Keep being awesome, keep smiling,
-and keep making life a little brighter. 🌸
+        title:
+          "{{NOTE_TITLE}}",
 
-And yes... I'm genuinely glad
+        message:
+          `{{NOTE_MESSAGE}}`
+
+      },
+
+
+      /* -------------------------------------------------------
+         FINAL BIRTHDAY MESSAGE
+      ------------------------------------------------------- */
+
+      finalMessage:
+        `{{FINAL_MESSAGE}}
+
+Keep being awesome,
+keep smiling,
+and keep making life
+a little brighter. 🌸
+
+And yes...
+I'm genuinely glad
 our codebases crossed paths. 🫶`
+
+
+    };
+
+
+    /* =========================================================
+       🎹 VIDEO CONFIGURATION
+       
+       CHOOSE ONE
+    ========================================================= */
+
+    const VIDEO = {
+
+      /*
+       * OPTION A
+       *
+       * Google Drive file ID.
+       *
+       * Example:
+       *
+       * driveId:
+       * "1AbCdEfGhIjKlMnOp"
+       */
+
+      driveId:
+        "YOUR_GOOGLE_DRIVE_FILE_ID",
+
+
+      /*
+       * OPTION B
+       *
+       * YouTube video ID.
+       *
+       * Example:
+       *
+       * youtubeId:
+       * "dQw4w9WgXcQ"
+       *
+       * Leave empty if using Google Drive.
+       */
+
+      youtubeId:
+        ""
 
     };
 
@@ -2138,6 +2667,11 @@ our codebases crossed paths. 🫶`
     const finalScreen =
       document.getElementById(
         "finalScreen"
+      );
+
+    const videoScreen =
+      document.getElementById(
+        "videoScreen"
       );
 
 
@@ -2201,16 +2735,6 @@ our codebases crossed paths. 🫶`
       );
 
 
-    const messageCounter =
-      document.getElementById(
-        "messageCounter"
-      );
-
-    const paper =
-      document.getElementById(
-        "paper"
-      );
-
     const paperNumber =
       document.getElementById(
         "paperNumber"
@@ -2242,14 +2766,25 @@ our codebases crossed paths. 🫶`
         "finalMessage"
       );
 
-    const restartBtn =
+    const watchPianoBtn =
       document.getElementById(
-        "restartBtn"
+        "watchPianoBtn"
+      );
+
+
+    const driveVideo =
+      document.getElementById(
+        "driveVideo"
+      );
+
+    const videoName =
+      document.getElementById(
+        "videoName"
       );
 
 
     /* =========================================================
-       NAME
+       BASIC TEXT
     ========================================================= */
 
     greetingName.textContent =
@@ -2261,12 +2796,29 @@ our codebases crossed paths. 🫶`
     finalName.textContent =
       CONFIG.name;
 
+    videoName.textContent =
+      CONFIG.name;
+
     document.title =
       `A Little Surprise for ${CONFIG.name} 💌`;
 
 
     /* =========================================================
-       SCREEN SWITCHING
+       NAME REPLACEMENT
+    ========================================================= */
+
+    function replaceName(text) {
+
+      return text.replaceAll(
+        "{{NAME}}",
+        CONFIG.name
+      );
+
+    }
+
+
+    /* =========================================================
+       SCREEN SWITCH
     ========================================================= */
 
     function showScreen(screen) {
@@ -2281,9 +2833,11 @@ our codebases crossed paths. 🫶`
 
         });
 
+
       screen.classList.add(
         "active"
       );
+
 
       window.scrollTo({
         top: 0,
@@ -2324,7 +2878,8 @@ our codebases crossed paths. 🫶`
 
       terminalContent.innerHTML = "";
 
-      progressBar.style.width = "0%";
+      progressBar.style.width =
+        "0%";
 
       openSurpriseBtn.classList.remove(
         "show"
@@ -2340,6 +2895,7 @@ our codebases crossed paths. 🫶`
               document.createElement(
                 "div"
               );
+
 
             lineElement.className =
               "terminal-line";
@@ -2411,14 +2967,16 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       02 — START CAKE CREATION
+       02 — CAKE
     ========================================================= */
 
     openSurpriseBtn.addEventListener(
       "click",
       () => {
 
-        showScreen(cakeScreen);
+        showScreen(
+          cakeScreen
+        );
 
         startCakeCreation();
 
@@ -2439,17 +2997,6 @@ our codebases crossed paths. 🫶`
         "show"
       );
 
-
-      /*
-       * Each step happens separately.
-       *
-       * 1 = base
-       * 2 = middle
-       * 3 = top
-       * 4 = icing
-       * 5 = candles
-       * 6 = flames
-       */
 
       setTimeout(() => {
 
@@ -2538,11 +3085,13 @@ our codebases crossed paths. 🫶`
             CONFIG.greeting
           );
 
+
         showScreen(
           greetingScreen
         );
 
-        createSmallSparkles();
+
+        createSparkles();
 
       }
     );
@@ -2592,9 +3141,8 @@ our codebases crossed paths. 🫶`
           messageScreen
         );
 
-        currentMessage = 0;
 
-        renderMessage();
+        renderSingleNote();
 
       }, 1300);
 
@@ -2627,82 +3175,25 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       06 — PAPER NOTES
+       06 — SINGLE PAPER
     ========================================================= */
 
-    let currentMessage = 0;
-
-
-    function replaceName(text) {
-
-      return text.replaceAll(
-        "{{NAME}}",
-        CONFIG.name
-      );
-
-    }
-
-
-    function renderMessage() {
-
-      const item =
-        CONFIG.messages[
-          currentMessage
-        ];
-
-
-      messageCounter.textContent =
-        `Note ${
-          currentMessage + 1
-        } of ${
-          CONFIG.messages.length
-        }`;
-
+    function renderSingleNote() {
 
       paperNumber.textContent =
-        `PAPER_${
-          String(
-            currentMessage + 1
-          ).padStart(2, "0")
-        } 💌`;
+        "PAPER_01 💌";
 
 
       paperTitle.textContent =
         replaceName(
-          item.title
+          CONFIG.note.title
         );
 
 
       paperMessage.textContent =
         replaceName(
-          item.message
+          CONFIG.note.message
         );
-
-
-      /*
-       * Restart paper animation
-       */
-
-      paper.style.animation =
-        "none";
-
-      void paper.offsetWidth;
-
-      paper.style.animation =
-        "paperAppear 0.65s cubic-bezier(.2,.9,.2,1) forwards";
-
-
-      const isLastMessage =
-        currentMessage ===
-        CONFIG.messages.length - 1;
-
-
-      nextMessageBtn.textContent =
-        isLastMessage
-
-          ? "Open the final note... 💝"
-
-          : "Next little note → 🌸";
 
     }
 
@@ -2711,46 +3202,93 @@ our codebases crossed paths. 🫶`
       "click",
       () => {
 
-        const isLastMessage =
-          currentMessage ===
-          CONFIG.messages.length - 1;
+        finalMessage.textContent =
+          replaceName(
+            CONFIG.finalMessage
+          );
 
 
-        if (isLastMessage) {
-
-          showFinalScreen();
-
-          return;
-
-        }
+        showScreen(
+          finalScreen
+        );
 
 
-        currentMessage++;
-
-        renderMessage();
+        createConfetti();
 
       }
     );
 
 
     /* =========================================================
-       07 — FINAL MESSAGE
+       07 — FINAL → VIDEO
     ========================================================= */
 
-    function showFinalScreen() {
+    watchPianoBtn.addEventListener(
+      "click",
+      () => {
 
-      finalMessage.textContent =
-        replaceName(
-          CONFIG.finalMessage
+        setupVideo();
+
+        showScreen(
+          videoScreen
         );
 
-
-      showScreen(
-        finalScreen
-      );
+      }
+    );
 
 
-      createConfetti();
+    /* =========================================================
+       VIDEO SETUP
+    ========================================================= */
+
+    function setupVideo() {
+
+      /*
+       * If YouTube ID exists,
+       * use YouTube.
+       */
+
+      if (
+        VIDEO.youtubeId &&
+        VIDEO.youtubeId.trim() !== ""
+      ) {
+
+        driveVideo.src =
+          "https://www.youtube.com/embed/" +
+          VIDEO.youtubeId +
+          "?rel=0&modestbranding=1";
+
+        return;
+
+      }
+
+
+      /*
+       * Otherwise use Google Drive.
+       */
+
+      if (
+        VIDEO.driveId &&
+        VIDEO.driveId !==
+        "YOUR_GOOGLE_DRIVE_FILE_ID"
+      ) {
+
+        driveVideo.src =
+          "https://drive.google.com/file/d/" +
+          VIDEO.driveId +
+          "/preview";
+
+        return;
+
+      }
+
+
+      /*
+       * No video configured.
+       */
+
+      driveVideo.src =
+        "about:blank";
 
     }
 
@@ -2833,10 +3371,10 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       SMALL SPARKLES
+       SPARKLES
     ========================================================= */
 
-    function createSmallSparkles() {
+    function createSparkles() {
 
       const emojis = [
         "✨",
@@ -2899,28 +3437,6 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       RESTART
-    ========================================================= */
-
-    restartBtn.addEventListener(
-      "click",
-      () => {
-
-        envelopeWrapper.classList.remove(
-          "open"
-        );
-
-        showScreen(
-          loadingScreen
-        );
-
-        runLoadingScreen();
-
-      }
-    );
-
-
-    /* =========================================================
        START
     ========================================================= */
 
@@ -2930,3 +3446,4 @@ our codebases crossed paths. 🫶`
 
 </body>
 </html>
+```
