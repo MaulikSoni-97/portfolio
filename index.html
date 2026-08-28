@@ -6,7 +6,7 @@
 
   <title>A Little Surprise 💌</title>
 
-  <!-- Cute handwritten font + clean UI font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,6 +15,7 @@
   >
 
   <style>
+
     /* =========================================================
        RESET
     ========================================================= */
@@ -34,10 +35,16 @@
       overflow-x: hidden;
       font-family: "Nunito", sans-serif;
       color: #5c4a55;
+
       background:
         radial-gradient(circle at 10% 20%, #fff7fb 0%, transparent 25%),
         radial-gradient(circle at 90% 10%, #f7ecff 0%, transparent 25%),
-        linear-gradient(135deg, #ffeef5, #f5edff, #eaf8ff);
+        linear-gradient(
+          135deg,
+          #ffeef5,
+          #f5edff,
+          #eaf8ff
+        );
     }
 
     button {
@@ -58,47 +65,48 @@
 
     .floating-item {
       position: absolute;
-      animation: floatAround linear infinite;
-      opacity: 0.7;
+      opacity: 0.65;
       user-select: none;
+      animation: floatAround linear infinite;
     }
 
     .floating-item:nth-child(1) {
       left: 8%;
       top: 12%;
-      animation-duration: 9s;
       font-size: 24px;
+      animation-duration: 9s;
     }
 
     .floating-item:nth-child(2) {
       right: 8%;
       top: 18%;
-      animation-duration: 12s;
       font-size: 18px;
+      animation-duration: 12s;
     }
 
     .floating-item:nth-child(3) {
       left: 15%;
       bottom: 14%;
-      animation-duration: 10s;
       font-size: 20px;
+      animation-duration: 10s;
     }
 
     .floating-item:nth-child(4) {
       right: 12%;
       bottom: 10%;
-      animation-duration: 13s;
       font-size: 25px;
+      animation-duration: 13s;
     }
 
     .floating-item:nth-child(5) {
       left: 50%;
       top: 8%;
-      animation-duration: 11s;
       font-size: 18px;
+      animation-duration: 11s;
     }
 
     @keyframes floatAround {
+
       0% {
         transform: translateY(0) rotate(0deg);
       }
@@ -110,10 +118,11 @@
       100% {
         transform: translateY(0) rotate(0deg);
       }
+
     }
 
     /* =========================================================
-       APP
+       APP / SCREENS
     ========================================================= */
 
     .app {
@@ -124,9 +133,12 @@
 
     .screen {
       display: none;
+
       min-height: 100vh;
       width: 100%;
+
       padding: 24px;
+
       align-items: center;
       justify-content: center;
     }
@@ -136,29 +148,85 @@
     }
 
     /* =========================================================
-       LOADING SCREEN
+       COMMON BUTTON
+    ========================================================= */
+
+    .primary-btn {
+      border: none;
+      cursor: pointer;
+
+      padding: 15px 25px;
+
+      border-radius: 999px;
+
+      color: white;
+
+      font-weight: 800;
+      font-size: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f49ab5,
+          #d8a7ef
+        );
+
+      box-shadow:
+        0 12px 28px rgba(200, 110, 150, 0.25);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* =========================================================
+       SCREEN 1
+       FAKE COMPILATION
     ========================================================= */
 
     .terminal-card {
+
       width: min(620px, 100%);
+
       padding: 26px;
+
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 20px 60px rgba(130, 90, 120, 0.15);
+
+      background:
+        rgba(255, 255, 255, 0.68);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+      box-shadow:
+        0 20px 60px rgba(130, 90, 120, 0.15);
+
       backdrop-filter: blur(12px);
     }
 
     .terminal-top {
+
       display: flex;
       gap: 8px;
+
       margin-bottom: 24px;
     }
 
     .dot {
+
       width: 11px;
       height: 11px;
+
       border-radius: 50%;
+
       background: #f3a6b8;
     }
 
@@ -171,17 +239,26 @@
     }
 
     .terminal-content {
+
       min-height: 240px;
+
       font-family: monospace;
+
       line-height: 1.8;
+
       font-size: 15px;
+
       color: #6a5664;
     }
 
     .terminal-line {
+
       opacity: 0;
+
       transform: translateY(8px);
-      animation: showLine 0.4s forwards;
+
+      animation:
+        showLine 0.4s forwards;
     }
 
     .terminal-line.success {
@@ -189,294 +266,1050 @@
     }
 
     .terminal-line.highlight {
+
       color: #d06f91;
+
       font-weight: bold;
     }
 
     @keyframes showLine {
+
       to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
+
     }
 
     .progress-container {
+
       width: 100%;
       height: 10px;
+
       margin: 14px 0 20px;
+
       overflow: hidden;
+
       border-radius: 20px;
-      background: rgba(190, 150, 175, 0.2);
+
+      background:
+        rgba(190, 150, 175, 0.2);
     }
 
     .progress-bar {
+
       width: 0%;
       height: 100%;
+
       border-radius: inherit;
-      background: linear-gradient(90deg, #f39ab4, #c9a7ed, #8fcfe6);
-      transition: width 0.3s ease;
+
+      background:
+        linear-gradient(
+          90deg,
+          #f39ab4,
+          #c9a7ed,
+          #8fcfe6
+        );
+
+      transition:
+        width 0.3s ease;
     }
 
     .open-surprise-btn {
+
       display: none;
-      margin-top: 24px;
+
       width: 100%;
+
+      margin-top: 24px;
+
       padding: 16px 20px;
+
       border: none;
+
       border-radius: 18px;
+
       cursor: pointer;
-      background: linear-gradient(135deg, #f49ab5, #d8a7ef);
+
+      background:
+        linear-gradient(
+          135deg,
+          #f49ab5,
+          #d8a7ef
+        );
+
       color: white;
+
       font-weight: 800;
+
       font-size: 16px;
-      box-shadow: 0 10px 25px rgba(200, 110, 150, 0.25);
-      transition: transform 0.2s ease;
+
+      box-shadow:
+        0 10px 25px
+        rgba(200, 110, 150, 0.25);
     }
 
     .open-surprise-btn.show {
-      display: block;
-      animation: popIn 0.5s ease forwards;
-    }
 
-    .open-surprise-btn:active {
-      transform: scale(0.97);
+      display: block;
+
+      animation:
+        popIn 0.5s ease forwards;
     }
 
     /* =========================================================
-       ENVELOPE SCREEN
+       SCREEN 2
+       CAKE CREATION
+    ========================================================= */
+
+    .cake-screen {
+
+      text-align: center;
+
+      width: min(650px, 100%);
+    }
+
+    .cake-label {
+
+      display: inline-block;
+
+      padding: 7px 14px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,0.55);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .cake-title {
+
+      margin: 0;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(48px, 11vw, 76px);
+
+      line-height: 0.95;
+
+      color: #6d5562;
+    }
+
+    .cake-subtitle {
+
+      margin:
+        14px 0 35px;
+
+      opacity: 0.7;
+
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       CSS CAKE
+    ========================================================= */
+
+    .cake-area {
+
+      position: relative;
+
+      width: 330px;
+      height: 300px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: center;
+    }
+
+    .cake-shadow {
+
+      position: absolute;
+
+      bottom: 20px;
+
+      width: 260px;
+      height: 35px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(130, 90, 120, 0.12);
+
+      filter: blur(7px);
+    }
+
+    .cake-base {
+
+      position: absolute;
+
+      bottom: 40px;
+
+      width: 250px;
+      height: 105px;
+
+      border-radius:
+        15px 15px 22px 22px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f8b5c7,
+          #ed91ac
+        );
+
+      box-shadow:
+        0 15px 25px
+        rgba(130, 70, 100, 0.18);
+
+      opacity: 0;
+
+      transform:
+        translateY(50px)
+        scale(0.8);
+
+      transition:
+        all 0.8s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    .cake-middle {
+
+      position: absolute;
+
+      bottom: 125px;
+
+      width: 215px;
+      height: 72px;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffd5df,
+          #f8b7cb
+        );
+
+      box-shadow:
+        0 12px 20px
+        rgba(130, 70, 100, 0.13);
+
+      opacity: 0;
+
+      transform:
+        translateY(50px)
+        scale(0.8);
+
+      transition:
+        all 0.8s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    .cake-top {
+
+      position: absolute;
+
+      bottom: 190px;
+
+      width: 180px;
+      height: 58px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff1f5,
+          #ffd4e1
+        );
+
+      box-shadow:
+        0 10px 20px
+        rgba(130, 70, 100, 0.12);
+
+      opacity: 0;
+
+      transform:
+        translateY(50px)
+        scale(0.8);
+
+      transition:
+        all 0.8s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    .icing {
+
+      position: absolute;
+
+      bottom: 184px;
+
+      width: 190px;
+      height: 25px;
+
+      border-radius:
+        50% 50% 12px 12px;
+
+      background: #fff8fb;
+
+      opacity: 0;
+
+      transform: scaleX(0.6);
+
+      transition:
+        all 0.7s ease;
+    }
+
+    /* Candles */
+
+    .candles {
+
+      position: absolute;
+
+      bottom: 235px;
+
+      display: flex;
+
+      gap: 28px;
+
+      opacity: 0;
+
+      transform:
+        translateY(20px);
+
+      transition:
+        all 0.7s ease;
+    }
+
+    .candle {
+
+      position: relative;
+
+      width: 12px;
+      height: 55px;
+
+      border-radius: 6px;
+
+      background:
+        repeating-linear-gradient(
+          135deg,
+          #caa7e8 0px,
+          #caa7e8 7px,
+          #f5d9f0 7px,
+          #f5d9f0 14px
+        );
+    }
+
+    .flame {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: -25px;
+
+      width: 15px;
+      height: 23px;
+
+      transform:
+        translateX(-50%);
+
+      border-radius:
+        50% 50% 50% 50%;
+
+      background:
+        #ffd76a;
+
+      box-shadow:
+        0 0 15px
+        rgba(255, 190, 80, 0.8);
+
+      opacity: 0;
+
+      animation:
+        flame 0.8s
+        infinite alternate;
+    }
+
+    @keyframes flame {
+
+      from {
+        transform:
+          translateX(-50%)
+          scale(1)
+          rotate(-3deg);
+      }
+
+      to {
+        transform:
+          translateX(-50%)
+          scale(1.1)
+          rotate(3deg);
+      }
+    }
+
+    /* Cake assembly states */
+
+    .cake-area.build-1 .cake-base {
+
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .cake-area.build-2 .cake-middle {
+
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .cake-area.build-3 .cake-top {
+
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .cake-area.build-4 .icing {
+
+      opacity: 1;
+
+      transform:
+        scaleX(1);
+    }
+
+    .cake-area.build-5 .candles {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .cake-area.build-6 .flame {
+
+      opacity: 1;
+    }
+
+    /* Cake decorations */
+
+    .cake-sprinkle {
+
+      position: absolute;
+
+      width: 8px;
+      height: 4px;
+
+      border-radius: 4px;
+
+      background: #d99ab4;
+    }
+
+    .sprinkle-1 {
+      left: 34%;
+      bottom: 155px;
+      transform: rotate(20deg);
+    }
+
+    .sprinkle-2 {
+      left: 55%;
+      bottom: 150px;
+      transform: rotate(-25deg);
+    }
+
+    .sprinkle-3 {
+      left: 45%;
+      bottom: 180px;
+      transform: rotate(10deg);
+    }
+
+    .cake-complete {
+
+      margin-top: 12px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 28px;
+
+      color: #bf7892;
+
+      opacity: 0;
+
+      transform: translateY(10px);
+
+      transition: all 0.6s ease;
+    }
+
+    .cake-complete.show {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .wish-btn {
+
+      display: none;
+
+      margin-top: 18px;
+    }
+
+    .wish-btn.show {
+
+      display: inline-block;
+
+      animation:
+        wishPop 0.7s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    @keyframes wishPop {
+
+      0% {
+        opacity: 0;
+        transform:
+          scale(0.5)
+          translateY(20px);
+      }
+
+      70% {
+        transform:
+          scale(1.08);
+      }
+
+      100% {
+        opacity: 1;
+        transform:
+          scale(1);
+      }
+    }
+
+    /* =========================================================
+       SCREEN 3
+       GREETING
+    ========================================================= */
+
+    .greeting-card {
+
+      width: min(600px, 100%);
+
+      padding: 45px 30px;
+
+      text-align: center;
+
+      border-radius: 32px;
+
+      background:
+        rgba(255,255,255,0.72);
+
+      box-shadow:
+        0 25px 70px
+        rgba(130,80,110,0.18);
+
+      backdrop-filter:
+        blur(12px);
+
+      animation:
+        popIn 0.8s
+        cubic-bezier(.2,.9,.2,1);
+    }
+
+    .greeting-icon {
+
+      font-size: 64px;
+
+      animation:
+        heartbeat 1.6s infinite;
+    }
+
+    @keyframes heartbeat {
+
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .greeting-title {
+
+      margin:
+        18px 0 15px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(48px, 11vw, 76px);
+
+      line-height: 0.95;
+
+      color: #6c5561;
+    }
+
+    .greeting-message {
+
+      max-width: 500px;
+
+      margin: 25px auto;
+
+      white-space: pre-line;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(27px, 6vw, 37px);
+
+      line-height: 1.35;
+    }
+
+    .greeting-hint {
+
+      margin-top: 25px;
+
+      font-size: 14px;
+
+      opacity: 0.65;
+    }
+
+    /* =========================================================
+       SCREEN 4
+       ENVELOPE
     ========================================================= */
 
     .envelope-container {
+
       width: 100%;
       max-width: 460px;
+
       text-align: center;
     }
 
     .tiny-label {
+
       display: inline-block;
+
       margin-bottom: 10px;
+
       padding: 7px 14px;
+
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
+
+      background:
+        rgba(255,255,255,0.55);
+
       font-size: 13px;
+
       font-weight: 700;
     }
 
     .envelope-title {
+
       margin: 8px 0;
-      font-family: "Caveat", cursive;
-      font-size: clamp(42px, 10vw, 70px);
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(42px,10vw,70px);
+
       line-height: 1;
+
       color: #6d5562;
     }
 
     .envelope-subtitle {
-      margin: 0 0 35px;
+
+      margin:
+        0 0 35px;
+
       font-size: 16px;
+
       opacity: 0.75;
     }
 
     .envelope-wrapper {
+
       position: relative;
-      width: min(330px, 85vw);
+
+      width: min(330px,85vw);
+
       height: 225px;
-      margin: 0 auto 30px;
+
+      margin:
+        0 auto 30px;
+
       cursor: pointer;
+
       perspective: 1000px;
-      transition: transform 0.25s ease;
+
+      transition:
+        transform 0.25s ease;
     }
 
     .envelope-wrapper:hover {
-      transform: translateY(-5px);
+
+      transform:
+        translateY(-5px);
     }
 
     .envelope {
+
       position: absolute;
+
       inset: 0;
+
       border-radius: 10px;
+
       background: #f4a9bd;
-      box-shadow: 0 22px 35px rgba(151, 91, 115, 0.22);
+
+      box-shadow:
+        0 22px 35px
+        rgba(151,91,115,0.22);
+
       overflow: hidden;
     }
 
     .letter-preview {
+
       position: absolute;
+
       width: 86%;
       height: 88%;
+
       left: 7%;
       top: 8%;
+
       padding: 20px;
+
       border-radius: 8px;
-      background:
-        linear-gradient(transparent 95%, rgba(190, 140, 150, 0.08) 95%);
-      background-color: #fffdf9;
-      background-size: 100% 28px;
+
+      background-color:
+        #fffdf9;
+
       z-index: 1;
-      transition: transform 1s cubic-bezier(.2,.8,.2,1);
+
+      transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
     }
 
     .preview-heart {
+
       font-size: 30px;
-      animation: heartbeat 1.5s infinite;
+
+      animation:
+        heartbeat 1.5s infinite;
     }
 
     .envelope-front {
+
       position: absolute;
+
       inset: auto 0 0;
+
       width: 100%;
       height: 100%;
+
       z-index: 3;
     }
 
     .envelope-front::before {
+
       content: "";
+
       position: absolute;
+
       left: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
-      border-left: 165px solid transparent;
-      border-right: 165px solid transparent;
-      border-bottom: 115px solid #f7b8c8;
+
+      border-left:
+        165px solid transparent;
+
+      border-right:
+        165px solid transparent;
+
+      border-bottom:
+        115px solid #f7b8c8;
     }
 
     .envelope-front::after {
+
       content: "";
+
       position: absolute;
+
       left: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
-      border-top: 112px solid transparent;
-      border-bottom: 112px solid transparent;
-      border-left: 165px solid #f0a0b8;
+
+      border-top:
+        112px solid transparent;
+
+      border-bottom:
+        112px solid transparent;
+
+      border-left:
+        165px solid #f0a0b8;
     }
 
     .envelope-right {
+
       position: absolute;
+
       right: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
-      border-top: 112px solid transparent;
-      border-bottom: 112px solid transparent;
-      border-right: 165px solid #efa1b7;
+
+      border-top:
+        112px solid transparent;
+
+      border-bottom:
+        112px solid transparent;
+
+      border-right:
+        165px solid #efa1b7;
+
       z-index: 4;
     }
 
     .envelope-flap {
+
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 0;
       height: 0;
-      border-left: 165px solid transparent;
-      border-right: 165px solid transparent;
-      border-top: 120px solid #f6b2c5;
+
+      border-left:
+        165px solid transparent;
+
+      border-right:
+        165px solid transparent;
+
+      border-top:
+        120px solid #f6b2c5;
+
       transform-origin: top;
+
       z-index: 5;
-      transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
+
+      transition:
+        transform 0.9s
+        cubic-bezier(.2,.8,.2,1);
     }
 
     .seal {
+
       position: absolute;
+
       top: 94px;
       left: 50%;
+
       z-index: 6;
-      transform: translateX(-50%);
+
+      transform:
+        translateX(-50%);
+
       width: 48px;
       height: 48px;
+
       display: grid;
+
       place-items: center;
+
       border-radius: 50%;
+
       background: #fff2f6;
-      box-shadow: 0 4px 12px rgba(130, 70, 90, 0.12);
-      transition: opacity 0.3s ease;
+
+      box-shadow:
+        0 4px 12px
+        rgba(130,70,90,0.12);
+
+      transition:
+        opacity 0.3s ease;
     }
 
-    .envelope-wrapper.open .envelope-flap {
-      transform: rotateX(180deg);
+    .envelope-wrapper.open
+    .envelope-flap {
+
+      transform:
+        rotateX(180deg);
+
       z-index: 0;
     }
 
-    .envelope-wrapper.open .letter-preview {
-      transform: translateY(-115px);
+    .envelope-wrapper.open
+    .letter-preview {
+
+      transform:
+        translateY(-115px);
     }
 
-    .envelope-wrapper.open .seal {
+    .envelope-wrapper.open
+    .seal {
+
       opacity: 0;
     }
 
     .tap-text {
+
       font-size: 14px;
+
       font-weight: 700;
+
       opacity: 0.7;
-      animation: bounceText 1.5s infinite;
+
+      animation:
+        bounceText 1.5s infinite;
     }
 
     @keyframes bounceText {
+
       50% {
-        transform: translateY(-5px);
+        transform:
+          translateY(-5px);
       }
     }
 
     /* =========================================================
-       MESSAGE SCREEN
+       SCREEN 5
+       PAPERS
     ========================================================= */
 
     .message-container {
-      width: min(560px, 100%);
+
+      width: min(560px,100%);
+
       text-align: center;
     }
 
     .message-counter {
+
       margin-bottom: 14px;
+
       font-size: 13px;
+
       font-weight: 800;
+
       letter-spacing: 1px;
+
       opacity: 0.6;
+
       text-transform: uppercase;
     }
 
     .paper-stack {
+
       position: relative;
+
       min-height: 470px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
     }
 
     .paper {
+
       position: relative;
+
       width: 100%;
+
       min-height: 410px;
-      padding: 42px 30px 35px;
+
+      padding:
+        42px 30px 35px;
+
       border-radius: 8px;
+
       background:
         repeating-linear-gradient(
           to bottom,
           transparent 0px,
           transparent 32px,
-          rgba(218, 181, 188, 0.18) 33px
+          rgba(218,181,188,0.18) 33px
         ),
         #fffefa;
+
       box-shadow:
-        0 22px 50px rgba(100, 70, 85, 0.2),
-        inset 0 0 40px rgba(255, 230, 235, 0.25);
-      transform: rotate(-1deg) scale(0.92);
+        0 22px 50px
+        rgba(100,70,85,0.2),
+
+        inset 0 0 40px
+        rgba(255,230,235,0.25);
+
+      transform:
+        rotate(-1deg)
+        scale(0.92);
+
       opacity: 0;
-      animation: paperAppear 0.65s cubic-bezier(.2,.9,.2,1) forwards;
+
+      animation:
+        paperAppear 0.65s
+        cubic-bezier(.2,.9,.2,1)
+        forwards;
     }
 
     .paper::before,
     .paper::after {
+
       content: "";
+
       position: absolute;
+
       width: 60px;
       height: 20px;
+
       top: -8px;
-      background: rgba(248, 204, 215, 0.55);
-      transform: rotate(-6deg);
+
+      background:
+        rgba(248,204,215,0.55);
+
+      transform:
+        rotate(-6deg);
     }
 
     .paper::before {
@@ -484,138 +1317,247 @@
     }
 
     .paper::after {
+
       right: 25px;
-      transform: rotate(6deg);
+
+      transform:
+        rotate(6deg);
     }
 
     @keyframes paperAppear {
+
       to {
+
         opacity: 1;
-        transform: rotate(-1deg) scale(1);
+
+        transform:
+          rotate(-1deg)
+          scale(1);
       }
     }
 
     .paper-number {
+
       margin-bottom: 12px;
+
       font-size: 13px;
+
       font-weight: 800;
+
       color: #d4879e;
     }
 
     .paper-title {
-      margin: 0 0 24px;
-      font-family: "Caveat", cursive;
-      font-size: clamp(38px, 9vw, 58px);
+
+      margin:
+        0 0 24px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(38px,9vw,58px);
+
       line-height: 1;
+
       color: #725967;
     }
 
     .paper-message {
+
       max-width: 450px;
+
       margin: auto;
+
       white-space: pre-line;
-      font-family: "Caveat", cursive;
-      font-size: clamp(25px, 6vw, 34px);
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(25px,6vw,34px);
+
       line-height: 1.35;
+
       color: #634f59;
     }
 
     .next-btn {
-      margin-top: 30px;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      background: #fff1f5;
-      color: #c56e8d;
-      font-weight: 800;
-      box-shadow: 0 8px 20px rgba(170, 100, 125, 0.12);
-      transition: transform 0.2s ease;
-    }
 
-    .next-btn:active {
-      transform: scale(0.96);
+      margin-top: 30px;
+
+      padding:
+        14px 24px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      cursor: pointer;
+
+      background: #fff1f5;
+
+      color: #c56e8d;
+
+      font-weight: 800;
+
+      box-shadow:
+        0 8px 20px
+        rgba(170,100,125,0.12);
     }
 
     /* =========================================================
-       FINAL SCREEN
+       SCREEN 6
+       FINAL
     ========================================================= */
 
     .final-card {
-      width: min(620px, 100%);
-      padding: 42px 28px;
+
+      width: min(620px,100%);
+
+      padding:
+        42px 28px;
+
       text-align: center;
+
       border-radius: 32px;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 25px 70px rgba(130, 80, 110, 0.18);
-      backdrop-filter: blur(12px);
-      animation: popIn 0.8s cubic-bezier(.2,.9,.2,1);
+
+      background:
+        rgba(255,255,255,0.72);
+
+      box-shadow:
+        0 25px 70px
+        rgba(130,80,110,0.18);
+
+      backdrop-filter:
+        blur(12px);
+
+      animation:
+        popIn 0.8s
+        cubic-bezier(.2,.9,.2,1);
     }
 
     @keyframes popIn {
+
       from {
+
         opacity: 0;
-        transform: scale(0.85) translateY(25px);
+
+        transform:
+          scale(0.85)
+          translateY(25px);
       }
 
       to {
+
         opacity: 1;
-        transform: scale(1) translateY(0);
+
+        transform:
+          scale(1)
+          translateY(0);
       }
     }
 
-    .cake {
-      font-size: 60px;
-      animation: bounceCake 2s infinite;
+    .final-cake {
+
+      font-size: 64px;
+
+      animation:
+        bounceCake 2s infinite;
     }
 
     @keyframes bounceCake {
+
       50% {
-        transform: translateY(-8px) rotate(2deg);
+
+        transform:
+          translateY(-8px)
+          rotate(2deg);
       }
     }
 
     .final-title {
-      margin: 16px 0 12px;
-      font-family: "Caveat", cursive;
-      font-size: clamp(52px, 11vw, 76px);
+
+      margin:
+        16px 0 12px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(52px,11vw,76px);
+
       line-height: 0.95;
+
       color: #6c5561;
     }
 
     .final-message {
-      margin: 25px auto;
+
+      margin:
+        25px auto;
+
       max-width: 500px;
+
       white-space: pre-line;
-      font-family: "Caveat", cursive;
-      font-size: clamp(26px, 6vw, 36px);
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size:
+        clamp(26px,6vw,36px);
+
       line-height: 1.35;
     }
 
     .status-box {
+
       margin-top: 30px;
+
       padding: 18px;
+
       border-radius: 18px;
-      background: #fff8fb;
+
+      background:
+        #fff8fb;
+
       text-align: left;
-      font-family: monospace;
+
+      font-family:
+        monospace;
+
       font-size: 13px;
+
       line-height: 1.8;
+
       color: #78626e;
     }
 
     .success-text {
+
       color: #6aa37e;
+
       font-weight: bold;
     }
 
     .restart-btn {
+
       margin-top: 24px;
+
       border: none;
+
       background: transparent;
+
       cursor: pointer;
+
       color: #bd7590;
+
       text-decoration: underline;
+
       font-weight: 700;
     }
 
@@ -624,18 +1566,27 @@
     ========================================================= */
 
     .confetti {
+
       position: fixed;
-      width: 10px;
-      height: 10px;
+
       top: -20px;
+
       z-index: 50;
+
       pointer-events: none;
-      animation: confettiFall linear forwards;
+
+      animation:
+        confettiFall
+        linear forwards;
     }
 
     @keyframes confettiFall {
+
       to {
-        transform: translateY(110vh) rotate(720deg);
+
+        transform:
+          translateY(110vh)
+          rotate(720deg);
       }
     }
 
@@ -644,6 +1595,7 @@
     ========================================================= */
 
     @media (max-width: 480px) {
+
       .screen {
         padding: 18px;
       }
@@ -656,86 +1608,265 @@
         font-size: 13px;
       }
 
+      .cake-area {
+
+        transform:
+          scale(0.88);
+
+        margin-top: -10px;
+      }
+
       .paper {
+
         min-height: 430px;
-        padding: 40px 22px 30px;
+
+        padding:
+          40px 22px 30px;
       }
 
       .envelope-wrapper {
+
         height: 200px;
-        transform: scale(0.92);
+
+        transform:
+          scale(0.92);
+
         margin-bottom: 15px;
       }
 
       .envelope-wrapper:hover {
-        transform: scale(0.92);
+
+        transform:
+          scale(0.92);
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- Background decorations -->
+  <!-- =======================================================
+       FLOATING BACKGROUND
+  ======================================================== -->
+
   <div class="background-decoration">
+
     <div class="floating-item">💗</div>
     <div class="floating-item">✨</div>
     <div class="floating-item">🌸</div>
     <div class="floating-item">💫</div>
     <div class="floating-item">♡</div>
+
   </div>
+
 
   <main class="app">
 
+
     <!-- =====================================================
-         SCREEN 1 — LOADING
+         01 — COMPILATION
     ====================================================== -->
 
-    <section class="screen active" id="loadingScreen">
+    <section
+      class="screen active"
+      id="loadingScreen"
+    >
+
       <div class="terminal-card">
 
         <div class="terminal-top">
+
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
+
         </div>
 
-        <div class="terminal-content" id="terminalContent"></div>
+        <div
+          class="terminal-content"
+          id="terminalContent"
+        ></div>
 
         <div class="progress-container">
-          <div class="progress-bar" id="progressBar"></div>
+
+          <div
+            class="progress-bar"
+            id="progressBar"
+          ></div>
+
         </div>
 
         <button
           class="open-surprise-btn"
           id="openSurpriseBtn"
         >
-          Open the surprise 💌
+          Start the surprise 🎁
         </button>
 
       </div>
+
     </section>
 
 
     <!-- =====================================================
-         SCREEN 2 — ENVELOPE
+         02 — CAKE CREATION
     ====================================================== -->
 
-    <section class="screen" id="envelopeScreen">
+    <section
+      class="screen"
+      id="cakeScreen"
+    >
+
+      <div class="cake-screen">
+
+        <div class="cake-label">
+          🎂 birthday.exe
+        </div>
+
+        <h1 class="cake-title">
+          Creating something sweet...
+        </h1>
+
+        <p class="cake-subtitle">
+          Please wait while your birthday cake is being assembled ✨
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div
+          class="cake-area"
+          id="cakeArea"
+        >
+
+          <div class="cake-shadow"></div>
+
+          <div class="cake-base"></div>
+
+          <div class="cake-middle"></div>
+
+          <div class="cake-top"></div>
+
+          <div class="icing"></div>
+
+          <div class="cake-sprinkle sprinkle-1"></div>
+          <div class="cake-sprinkle sprinkle-2"></div>
+          <div class="cake-sprinkle sprinkle-3"></div>
+
+          <div class="candles">
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="cake-complete"
+          id="cakeComplete"
+        >
+          ✨ Cake successfully created ✨
+        </div>
+
+
+        <button
+          class="primary-btn wish-btn"
+          id="wishBtn"
+        >
+          🎉 Make a Wish 🎉
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03 — BIRTHDAY GREETING
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="greetingScreen"
+    >
+
+      <div class="greeting-card">
+
+        <div class="greeting-icon">
+          🎂
+        </div>
+
+        <h1 class="greeting-title">
+
+          Happy Birthday,
+          <br>
+
+          <span id="greetingName"></span>! 💗
+
+        </h1>
+
+        <div
+          class="greeting-message"
+          id="greetingMessage"
+        ></div>
+
+        <button
+          class="primary-btn"
+          id="greetingContinueBtn"
+        >
+          I have something else for you... 💌
+        </button>
+
+        <div class="greeting-hint">
+          Okay... maybe this isn't the whole surprise 👀
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         04 — ENVELOPE
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="envelopeScreen"
+    >
 
       <div class="envelope-container">
 
         <div class="tiny-label">
-          ✨ A tiny surprise has arrived
+          ✨ One more little thing
         </div>
 
         <h1 class="envelope-title">
-          Hey <span id="recipientName"></span>! 👀
+
+          Hey
+          <span id="recipientName"></span> 👀
+
         </h1>
 
         <p class="envelope-subtitle">
-          Someone left something for you...
+
+          I couldn't fit everything into one birthday wish...
+
         </p>
+
 
         <div
           class="envelope-wrapper"
@@ -748,7 +1879,11 @@
           <div class="envelope">
 
             <div class="letter-preview">
-              <div class="preview-heart">💌</div>
+
+              <div class="preview-heart">
+                💌
+              </div>
+
             </div>
 
             <div class="envelope-flap"></div>
@@ -757,14 +1892,19 @@
 
             <div class="envelope-right"></div>
 
-            <div class="seal">💗</div>
+            <div class="seal">
+              💗
+            </div>
 
           </div>
 
         </div>
 
+
         <div class="tap-text">
+
           Tap the envelope to open it 🌸
+
         </div>
 
       </div>
@@ -773,34 +1913,56 @@
 
 
     <!-- =====================================================
-         SCREEN 3 — MESSAGE PAPERS
+         05 — PAPER NOTES
     ====================================================== -->
 
-    <section class="screen" id="messageScreen">
+    <section
+      class="screen"
+      id="messageScreen"
+    >
 
       <div class="message-container">
 
-        <div class="message-counter" id="messageCounter">
+        <div
+          class="message-counter"
+          id="messageCounter"
+        >
           Note 1 of 3
         </div>
 
+
         <div class="paper-stack">
 
-          <article class="paper" id="paper">
+          <article
+            class="paper"
+            id="paper"
+          >
 
-            <div class="paper-number" id="paperNumber">
+            <div
+              class="paper-number"
+              id="paperNumber"
+            >
               PAPER_01 💌
             </div>
 
-            <h2 class="paper-title" id="paperTitle">
+            <h2
+              class="paper-title"
+              id="paperTitle"
+            >
               Hey!
             </h2>
 
-            <div class="paper-message" id="paperMessage">
+            <div
+              class="paper-message"
+              id="paperMessage"
+            >
               Your message goes here.
             </div>
 
-            <button class="next-btn" id="nextMessageBtn">
+            <button
+              class="next-btn"
+              id="nextMessageBtn"
+            >
               Next little note → 🌸
             </button>
 
@@ -814,23 +1976,38 @@
 
 
     <!-- =====================================================
-         SCREEN 4 — FINAL
+         06 — FINAL
     ====================================================== -->
 
-    <section class="screen" id="finalScreen">
+    <section
+      class="screen"
+      id="finalScreen"
+    >
 
       <div class="final-card">
 
-        <div class="cake">🎂</div>
+        <div class="final-cake">
+          🎂
+        </div>
 
         <h1 class="final-title">
-          Happy Birthday,<br>
+
+          Happy Birthday,
+          <br>
+
           <span id="finalName"></span>! ✨
+
         </h1>
 
-        <div class="final-message" id="finalMessage"></div>
+
+        <div
+          class="final-message"
+          id="finalMessage"
+        ></div>
+
 
         <div class="status-box">
+
           <div>
             &gt; Checking age...
           </div>
@@ -850,10 +2027,15 @@
           <div>
             &gt; Status: {{NAME}} is officially one year more awesome. ✨
           </div>
+
         </div>
 
-        <button class="restart-btn" id="restartBtn">
-          Read it again 💌
+
+        <button
+          class="restart-btn"
+          id="restartBtn"
+        >
+          Experience it again 💌
         </button>
 
       </div>
@@ -866,41 +2048,60 @@
   <script>
 
     /* =========================================================
-       🎨 CONFIGURATION
-
-       EDIT ONLY THIS SECTION TO PERSONALIZE THE WEBSITE
+       💗 PERSONALIZATION
+       
+       EDIT ONLY THIS SECTION
     ========================================================= */
 
     const CONFIG = {
 
-      // Change this later
       name: "{{NAME}}",
+
+
+      /*
+       * This appears immediately after
+       * "Make a Wish"
+       */
+
+      greeting: `{{GREETING_MESSAGE}}`,
+
+
+      /*
+       * These become the individual
+       * handwritten papers.
+       */
 
       messages: [
 
         {
-          title: "Hey {{NAME}}! 🌸",
+          title: "{{NOTE_1_TITLE}}",
           message: `{{MESSAGE_1}}`
         },
 
         {
-          title: "A small thing... 🫣",
+          title: "{{NOTE_2_TITLE}}",
           message: `{{MESSAGE_2}}`
         },
 
         {
-          title: "Since it's your birthday... 🎂",
+          title: "{{NOTE_3_TITLE}}",
           message: `{{MESSAGE_3}}`
         }
 
       ],
 
+
+      /*
+       * Final emotional/cute message
+       */
+
       finalMessage: `{{FINAL_MESSAGE}}
 
-Keep being awesome, keep writing questionable code,
-and please remember to take breaks from debugging life too. 😂💻🌸
+Keep being awesome, keep smiling,
+and keep making life a little brighter. 🌸
 
-P.S. I'm really glad our codebases crossed paths. 🫶`
+And yes... I'm genuinely glad
+our codebases crossed paths. 🫶`
 
     };
 
@@ -909,68 +2110,196 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
        ELEMENTS
     ========================================================= */
 
-    const loadingScreen = document.getElementById("loadingScreen");
-    const envelopeScreen = document.getElementById("envelopeScreen");
-    const messageScreen = document.getElementById("messageScreen");
-    const finalScreen = document.getElementById("finalScreen");
+    const loadingScreen =
+      document.getElementById(
+        "loadingScreen"
+      );
 
-    const terminalContent = document.getElementById("terminalContent");
-    const progressBar = document.getElementById("progressBar");
-    const openSurpriseBtn = document.getElementById("openSurpriseBtn");
+    const cakeScreen =
+      document.getElementById(
+        "cakeScreen"
+      );
 
-    const envelopeWrapper = document.getElementById("envelopeWrapper");
+    const greetingScreen =
+      document.getElementById(
+        "greetingScreen"
+      );
 
-    const recipientName = document.getElementById("recipientName");
+    const envelopeScreen =
+      document.getElementById(
+        "envelopeScreen"
+      );
 
-    const messageCounter = document.getElementById("messageCounter");
-    const paper = document.getElementById("paper");
-    const paperNumber = document.getElementById("paperNumber");
-    const paperTitle = document.getElementById("paperTitle");
-    const paperMessage = document.getElementById("paperMessage");
-    const nextMessageBtn = document.getElementById("nextMessageBtn");
+    const messageScreen =
+      document.getElementById(
+        "messageScreen"
+      );
 
-    const finalName = document.getElementById("finalName");
-    const finalMessage = document.getElementById("finalMessage");
+    const finalScreen =
+      document.getElementById(
+        "finalScreen"
+      );
 
-    const restartBtn = document.getElementById("restartBtn");
+
+    const terminalContent =
+      document.getElementById(
+        "terminalContent"
+      );
+
+    const progressBar =
+      document.getElementById(
+        "progressBar"
+      );
+
+    const openSurpriseBtn =
+      document.getElementById(
+        "openSurpriseBtn"
+      );
+
+
+    const cakeArea =
+      document.getElementById(
+        "cakeArea"
+      );
+
+    const cakeComplete =
+      document.getElementById(
+        "cakeComplete"
+      );
+
+    const wishBtn =
+      document.getElementById(
+        "wishBtn"
+      );
+
+
+    const greetingName =
+      document.getElementById(
+        "greetingName"
+      );
+
+    const greetingMessage =
+      document.getElementById(
+        "greetingMessage"
+      );
+
+    const greetingContinueBtn =
+      document.getElementById(
+        "greetingContinueBtn"
+      );
+
+
+    const recipientName =
+      document.getElementById(
+        "recipientName"
+      );
+
+
+    const envelopeWrapper =
+      document.getElementById(
+        "envelopeWrapper"
+      );
+
+
+    const messageCounter =
+      document.getElementById(
+        "messageCounter"
+      );
+
+    const paper =
+      document.getElementById(
+        "paper"
+      );
+
+    const paperNumber =
+      document.getElementById(
+        "paperNumber"
+      );
+
+    const paperTitle =
+      document.getElementById(
+        "paperTitle"
+      );
+
+    const paperMessage =
+      document.getElementById(
+        "paperMessage"
+      );
+
+    const nextMessageBtn =
+      document.getElementById(
+        "nextMessageBtn"
+      );
+
+
+    const finalName =
+      document.getElementById(
+        "finalName"
+      );
+
+    const finalMessage =
+      document.getElementById(
+        "finalMessage"
+      );
+
+    const restartBtn =
+      document.getElementById(
+        "restartBtn"
+      );
 
 
     /* =========================================================
-       PERSONALIZE NAME
+       NAME
     ========================================================= */
 
-    recipientName.textContent = CONFIG.name;
-    finalName.textContent = CONFIG.name;
+    greetingName.textContent =
+      CONFIG.name;
 
-    document.title = `A Little Surprise for ${CONFIG.name} 💌`;
+    recipientName.textContent =
+      CONFIG.name;
+
+    finalName.textContent =
+      CONFIG.name;
+
+    document.title =
+      `A Little Surprise for ${CONFIG.name} 💌`;
 
 
     /* =========================================================
-       SCREEN HELPER
+       SCREEN SWITCHING
     ========================================================= */
 
     function showScreen(screen) {
 
-      document.querySelectorAll(".screen").forEach(item => {
-        item.classList.remove("active");
-      });
+      document
+        .querySelectorAll(".screen")
+        .forEach(item => {
 
-      screen.classList.add("active");
+          item.classList.remove(
+            "active"
+          );
+
+        });
+
+      screen.classList.add(
+        "active"
+      );
 
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
+
     }
 
 
     /* =========================================================
-       LOADING ANIMATION
+       01 — FAKE COMPILATION
     ========================================================= */
 
     const loadingLines = [
 
-      "Initializing surprise... 💫",
+      "Initializing birthday.exe... 💫",
 
       "Loading cute animations... ✓",
 
@@ -979,6 +2308,8 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
       `Checking recipient... ${CONFIG.name} ✓`,
 
       "Injecting happiness... ✓",
+
+      "Preparing cake engine... 🍰",
 
       "Searching for bugs...",
 
@@ -992,74 +2323,274 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
     function runLoadingScreen() {
 
       terminalContent.innerHTML = "";
+
       progressBar.style.width = "0%";
 
-      loadingLines.forEach((line, index) => {
+      openSurpriseBtn.classList.remove(
+        "show"
+      );
 
-        setTimeout(() => {
 
-          const lineElement = document.createElement("div");
+      loadingLines.forEach(
+        (line, index) => {
 
-          lineElement.className = "terminal-line";
+          setTimeout(() => {
 
-          if (line.includes("✓") || line.includes("successful")) {
-            lineElement.classList.add("success");
-          }
+            const lineElement =
+              document.createElement(
+                "div"
+              );
 
-          if (line.includes("Compiling")) {
-            lineElement.classList.add("highlight");
-          }
+            lineElement.className =
+              "terminal-line";
 
-          lineElement.textContent = "> " + line;
 
-          terminalContent.appendChild(lineElement);
+            if (
+              line.includes("✓") ||
+              line.includes("successful")
+            ) {
 
-          const progress =
-            ((index + 1) / loadingLines.length) * 100;
+              lineElement.classList.add(
+                "success"
+              );
 
-          progressBar.style.width = progress + "%";
+            }
 
-          if (index === loadingLines.length - 1) {
 
-            setTimeout(() => {
-              openSurpriseBtn.classList.add("show");
-            }, 500);
+            if (
+              line.includes("Compiling")
+            ) {
 
-          }
+              lineElement.classList.add(
+                "highlight"
+              );
 
-        }, index * 650);
+            }
 
-      });
+
+            lineElement.textContent =
+              "> " + line;
+
+
+            terminalContent.appendChild(
+              lineElement
+            );
+
+
+            const progress =
+              ((index + 1) /
+                loadingLines.length) *
+              100;
+
+
+            progressBar.style.width =
+              progress + "%";
+
+
+            if (
+              index ===
+              loadingLines.length - 1
+            ) {
+
+              setTimeout(() => {
+
+                openSurpriseBtn.classList.add(
+                  "show"
+                );
+
+              }, 600);
+
+            }
+
+          }, index * 600);
+
+        }
+      );
 
     }
 
 
     /* =========================================================
-       OPEN SURPRISE
+       02 — START CAKE CREATION
     ========================================================= */
 
-    openSurpriseBtn.addEventListener("click", () => {
+    openSurpriseBtn.addEventListener(
+      "click",
+      () => {
 
-      showScreen(envelopeScreen);
+        showScreen(cakeScreen);
 
-    });
+        startCakeCreation();
+
+      }
+    );
+
+
+    function startCakeCreation() {
+
+      cakeArea.className =
+        "cake-area";
+
+      cakeComplete.classList.remove(
+        "show"
+      );
+
+      wishBtn.classList.remove(
+        "show"
+      );
+
+
+      /*
+       * Each step happens separately.
+       *
+       * 1 = base
+       * 2 = middle
+       * 3 = top
+       * 4 = icing
+       * 5 = candles
+       * 6 = flames
+       */
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-1"
+        );
+
+      }, 500);
+
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-2"
+        );
+
+      }, 1300);
+
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-3"
+        );
+
+      }, 2100);
+
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-4"
+        );
+
+      }, 2900);
+
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-5"
+        );
+
+      }, 3700);
+
+
+      setTimeout(() => {
+
+        cakeArea.classList.add(
+          "build-6"
+        );
+
+      }, 4400);
+
+
+      setTimeout(() => {
+
+        cakeComplete.classList.add(
+          "show"
+        );
+
+      }, 5000);
+
+
+      setTimeout(() => {
+
+        wishBtn.classList.add(
+          "show"
+        );
+
+      }, 5500);
+
+    }
 
 
     /* =========================================================
-       ENVELOPE
+       03 — MAKE A WISH
+    ========================================================= */
+
+    wishBtn.addEventListener(
+      "click",
+      () => {
+
+        greetingMessage.textContent =
+          replaceName(
+            CONFIG.greeting
+          );
+
+        showScreen(
+          greetingScreen
+        );
+
+        createSmallSparkles();
+
+      }
+    );
+
+
+    /* =========================================================
+       04 — GREETING → ENVELOPE
+    ========================================================= */
+
+    greetingContinueBtn.addEventListener(
+      "click",
+      () => {
+
+        showScreen(
+          envelopeScreen
+        );
+
+      }
+    );
+
+
+    /* =========================================================
+       05 — ENVELOPE
     ========================================================= */
 
     function openEnvelope() {
 
-      if (envelopeWrapper.classList.contains("open")) {
+      if (
+        envelopeWrapper.classList.contains(
+          "open"
+        )
+      ) {
+
         return;
+
       }
 
-      envelopeWrapper.classList.add("open");
+
+      envelopeWrapper.classList.add(
+        "open"
+      );
+
 
       setTimeout(() => {
 
-        showScreen(messageScreen);
+        showScreen(
+          messageScreen
+        );
 
         currentMessage = 0;
 
@@ -1070,23 +2601,33 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
     }
 
 
-    envelopeWrapper.addEventListener("click", openEnvelope);
+    envelopeWrapper.addEventListener(
+      "click",
+      openEnvelope
+    );
 
 
-    envelopeWrapper.addEventListener("keydown", event => {
+    envelopeWrapper.addEventListener(
+      "keydown",
+      event => {
 
-      if (
-        event.key === "Enter" ||
-        event.key === " "
-      ) {
-        openEnvelope();
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          openEnvelope();
+
+        }
+
       }
-
-    });
+    );
 
 
     /* =========================================================
-       MESSAGE PAPERS
+       06 — PAPER NOTES
     ========================================================= */
 
     let currentMessage = 0;
@@ -1105,21 +2646,45 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
     function renderMessage() {
 
       const item =
-        CONFIG.messages[currentMessage];
+        CONFIG.messages[
+          currentMessage
+        ];
+
 
       messageCounter.textContent =
-        `Note ${currentMessage + 1} of ${CONFIG.messages.length}`;
+        `Note ${
+          currentMessage + 1
+        } of ${
+          CONFIG.messages.length
+        }`;
+
 
       paperNumber.textContent =
-        `PAPER_${String(currentMessage + 1).padStart(2, "0")} 💌`;
+        `PAPER_${
+          String(
+            currentMessage + 1
+          ).padStart(2, "0")
+        } 💌`;
+
 
       paperTitle.textContent =
-        replaceName(item.title);
+        replaceName(
+          item.title
+        );
+
 
       paperMessage.textContent =
-        replaceName(item.message);
+        replaceName(
+          item.message
+        );
 
-      paper.style.animation = "none";
+
+      /*
+       * Restart paper animation
+       */
+
+      paper.style.animation =
+        "none";
 
       void paper.offsetWidth;
 
@@ -1128,45 +2693,62 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
 
 
       const isLastMessage =
-        currentMessage === CONFIG.messages.length - 1;
+        currentMessage ===
+        CONFIG.messages.length - 1;
+
 
       nextMessageBtn.textContent =
         isLastMessage
-          ? "One last thing... 🎂"
+
+          ? "Open the final note... 💝"
+
           : "Next little note → 🌸";
 
     }
 
 
-    nextMessageBtn.addEventListener("click", () => {
+    nextMessageBtn.addEventListener(
+      "click",
+      () => {
 
-      const isLastMessage =
-        currentMessage === CONFIG.messages.length - 1;
+        const isLastMessage =
+          currentMessage ===
+          CONFIG.messages.length - 1;
 
-      if (isLastMessage) {
 
-        showFinalScreen();
+        if (isLastMessage) {
 
-        return;
+          showFinalScreen();
+
+          return;
+
+        }
+
+
+        currentMessage++;
+
+        renderMessage();
+
       }
-
-      currentMessage++;
-
-      renderMessage();
-
-    });
+    );
 
 
     /* =========================================================
-       FINAL SCREEN
+       07 — FINAL MESSAGE
     ========================================================= */
 
     function showFinalScreen() {
 
       finalMessage.textContent =
-        replaceName(CONFIG.finalMessage);
+        replaceName(
+          CONFIG.finalMessage
+        );
 
-      showScreen(finalScreen);
+
+      showScreen(
+        finalScreen
+      );
+
 
       createConfetti();
 
@@ -1180,40 +2762,136 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
     function createConfetti() {
 
       const emojis = [
+
         "🎉",
         "✨",
         "💗",
         "🌸",
         "🎂",
+        "💫",
+        "♡"
+
+      ];
+
+
+      for (
+        let i = 0;
+        i < 60;
+        i++
+      ) {
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+
+        item.className =
+          "confetti";
+
+
+        item.textContent =
+          emojis[
+            Math.floor(
+              Math.random() *
+              emojis.length
+            )
+          ];
+
+
+        item.style.left =
+          Math.random() * 100 +
+          "vw";
+
+
+        item.style.animationDuration =
+          3 +
+          Math.random() * 3 +
+          "s";
+
+
+        item.style.fontSize =
+          14 +
+          Math.random() * 16 +
+          "px";
+
+
+        document.body.appendChild(
+          item
+        );
+
+
+        setTimeout(() => {
+
+          item.remove();
+
+        }, 6500);
+
+      }
+
+    }
+
+
+    /* =========================================================
+       SMALL SPARKLES
+    ========================================================= */
+
+    function createSmallSparkles() {
+
+      const emojis = [
+        "✨",
+        "💗",
+        "🌸",
         "💫"
       ];
 
-      for (let i = 0; i < 55; i++) {
+
+      for (
+        let i = 0;
+        i < 18;
+        i++
+      ) {
 
         const item =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
-        item.className = "confetti";
+
+        item.className =
+          "confetti";
+
 
         item.textContent =
-          emojis[Math.floor(
-            Math.random() * emojis.length
-          )];
+          emojis[
+            Math.floor(
+              Math.random() *
+              emojis.length
+            )
+          ];
+
 
         item.style.left =
-          Math.random() * 100 + "vw";
+          Math.random() * 100 +
+          "vw";
+
 
         item.style.animationDuration =
-          3 + Math.random() * 3 + "s";
+          2 +
+          Math.random() * 2 +
+          "s";
 
-        item.style.fontSize =
-          14 + Math.random() * 16 + "px";
 
-        document.body.appendChild(item);
+        document.body.appendChild(
+          item
+        );
+
 
         setTimeout(() => {
+
           item.remove();
-        }, 6500);
+
+        }, 4500);
 
       }
 
@@ -1224,13 +2902,22 @@ P.S. I'm really glad our codebases crossed paths. 🫶`
        RESTART
     ========================================================= */
 
-    restartBtn.addEventListener("click", () => {
+    restartBtn.addEventListener(
+      "click",
+      () => {
 
-      envelopeWrapper.classList.remove("open");
+        envelopeWrapper.classList.remove(
+          "open"
+        );
 
-      showScreen(envelopeScreen);
+        showScreen(
+          loadingScreen
+        );
 
-    });
+        runLoadingScreen();
+
+      }
+    );
 
 
     /* =========================================================
