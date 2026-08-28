@@ -1,28 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>A Little Birthday Surprise 💌</title>
 
-  <!-- Fonts -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
@@ -30,11 +15,6 @@ content="width=device-width, initial-scale=1.0"
   >
 
   <style>
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
@@ -48,66 +28,37 @@ content="width=device-width, initial-scale=1.0"
     }
 
     body {
-
       overflow-x: hidden;
-
       font-family: "Nunito", sans-serif;
-
       color: #5c4a55;
 
       background:
-        radial-gradient(
-          circle at 10% 20%,
-          #fff7fb 0%,
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 90% 10%,
-          #f7ecff 0%,
-          transparent 27%
-        ),
-        linear-gradient(
-          135deg,
-          #ffeef5,
-          #f5edff,
-          #eaf8ff
-        );
+        radial-gradient(circle at 10% 20%, #fff7fb 0%, transparent 27%),
+        radial-gradient(circle at 90% 10%, #f7ecff 0%, transparent 27%),
+        linear-gradient(135deg, #ffeef5, #f5edff, #eaf8ff);
     }
 
     button {
       font: inherit;
     }
 
-
     /* =========================================================
-       BACKGROUND DECORATION
+       BACKGROUND
     ========================================================= */
 
     .background-decoration {
-
       position: fixed;
-
       inset: 0;
-
       overflow: hidden;
-
       pointer-events: none;
-
       z-index: 0;
     }
 
     .floating-item {
-
       position: absolute;
-
       opacity: 0.65;
-
       user-select: none;
-
-      animation:
-        floatAround
-        linear
-        infinite;
+      animation: floatAround linear infinite;
     }
 
     .floating-item:nth-child(1) {
@@ -146,52 +97,32 @@ content="width=device-width, initial-scale=1.0"
     }
 
     @keyframes floatAround {
-
-      0% {
-        transform:
-          translateY(0)
-          rotate(0deg);
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
       }
 
       50% {
-        transform:
-          translateY(-25px)
-          rotate(12deg);
-      }
-
-      100% {
-        transform:
-          translateY(0)
-          rotate(0deg);
+        transform: translateY(-25px) rotate(12deg);
       }
     }
-
-
-    /* =========================================================
-       APP / SCREENS
-    ========================================================= */
 
     .app {
-
       position: relative;
-
       z-index: 1;
-
       min-height: 100vh;
     }
 
+    /* =========================================================
+       SCREENS
+    ========================================================= */
+
     .screen {
-
       display: none;
-
       min-height: 100vh;
-
       width: 100%;
-
       padding: 24px;
 
       align-items: center;
-
       justify-content: center;
     }
 
@@ -199,27 +130,20 @@ content="width=device-width, initial-scale=1.0"
       display: flex;
     }
 
-
     /* =========================================================
-       COMMON BUTTON
+       BUTTON
     ========================================================= */
 
     .primary-btn {
-
       border: none;
-
       cursor: pointer;
 
-      padding:
-        15px 25px;
+      padding: 15px 25px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       color: white;
-
       font-weight: 800;
-
       font-size: 15px;
 
       background:
@@ -230,8 +154,7 @@ content="width=device-width, initial-scale=1.0"
         );
 
       box-shadow:
-        0 12px 28px
-        rgba(200, 110, 150, 0.25);
+        0 12px 28px rgba(200, 110, 150, 0.25);
 
       transition:
         transform 0.2s ease,
@@ -239,169 +162,118 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .primary-btn:hover {
-
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       box-shadow:
-        0 15px 32px
-        rgba(200, 110, 150, 0.3);
+        0 15px 32px rgba(200, 110, 150, 0.3);
     }
 
     .primary-btn:active {
-
-      transform:
-        scale(0.96);
+      transform: scale(0.96);
     }
 
-
     /* =========================================================
-       01 — COMPILATION SCREEN
+       COMPILATION SCREEN
     ========================================================= */
 
     .terminal-card {
+      width: min(620px, 100%);
 
-      width:
-        min(620px, 100%);
+      padding: 26px;
 
-      padding:
-        26px;
-
-      border-radius:
-        24px;
+      border-radius: 24px;
 
       background:
         rgba(255, 255, 255, 0.68);
 
       border:
-        1px solid
-        rgba(255, 255, 255, 0.8);
+        1px solid rgba(255, 255, 255, 0.8);
 
       box-shadow:
-        0 20px 60px
-        rgba(130, 90, 120, 0.15);
+        0 20px 60px rgba(130, 90, 120, 0.15);
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter: blur(12px);
     }
 
     .terminal-top {
-
       display: flex;
-
       gap: 8px;
-
-      margin-bottom:
-        24px;
+      margin-bottom: 24px;
     }
 
     .dot {
-
       width: 11px;
-
       height: 11px;
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      background:
-        #f3a6b8;
+      background: #f3a6b8;
     }
 
     .dot:nth-child(2) {
-      background:
-        #f5d38a;
+      background: #f5d38a;
     }
 
     .dot:nth-child(3) {
-      background:
-        #a8d8ba;
+      background: #a8d8ba;
     }
 
     .terminal-content {
+      min-height: 240px;
 
-      min-height:
-        240px;
+      font-family: monospace;
 
-      font-family:
-        monospace;
+      line-height: 1.8;
 
-      line-height:
-        1.8;
+      font-size: 15px;
 
-      font-size:
-        15px;
-
-      color:
-        #6a5664;
+      color: #6a5664;
     }
 
     .terminal-line {
-
       opacity: 0;
 
-      transform:
-        translateY(8px);
+      transform: translateY(8px);
 
       animation:
-        showLine
-        0.4s
-        forwards;
+        showLine 0.4s forwards;
     }
 
     .terminal-line.success {
-      color:
-        #6ca984;
+      color: #6ca984;
     }
 
     .terminal-line.highlight {
-
-      color:
-        #d06f91;
-
-      font-weight:
-        bold;
+      color: #d06f91;
+      font-weight: bold;
     }
 
     @keyframes showLine {
-
       to {
-
-        opacity:
-          1;
-
-        transform:
-          translateY(0);
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
     .progress-container {
-
       width: 100%;
-
       height: 10px;
 
-      margin:
-        14px 0 20px;
+      margin: 14px 0 20px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
-      border-radius:
-        20px;
+      border-radius: 20px;
 
       background:
         rgba(190, 150, 175, 0.2);
     }
 
     .progress-bar {
-
       width: 0%;
-
       height: 100%;
 
-      border-radius:
-        inherit;
+      border-radius: inherit;
 
       background:
         linear-gradient(
@@ -416,26 +288,18 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .open-surprise-btn {
-
-      display:
-        none;
+      display: none;
 
       width: 100%;
 
-      margin-top:
-        24px;
+      margin-top: 24px;
 
-      padding:
-        16px 20px;
+      padding: 16px 20px;
 
-      border:
-        none;
+      border: none;
+      border-radius: 18px;
 
-      border-radius:
-        18px;
-
-      cursor:
-        pointer;
+      cursor: pointer;
 
       background:
         linear-gradient(
@@ -444,181 +308,122 @@ content="width=device-width, initial-scale=1.0"
           #d8a7ef
         );
 
-      color:
-        white;
+      color: white;
 
-      font-weight:
-        800;
-
-      font-size:
-        16px;
+      font-weight: 800;
+      font-size: 16px;
 
       box-shadow:
-        0 10px 25px
-        rgba(200, 110, 150, 0.25);
+        0 10px 25px rgba(200, 110, 150, 0.25);
     }
 
     .open-surprise-btn.show {
-
-      display:
-        block;
+      display: block;
 
       animation:
-        popIn
-        0.5s
-        ease
-        forwards;
+        popIn 0.5s ease forwards;
     }
 
-
     /* =========================================================
-       02 — CAKE SCREEN
+       CAKE SCREEN
     ========================================================= */
 
     .cake-screen {
+      text-align: center;
 
-      text-align:
-        center;
-
-      width:
-        min(650px, 100%);
+      width: min(650px, 100%);
     }
 
-    .cake-label {
+    .cake-label,
+    .tiny-label {
+      display: inline-block;
 
-      display:
-        inline-block;
+      padding: 7px 14px;
 
-      padding:
-        7px 14px;
-
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       background:
         rgba(255,255,255,0.55);
 
-      font-size:
-        13px;
+      font-size: 13px;
+      font-weight: 800;
 
-      font-weight:
-        800;
-
-      margin-bottom:
-        12px;
+      margin-bottom: 12px;
     }
 
     .cake-title {
+      margin: 0;
 
-      margin:
-        0;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(48px, 11vw, 76px);
 
-      line-height:
-        0.95;
+      line-height: 0.95;
 
-      color:
-        #6d5562;
+      color: #6d5562;
     }
 
     .cake-subtitle {
+      margin: 14px 0 35px;
 
-      margin:
-        14px 0 35px;
+      opacity: 0.7;
 
-      opacity:
-        0.7;
-
-      font-size:
-        15px;
+      font-size: 15px;
     }
 
     .cake-area {
+      position: relative;
 
-      position:
-        relative;
+      width: 330px;
+      height: 300px;
 
-      width:
-        330px;
+      margin: 0 auto;
 
-      height:
-        300px;
+      display: flex;
 
-      margin:
-        0 auto;
-
-      display:
-        flex;
-
-      align-items:
-        flex-end;
-
-      justify-content:
-        center;
+      align-items: flex-end;
+      justify-content: center;
     }
 
     .cake-shadow {
+      position: absolute;
 
-      position:
-        absolute;
+      bottom: 20px;
 
-      bottom:
-        20px;
+      width: 260px;
+      height: 35px;
 
-      width:
-        260px;
-
-      height:
-        35px;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
         rgba(130, 90, 120, 0.12);
 
-      filter:
-        blur(7px);
+      filter: blur(7px);
     }
 
     .cake-base,
     .cake-middle,
     .cake-top {
+      position: absolute;
 
-      position:
-        absolute;
+      border-radius: 15px;
 
-      border-radius:
-        15px;
-
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         translateY(50px)
         scale(0.8);
 
       transition:
-        all 0.8s
-        cubic-bezier(.2,.9,.2,1);
+        all 0.8s cubic-bezier(.2,.9,.2,1);
     }
 
     .cake-base {
+      bottom: 40px;
 
-      bottom:
-        40px;
-
-      width:
-        250px;
-
-      height:
-        105px;
+      width: 250px;
+      height: 105px;
 
       border-radius:
         15px 15px 22px 22px;
@@ -631,20 +436,14 @@ content="width=device-width, initial-scale=1.0"
         );
 
       box-shadow:
-        0 15px 25px
-        rgba(130, 70, 100, 0.18);
+        0 15px 25px rgba(130, 70, 100, 0.18);
     }
 
     .cake-middle {
+      bottom: 125px;
 
-      bottom:
-        125px;
-
-      width:
-        215px;
-
-      height:
-        72px;
+      width: 215px;
+      height: 72px;
 
       background:
         linear-gradient(
@@ -654,23 +453,16 @@ content="width=device-width, initial-scale=1.0"
         );
 
       box-shadow:
-        0 12px 20px
-        rgba(130, 70, 100, 0.13);
+        0 12px 20px rgba(130, 70, 100, 0.13);
     }
 
     .cake-top {
+      bottom: 190px;
 
-      bottom:
-        190px;
+      width: 180px;
+      height: 58px;
 
-      width:
-        180px;
-
-      height:
-        58px;
-
-      border-radius:
-        18px;
+      border-radius: 18px;
 
       background:
         linear-gradient(
@@ -680,32 +472,23 @@ content="width=device-width, initial-scale=1.0"
         );
 
       box-shadow:
-        0 10px 20px
-        rgba(130, 70, 100, 0.12);
+        0 10px 20px rgba(130, 70, 100, 0.12);
     }
 
     .icing {
+      position: absolute;
 
-      position:
-        absolute;
+      bottom: 184px;
 
-      bottom:
-        184px;
-
-      width:
-        190px;
-
-      height:
-        25px;
+      width: 190px;
+      height: 25px;
 
       border-radius:
         50% 50% 12px 12px;
 
-      background:
-        #fff8fb;
+      background: #fff8fb;
 
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         scaleX(0.6);
@@ -715,21 +498,15 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .candles {
+      position: absolute;
 
-      position:
-        absolute;
+      bottom: 235px;
 
-      bottom:
-        235px;
+      display: flex;
 
-      display:
-        flex;
+      gap: 28px;
 
-      gap:
-        28px;
-
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         translateY(20px);
@@ -739,18 +516,12 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .candle {
+      position: relative;
 
-      position:
-        relative;
+      width: 12px;
+      height: 55px;
 
-      width:
-        12px;
-
-      height:
-        55px;
-
-      border-radius:
-        6px;
+      border-radius: 6px;
 
       background:
         repeating-linear-gradient(
@@ -763,49 +534,32 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .flame {
+      position: absolute;
 
-      position:
-        absolute;
+      left: 50%;
+      top: -25px;
 
-      left:
-        50%;
-
-      top:
-        -25px;
-
-      width:
-        15px;
-
-      height:
-        23px;
+      width: 15px;
+      height: 23px;
 
       transform:
         translateX(-50%);
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      background:
-        #ffd76a;
+      background: #ffd76a;
 
       box-shadow:
-        0 0 15px
-        rgba(255,190,80,0.8);
+        0 0 15px rgba(255,190,80,0.8);
 
-      opacity:
-        0;
+      opacity: 0;
 
       animation:
-        flame
-        0.8s
-        infinite
-        alternate;
+        flame 0.8s infinite alternate;
     }
 
     @keyframes flame {
-
       from {
-
         transform:
           translateX(-50%)
           scale(1)
@@ -813,7 +567,6 @@ content="width=device-width, initial-scale=1.0"
       }
 
       to {
-
         transform:
           translateX(-50%)
           scale(1.1)
@@ -821,137 +574,73 @@ content="width=device-width, initial-scale=1.0"
       }
     }
 
-    .cake-area.build-1
-    .cake-base {
-
-      opacity:
-        1;
-
-      transform:
-        translateY(0)
-        scale(1);
-    }
-
-    .cake-area.build-2
-    .cake-middle {
-
-      opacity:
-        1;
+    .cake-area.build-1 .cake-base,
+    .cake-area.build-2 .cake-middle,
+    .cake-area.build-3 .cake-top {
+      opacity: 1;
 
       transform:
         translateY(0)
         scale(1);
     }
 
-    .cake-area.build-3
-    .cake-top {
-
-      opacity:
-        1;
-
-      transform:
-        translateY(0)
-        scale(1);
-    }
-
-    .cake-area.build-4
-    .icing {
-
-      opacity:
-        1;
+    .cake-area.build-4 .icing {
+      opacity: 1;
 
       transform:
         scaleX(1);
     }
 
-    .cake-area.build-5
-    .candles {
-
-      opacity:
-        1;
+    .cake-area.build-5 .candles {
+      opacity: 1;
 
       transform:
         translateY(0);
     }
 
-    .cake-area.build-6
-    .flame {
-
-      opacity:
-        1;
+    .cake-area.build-6 .flame {
+      opacity: 1;
     }
 
     .cake-sprinkle {
+      position: absolute;
 
-      position:
-        absolute;
+      width: 8px;
+      height: 4px;
 
-      width:
-        8px;
+      border-radius: 4px;
 
-      height:
-        4px;
-
-      border-radius:
-        4px;
-
-      background:
-        #d99ab4;
+      background: #d99ab4;
     }
 
     .sprinkle-1 {
-
-      left:
-        34%;
-
-      bottom:
-        155px;
-
-      transform:
-        rotate(20deg);
+      left: 34%;
+      bottom: 155px;
+      transform: rotate(20deg);
     }
 
     .sprinkle-2 {
-
-      left:
-        55%;
-
-      bottom:
-        150px;
-
-      transform:
-        rotate(-25deg);
+      left: 55%;
+      bottom: 150px;
+      transform: rotate(-25deg);
     }
 
     .sprinkle-3 {
-
-      left:
-        45%;
-
-      bottom:
-        180px;
-
-      transform:
-        rotate(10deg);
+      left: 45%;
+      bottom: 180px;
+      transform: rotate(10deg);
     }
 
     .cake-complete {
+      margin-top: 12px;
 
-      margin-top:
-        12px;
+      font-family: "Caveat", cursive;
 
-      font-family:
-        "Caveat",
-        cursive;
+      font-size: 28px;
 
-      font-size:
-        28px;
+      color: #bf7892;
 
-      color:
-        #bf7892;
-
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         translateY(10px);
@@ -961,40 +650,28 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .cake-complete.show {
-
-      opacity:
-        1;
+      opacity: 1;
 
       transform:
         translateY(0);
     }
 
     .wish-btn {
+      display: none;
 
-      display:
-        none;
-
-      margin-top:
-        18px;
+      margin-top: 18px;
     }
 
     .wish-btn.show {
-
-      display:
-        inline-block;
+      display: inline-block;
 
       animation:
-        wishPop
-        0.7s
-        cubic-bezier(.2,.9,.2,1);
+        wishPop 0.7s cubic-bezier(.2,.9,.2,1);
     }
 
     @keyframes wishPop {
-
       0% {
-
-        opacity:
-          0;
+        opacity: 0;
 
         transform:
           scale(0.5)
@@ -1002,341 +679,221 @@ content="width=device-width, initial-scale=1.0"
       }
 
       70% {
-
         transform:
           scale(1.08);
       }
 
       100% {
-
-        opacity:
-          1;
+        opacity: 1;
 
         transform:
           scale(1);
       }
     }
 
-
     /* =========================================================
-       03 — GREETING
+       GREETING
     ========================================================= */
 
-    .greeting-card {
+    .greeting-card,
+    .final-card,
+    .video-card {
+      width: min(620px, 100%);
 
-      width:
-        min(600px, 100%);
+      padding: 45px 30px;
 
-      padding:
-        45px 30px;
+      text-align: center;
 
-      text-align:
-        center;
-
-      border-radius:
-        32px;
+      border-radius: 32px;
 
       background:
         rgba(255,255,255,0.72);
 
       box-shadow:
-        0 25px 70px
-        rgba(130,80,110,0.18);
+        0 25px 70px rgba(130,80,110,0.18);
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter: blur(12px);
 
       animation:
-        popIn
-        0.8s
-        cubic-bezier(.2,.9,.2,1);
+        popIn 0.8s cubic-bezier(.2,.9,.2,1);
     }
 
     .greeting-icon {
-
-      font-size:
-        64px;
+      font-size: 64px;
 
       animation:
-        heartbeat
-        1.6s
-        infinite;
+        heartbeat 1.6s infinite;
     }
 
     @keyframes heartbeat {
-
-      0%,
-      100% {
-        transform:
-          scale(1);
+      0%, 100% {
+        transform: scale(1);
       }
 
       50% {
-
-        transform:
-          scale(1.12);
+        transform: scale(1.12);
       }
     }
 
-    .greeting-title {
+    .greeting-title,
+    .final-title,
+    .video-title {
+      margin: 18px 0 15px;
 
-      margin:
-        18px 0 15px;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(48px, 11vw, 76px);
 
-      line-height:
-        0.95;
+      line-height: 0.95;
 
-      color:
-        #6c5561;
+      color: #6c5561;
     }
 
-    .greeting-message {
+    .greeting-message,
+    .final-message {
+      max-width: 500px;
 
-      max-width:
-        500px;
+      margin: 25px auto;
 
-      margin:
-        25px auto;
+      white-space: pre-line;
 
-      white-space:
-        pre-line;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(27px, 6vw, 37px);
 
-      line-height:
-        1.35;
+      line-height: 1.35;
     }
 
     .greeting-hint {
+      margin-top: 25px;
 
-      margin-top:
-        25px;
+      font-size: 14px;
 
-      font-size:
-        14px;
-
-      opacity:
-        0.65;
+      opacity: 0.65;
     }
 
-
     /* =========================================================
-       04 — ENVELOPE
+       ENVELOPE
     ========================================================= */
 
     .envelope-container {
+      width: 100%;
 
-      width:
-        100%;
+      max-width: 460px;
 
-      max-width:
-        460px;
-
-      text-align:
-        center;
-    }
-
-    .tiny-label {
-
-      display:
-        inline-block;
-
-      margin-bottom:
-        10px;
-
-      padding:
-        7px 14px;
-
-      border-radius:
-        999px;
-
-      background:
-        rgba(255,255,255,0.55);
-
-      font-size:
-        13px;
-
-      font-weight:
-        700;
+      text-align: center;
     }
 
     .envelope-title {
+      margin: 8px 0;
 
-      margin:
-        8px 0;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(42px,10vw,70px);
 
-      line-height:
-        1;
+      line-height: 1;
 
-      color:
-        #6d5562;
+      color: #6d5562;
     }
 
     .envelope-subtitle {
+      margin: 0 0 35px;
 
-      margin:
-        0 0 35px;
+      font-size: 16px;
 
-      font-size:
-        16px;
-
-      opacity:
-        0.75;
+      opacity: 0.75;
     }
 
     .envelope-wrapper {
-
-      position:
-        relative;
+      position: relative;
 
       width:
         min(330px,85vw);
 
-      height:
-        225px;
+      height: 225px;
 
-      margin:
-        0 auto 30px;
+      margin: 0 auto 30px;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      perspective:
-        1000px;
+      perspective: 1000px;
 
       transition:
         transform 0.25s ease;
     }
 
     .envelope-wrapper:hover {
-
       transform:
         translateY(-5px);
     }
 
     .envelope {
+      position: absolute;
 
-      position:
-        absolute;
+      inset: 0;
 
-      inset:
-        0;
+      border-radius: 10px;
 
-      border-radius:
-        10px;
-
-      background:
-        #f4a9bd;
+      background: #f4a9bd;
 
       box-shadow:
-        0 22px 35px
-        rgba(151,91,115,0.22);
+        0 22px 35px rgba(151,91,115,0.22);
 
-      overflow:
-        hidden;
+      overflow: hidden;
     }
 
     .letter-preview {
+      position: absolute;
 
-      position:
-        absolute;
+      width: 86%;
+      height: 88%;
 
-      width:
-        86%;
+      left: 7%;
+      top: 8%;
 
-      height:
-        88%;
+      padding: 20px;
 
-      left:
-        7%;
+      border-radius: 8px;
 
-      top:
-        8%;
+      background: #fffdf9;
 
-      padding:
-        20px;
-
-      border-radius:
-        8px;
-
-      background:
-        #fffdf9;
-
-      z-index:
-        1;
+      z-index: 1;
 
       transition:
-        transform 1s
-        cubic-bezier(.2,.8,.2,1);
+        transform 1s cubic-bezier(.2,.8,.2,1);
     }
 
     .preview-heart {
-
-      font-size:
-        30px;
+      font-size: 30px;
 
       animation:
-        heartbeat
-        1.5s
-        infinite;
+        heartbeat 1.5s infinite;
     }
 
     .envelope-front {
+      position: absolute;
 
-      position:
-        absolute;
+      inset: auto 0 0;
 
-      inset:
-        auto 0 0;
+      width: 100%;
+      height: 100%;
 
-      width:
-        100%;
-
-      height:
-        100%;
-
-      z-index:
-        3;
+      z-index: 3;
     }
 
     .envelope-front::before {
+      content: "";
 
-      content:
-        "";
+      position: absolute;
 
-      position:
-        absolute;
+      left: 0;
+      bottom: 0;
 
-      left:
-        0;
-
-      bottom:
-        0;
-
-      width:
-        0;
-
-      height:
-        0;
+      width: 0;
+      height: 0;
 
       border-left:
         165px solid transparent;
@@ -1349,24 +906,15 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .envelope-front::after {
+      content: "";
 
-      content:
-        "";
+      position: absolute;
 
-      position:
-        absolute;
+      left: 0;
+      bottom: 0;
 
-      left:
-        0;
-
-      bottom:
-        0;
-
-      width:
-        0;
-
-      height:
-        0;
+      width: 0;
+      height: 0;
 
       border-top:
         112px solid transparent;
@@ -1379,21 +927,13 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .envelope-right {
+      position: absolute;
 
-      position:
-        absolute;
+      right: 0;
+      bottom: 0;
 
-      right:
-        0;
-
-      bottom:
-        0;
-
-      width:
-        0;
-
-      height:
-        0;
+      width: 0;
+      height: 0;
 
       border-top:
         112px solid transparent;
@@ -1404,26 +944,17 @@ content="width=device-width, initial-scale=1.0"
       border-right:
         165px solid #efa1b7;
 
-      z-index:
-        4;
+      z-index: 4;
     }
 
     .envelope-flap {
+      position: absolute;
 
-      position:
-        absolute;
+      top: 0;
+      left: 0;
 
-      top:
-        0;
-
-      left:
-        0;
-
-      width:
-        0;
-
-      height:
-        0;
+      width: 0;
+      height: 0;
 
       border-left:
         165px solid transparent;
@@ -1434,179 +965,123 @@ content="width=device-width, initial-scale=1.0"
       border-top:
         120px solid #f6b2c5;
 
-      transform-origin:
-        top;
+      transform-origin: top;
 
-      z-index:
-        5;
+      z-index: 5;
 
       transition:
-        transform 0.9s
-        cubic-bezier(.2,.8,.2,1);
+        transform 0.9s cubic-bezier(.2,.8,.2,1);
     }
 
     .seal {
+      position: absolute;
 
-      position:
-        absolute;
+      top: 94px;
+      left: 50%;
 
-      top:
-        94px;
-
-      left:
-        50%;
-
-      z-index:
-        6;
+      z-index: 6;
 
       transform:
         translateX(-50%);
 
-      width:
-        48px;
+      width: 48px;
+      height: 48px;
 
-      height:
-        48px;
+      display: grid;
 
-      display:
-        grid;
+      place-items: center;
 
-      place-items:
-        center;
+      border-radius: 50%;
 
-      border-radius:
-        50%;
-
-      background:
-        #fff2f6;
+      background: #fff2f6;
 
       box-shadow:
-        0 4px 12px
-        rgba(130,70,90,0.12);
+        0 4px 12px rgba(130,70,90,0.12);
 
       transition:
         opacity 0.3s ease;
     }
 
-    .envelope-wrapper.open
-    .envelope-flap {
-
+    .envelope-wrapper.open .envelope-flap {
       transform:
         rotateX(180deg);
 
-      z-index:
-        0;
+      z-index: 0;
     }
 
-    .envelope-wrapper.open
-    .letter-preview {
-
+    .envelope-wrapper.open .letter-preview {
       transform:
         translateY(-115px);
     }
 
-    .envelope-wrapper.open
-    .seal {
-
-      opacity:
-        0;
+    .envelope-wrapper.open .seal {
+      opacity: 0;
     }
 
     .tap-text {
+      font-size: 14px;
 
-      font-size:
-        14px;
+      font-weight: 700;
 
-      font-weight:
-        700;
-
-      opacity:
-        0.7;
+      opacity: 0.7;
 
       animation:
-        bounceText
-        1.5s
-        infinite;
+        bounceText 1.5s infinite;
     }
 
     @keyframes bounceText {
-
       50% {
-
         transform:
           translateY(-5px);
       }
     }
 
-
     /* =========================================================
-       05 — ONE PAPER NOTE
+       PAPER NOTE
     ========================================================= */
 
     .message-container {
+      width: min(560px,100%);
 
-      width:
-        min(560px,100%);
-
-      text-align:
-        center;
+      text-align: center;
     }
 
     .message-counter {
+      margin-bottom: 14px;
 
-      margin-bottom:
-        14px;
+      font-size: 13px;
 
-      font-size:
-        13px;
+      font-weight: 800;
 
-      font-weight:
-        800;
+      letter-spacing: 1px;
 
-      letter-spacing:
-        1px;
+      opacity: 0.6;
 
-      opacity:
-        0.6;
-
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
     }
 
     .paper-stack {
+      position: relative;
 
-      position:
-        relative;
+      min-height: 470px;
 
-      min-height:
-        470px;
+      display: flex;
 
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
+      align-items: center;
+      justify-content: center;
     }
 
     .paper {
+      position: relative;
 
-      position:
-        relative;
+      width: 100%;
 
-      width:
-        100%;
-
-      min-height:
-        410px;
+      min-height: 410px;
 
       padding:
         42px 30px 35px;
 
-      border-radius:
-        8px;
+      border-radius: 8px;
 
       background:
         repeating-linear-gradient(
@@ -1618,43 +1093,30 @@ content="width=device-width, initial-scale=1.0"
         #fffefa;
 
       box-shadow:
-        0 22px 50px
-        rgba(100,70,85,0.2),
-
-        inset 0 0 40px
-        rgba(255,230,235,0.25);
+        0 22px 50px rgba(100,70,85,0.2),
+        inset 0 0 40px rgba(255,230,235,0.25);
 
       transform:
         rotate(-1deg)
         scale(0.92);
 
-      opacity:
-        0;
+      opacity: 0;
 
       animation:
-        paperAppear
-        0.65s
-        cubic-bezier(.2,.9,.2,1)
+        paperAppear 0.65s cubic-bezier(.2,.9,.2,1)
         forwards;
     }
 
     .paper::before,
     .paper::after {
+      content: "";
 
-      content:
-        "";
+      position: absolute;
 
-      position:
-        absolute;
+      width: 60px;
+      height: 20px;
 
-      width:
-        60px;
-
-      height:
-        20px;
-
-      top:
-        -8px;
+      top: -8px;
 
       background:
         rgba(248,204,215,0.55);
@@ -1664,25 +1126,19 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .paper::before {
-      left:
-        25px;
+      left: 25px;
     }
 
     .paper::after {
-
-      right:
-        25px;
+      right: 25px;
 
       transform:
         rotate(6deg);
     }
 
     @keyframes paperAppear {
-
       to {
-
-        opacity:
-          1;
+        opacity: 1;
 
         transform:
           rotate(-1deg)
@@ -1691,144 +1147,86 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .paper-number {
+      margin-bottom: 12px;
 
-      margin-bottom:
-        12px;
+      font-size: 13px;
 
-      font-size:
-        13px;
+      font-weight: 800;
 
-      font-weight:
-        800;
-
-      color:
-        #d4879e;
+      color: #d4879e;
     }
 
     .paper-title {
+      margin: 0 0 24px;
 
-      margin:
-        0 0 24px;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(38px,9vw,58px);
 
-      line-height:
-        1;
+      line-height: 1;
 
-      color:
-        #725967;
+      color: #725967;
     }
 
     .paper-message {
+      max-width: 450px;
 
-      max-width:
-        450px;
+      margin: auto;
 
-      margin:
-        auto;
+      white-space: pre-line;
 
-      white-space:
-        pre-line;
-
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
       font-size:
         clamp(25px,6vw,34px);
 
-      line-height:
-        1.35;
+      line-height: 1.35;
 
-      color:
-        #634f59;
+      color: #634f59;
     }
 
     .next-btn {
+      margin-top: 30px;
 
-      margin-top:
-        30px;
+      padding: 14px 24px;
 
-      padding:
-        14px 24px;
+      border: none;
 
-      border:
-        none;
+      border-radius: 999px;
 
-      border-radius:
-        999px;
+      cursor: pointer;
 
-      cursor:
-        pointer;
+      background: #fff1f5;
 
-      background:
-        #fff1f5;
+      color: #c56e8d;
 
-      color:
-        #c56e8d;
-
-      font-weight:
-        800;
+      font-weight: 800;
 
       box-shadow:
-        0 8px 20px
-        rgba(170,100,125,0.12);
+        0 8px 20px rgba(170,100,125,0.12);
     }
 
-
     /* =========================================================
-       06 — FINAL BIRTHDAY NOTE
+       FINAL MESSAGE
     ========================================================= */
 
     .final-card {
-
-      width:
-        min(620px,100%);
+      width: min(620px,100%);
 
       padding:
         42px 28px;
-
-      text-align:
-        center;
-
-      border-radius:
-        32px;
-
-      background:
-        rgba(255,255,255,0.72);
-
-      box-shadow:
-        0 25px 70px
-        rgba(130,80,110,0.18);
-
-      backdrop-filter:
-        blur(12px);
-
-      animation:
-        popIn
-        0.8s
-        cubic-bezier(.2,.9,.2,1);
     }
 
     .final-cake {
-
-      font-size:
-        64px;
+      font-size: 64px;
 
       animation:
-        bounceCake
-        2s infinite;
+        bounceCake 2s infinite;
     }
 
     @keyframes bounceCake {
-
       50% {
-
         transform:
           translateY(-8px)
           rotate(2deg);
@@ -1836,260 +1234,136 @@ content="width=device-width, initial-scale=1.0"
     }
 
     .final-title {
-
-      margin:
-        16px 0 12px;
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      font-size:
-        clamp(52px,11vw,76px);
-
-      line-height:
-        0.95;
-
-      color:
-        #6c5561;
-    }
-
-    .final-message {
-
-      margin:
-        25px auto;
-
-      max-width:
-        500px;
-
-      white-space:
-        pre-line;
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      font-size:
-        clamp(26px,6vw,36px);
-
-      line-height:
-        1.35;
+      margin: 16px 0 12px;
     }
 
     .status-box {
+      margin-top: 30px;
 
-      margin-top:
-        30px;
+      padding: 18px;
 
-      padding:
-        18px;
+      border-radius: 18px;
 
-      border-radius:
-        18px;
+      background: #fff8fb;
 
-      background:
-        #fff8fb;
+      text-align: left;
 
-      text-align:
-        left;
+      font-family: monospace;
 
-      font-family:
-        monospace;
+      font-size: 13px;
 
-      font-size:
-        13px;
+      line-height: 1.8;
 
-      line-height:
-        1.8;
-
-      color:
-        #78626e;
+      color: #78626e;
     }
 
     .success-text {
+      color: #6aa37e;
 
-      color:
-        #6aa37e;
-
-      font-weight:
-        bold;
+      font-weight: bold;
     }
 
     .finish-btn {
-
-      margin-top:
-        24px;
+      margin-top: 24px;
     }
 
-
     /* =========================================================
-       07 — PIANO VIDEO
+       PIANO VIDEO
     ========================================================= */
 
     .video-card {
-
-      width:
-        min(760px,100%);
+      width: min(760px,100%);
 
       padding:
         30px 22px 28px;
-
-      text-align:
-        center;
-
-      border-radius:
-        32px;
-
-      background:
-        rgba(255,255,255,0.74);
-
-      box-shadow:
-        0 25px 70px
-        rgba(130,80,110,0.18);
-
-      backdrop-filter:
-        blur(12px);
-
-      animation:
-        popIn
-        0.8s
-        cubic-bezier(.2,.9,.2,1);
     }
 
     .video-label {
+      display: inline-block;
 
-      display:
-        inline-block;
+      padding: 7px 14px;
 
-      padding:
-        7px 14px;
+      margin-bottom: 10px;
 
-      margin-bottom:
-        10px;
-
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       background:
         rgba(255,240,247,0.8);
 
-      color:
-        #c27692;
+      color: #c27692;
 
-      font-size:
-        13px;
+      font-size: 13px;
 
-      font-weight:
-        800;
+      font-weight: 800;
     }
 
     .video-title {
-
       margin:
         5px 0 8px;
 
-      font-family:
-        "Caveat",
-        cursive;
-
       font-size:
         clamp(46px,10vw,70px);
-
-      line-height:
-        1;
-
-      color:
-        #6d5562;
     }
 
     .video-subtitle {
-
       margin:
         0 0 25px;
 
-      opacity:
-        0.7;
+      opacity: 0.7;
 
-      font-size:
-        15px;
+      font-size: 15px;
     }
 
     .video-wrapper {
+      position: relative;
 
-      position:
-        relative;
+      width: 100%;
 
-      width:
-        100%;
+      aspect-ratio: 16 / 9;
 
-      aspect-ratio:
-        16 / 9;
+      overflow: hidden;
 
-      overflow:
-        hidden;
+      border-radius: 18px;
 
-      border-radius:
-        18px;
-
-      background:
-        #2c2430;
+      background: #2c2430;
 
       box-shadow:
-        0 18px 40px
-        rgba(90,55,75,0.2);
+        0 18px 40px rgba(90,55,75,0.2);
     }
 
     .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
 
-      width:
-        100%;
+      border: none;
 
-      height:
-        100%;
-
-      border:
-        none;
-
-      display:
-        block;
+      display: block;
     }
 
     .video-note {
-
       margin:
         20px auto 0;
 
-      max-width:
-        520px;
+      max-width: 520px;
 
-      font-family:
-        "Caveat",
-        cursive;
+      font-family: "Caveat", cursive;
 
-      font-size:
-        27px;
+      font-size: 27px;
 
-      line-height:
-        1.25;
+      line-height: 1.25;
     }
 
     .experience-btn {
-
-      margin-top:
-        25px;
+      margin-top: 25px;
     }
 
-
     /* =========================================================
-       ANIMATIONS
+       GENERAL ANIMATIONS
     ========================================================= */
 
     @keyframes popIn {
-
       from {
-
-        opacity:
-          0;
+        opacity: 0;
 
         transform:
           scale(0.85)
@@ -2097,9 +1371,7 @@ content="width=device-width, initial-scale=1.0"
       }
 
       to {
-
-        opacity:
-          1;
+        opacity: 1;
 
         transform:
           scale(1)
@@ -2107,41 +1379,26 @@ content="width=device-width, initial-scale=1.0"
       }
     }
 
-
-    /* =========================================================
-       CONFETTI
-    ========================================================= */
-
     .confetti {
+      position: fixed;
 
-      position:
-        fixed;
+      top: -20px;
 
-      top:
-        -20px;
+      z-index: 50;
 
-      z-index:
-        50;
-
-      pointer-events:
-        none;
+      pointer-events: none;
 
       animation:
-        confettiFall
-        linear
-        forwards;
+        confettiFall linear forwards;
     }
 
     @keyframes confettiFall {
-
       to {
-
         transform:
           translateY(110vh)
           rotate(720deg);
       }
     }
-
 
     /* =========================================================
        MOBILE
@@ -2150,595 +1407,593 @@ content="width=device-width, initial-scale=1.0"
     @media (max-width: 480px) {
 
       .screen {
-        padding:
-          18px;
+        padding: 18px;
       }
 
       .terminal-card {
-        padding:
-          20px;
+        padding: 20px;
       }
 
       .terminal-content {
-        font-size:
-          13px;
+        font-size: 13px;
       }
 
       .cake-area {
+        transform: scale(0.88);
 
-        transform:
-          scale(0.88);
-
-        margin-top:
-          -10px;
+        margin-top: -10px;
       }
 
       .paper {
-
-        min-height:
-          430px;
+        min-height: 430px;
 
         padding:
           40px 22px 30px;
       }
 
       .envelope-wrapper {
-
-        height:
-          200px;
+        height: 200px;
 
         transform:
           scale(0.92);
 
-        margin-bottom:
-          15px;
+        margin-bottom: 15px;
       }
 
       .envelope-wrapper:hover {
-
         transform:
           scale(0.92);
       }
 
       .video-card {
-
         padding:
           25px 14px;
       }
-
     }
-
   </style>
-
 </head>
+
 
 <body>
 
   <!-- =======================================================
-       FLOATING BACKGROUND
+       BACKGROUND DECORATION
   ======================================================== -->
 
   <div class="background-decoration">
 
-```
-<div class="floating-item">💗</div>
+    <div class="floating-item">💗</div>
 
-<div class="floating-item">✨</div>
+    <div class="floating-item">✨</div>
 
-<div class="floating-item">🌸</div>
+    <div class="floating-item">🌸</div>
 
-<div class="floating-item">💫</div>
+    <div class="floating-item">💫</div>
 
-<div class="floating-item">♡</div>
-```
+    <div class="floating-item">♡</div>
 
   </div>
+
 
   <main class="app">
 
-```
-<!-- =====================================================
-     01 — COMPILATION
-====================================================== -->
 
-<section
-  class="screen active"
-  id="loadingScreen"
->
+    <!-- =====================================================
+         01 — COMPILATION
+    ====================================================== -->
 
-  <div class="terminal-card">
-
-    <div class="terminal-top">
-
-      <span class="dot"></span>
-
-      <span class="dot"></span>
-
-      <span class="dot"></span>
-
-    </div>
-
-
-    <div
-      class="terminal-content"
-      id="terminalContent"
-    ></div>
-
-
-    <div class="progress-container">
-
-      <div
-        class="progress-bar"
-        id="progressBar"
-      ></div>
-
-    </div>
-
-
-    <button
-      class="open-surprise-btn"
-      id="openSurpriseBtn"
-    >
-      Start the surprise 🎁
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     02 — CAKE
-====================================================== -->
-
-<section
-  class="screen"
-  id="cakeScreen"
->
-
-  <div class="cake-screen">
-
-    <div class="cake-label">
-      🎂 birthday.exe
-    </div>
-
-
-    <h1 class="cake-title">
-      Creating something sweet...
-    </h1>
-
-
-    <p class="cake-subtitle">
-      Please wait while your birthday cake is being assembled ✨
-    </p>
-
-
-    <div
-      class="cake-area"
-      id="cakeArea"
+    <section
+      class="screen active"
+      id="loadingScreen"
     >
 
-      <div class="cake-shadow"></div>
+      <div class="terminal-card">
 
-      <div class="cake-base"></div>
+        <div class="terminal-top">
 
-      <div class="cake-middle"></div>
+          <span class="dot"></span>
 
-      <div class="cake-top"></div>
+          <span class="dot"></span>
 
-      <div class="icing"></div>
+          <span class="dot"></span>
 
-
-      <div class="cake-sprinkle sprinkle-1"></div>
-
-      <div class="cake-sprinkle sprinkle-2"></div>
-
-      <div class="cake-sprinkle sprinkle-3"></div>
-
-
-      <div class="candles">
-
-        <div class="candle">
-          <div class="flame"></div>
         </div>
 
-        <div class="candle">
-          <div class="flame"></div>
+
+        <div
+          class="terminal-content"
+          id="terminalContent"
+        ></div>
+
+
+        <div class="progress-container">
+
+          <div
+            class="progress-bar"
+            id="progressBar"
+          ></div>
+
         </div>
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+
+        <button
+          class="open-surprise-btn"
+          id="openSurpriseBtn"
+        >
+          Start the surprise 🎁
+        </button>
 
       </div>
 
-    </div>
+    </section>
 
 
-    <div
-      class="cake-complete"
-      id="cakeComplete"
-    >
-      ✨ Cake successfully created ✨
-    </div>
 
+    <!-- =====================================================
+         02 — CAKE
+    ====================================================== -->
 
-    <button
-      class="primary-btn wish-btn"
-      id="wishBtn"
-    >
-      🎉 Make a Wish 🎉
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     03 — BIRTHDAY GREETING
-====================================================== -->
-
-<section
-  class="screen"
-  id="greetingScreen"
->
-
-  <div class="greeting-card">
-
-    <div class="greeting-icon">
-      🎂
-    </div>
-
-
-    <h1 class="greeting-title">
-
-      Happy Birthday,
-      <br>
-
-      <span id="greetingName"></span>! 💗
-
-    </h1>
-
-
-    <div
-      class="greeting-message"
-      id="greetingMessage"
-    ></div>
-
-
-    <button
-      class="primary-btn"
-      id="greetingContinueBtn"
-    >
-      I have something else for you... 💌
-    </button>
-
-
-    <div class="greeting-hint">
-      Okay... maybe this isn't the whole surprise 👀
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     04 — ENVELOPE
-====================================================== -->
-
-<section
-  class="screen"
-  id="envelopeScreen"
->
-
-  <div class="envelope-container">
-
-    <div class="tiny-label">
-      ✨ One more little thing
-    </div>
-
-
-    <h1 class="envelope-title">
-
-      Hey
-      <span id="recipientName"></span> 👀
-
-    </h1>
-
-
-    <p class="envelope-subtitle">
-      I couldn't fit everything into one birthday wish...
-    </p>
-
-
-    <div
-      class="envelope-wrapper"
-      id="envelopeWrapper"
-      role="button"
-      tabindex="0"
-      aria-label="Open birthday letter"
+    <section
+      class="screen"
+      id="cakeScreen"
     >
 
-      <div class="envelope">
+      <div class="cake-screen">
 
-        <div class="letter-preview">
+        <div class="cake-label">
+          🎂 birthday.exe
+        </div>
 
-          <div class="preview-heart">
-            💌
+
+        <h1 class="cake-title">
+          Creating something sweet...
+        </h1>
+
+
+        <p class="cake-subtitle">
+          Please wait while your birthday cake is being assembled ✨
+        </p>
+
+
+        <div
+          class="cake-area"
+          id="cakeArea"
+        >
+
+          <div class="cake-shadow"></div>
+
+          <div class="cake-base"></div>
+
+          <div class="cake-middle"></div>
+
+          <div class="cake-top"></div>
+
+          <div class="icing"></div>
+
+
+          <div class="cake-sprinkle sprinkle-1"></div>
+
+          <div class="cake-sprinkle sprinkle-2"></div>
+
+          <div class="cake-sprinkle sprinkle-3"></div>
+
+
+          <div class="candles">
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
           </div>
 
         </div>
 
 
-        <div class="envelope-flap"></div>
-
-        <div class="envelope-front"></div>
-
-        <div class="envelope-right"></div>
-
-
-        <div class="seal">
-          💗
+        <div
+          class="cake-complete"
+          id="cakeComplete"
+        >
+          ✨ Cake successfully created ✨
         </div>
+
+
+        <button
+          class="primary-btn wish-btn"
+          id="wishBtn"
+        >
+          🎉 Make a Wish 🎉
+        </button>
 
       </div>
 
-    </div>
+    </section>
 
 
-    <div class="tap-text">
-      Tap the envelope to open it 🌸
-    </div>
 
-  </div>
+    <!-- =====================================================
+         03 — BIRTHDAY GREETING
+    ====================================================== -->
 
-</section>
+    <section
+      class="screen"
+      id="greetingScreen"
+    >
 
+      <div class="greeting-card">
 
-<!-- =====================================================
-     05 — ONE PAPER NOTE
-====================================================== -->
-
-<section
-  class="screen"
-  id="messageScreen"
->
-
-  <div class="message-container">
-
-    <div class="message-counter">
-      A little note for you 💌
-    </div>
-
-
-    <div class="paper-stack">
-
-      <article class="paper">
-
-        <div
-          class="paper-number"
-          id="paperNumber"
-        >
-          PAPER_01 💌
+        <div class="greeting-icon">
+          🎂
         </div>
 
 
-        <h2
-          class="paper-title"
-          id="paperTitle"
-        >
-          A little something...
-        </h2>
+        <h1 class="greeting-title">
+
+          Happy Birthday,
+
+          <br>
+
+          <span id="greetingName"></span>! 💗
+
+        </h1>
 
 
         <div
-          class="paper-message"
-          id="paperMessage"
+          class="greeting-message"
+          id="greetingMessage"
         ></div>
 
 
         <button
-          class="next-btn"
-          id="nextMessageBtn"
+          class="primary-btn"
+          id="greetingContinueBtn"
         >
-          One final thing... 💝
+          I have something else for you... 💌
         </button>
 
-      </article>
 
-    </div>
+        <div class="greeting-hint">
+          Okay... maybe this isn't the whole surprise 👀
+        </div>
 
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     06 — FINAL BIRTHDAY NOTE
-====================================================== -->
-
-<section
-  class="screen"
-  id="finalScreen"
->
-
-  <div class="final-card">
-
-    <div class="final-cake">
-      🎂
-    </div>
-
-
-    <h1 class="final-title">
-
-      Happy Birthday,
-      <br>
-
-      <span id="finalName"></span>! ✨
-
-    </h1>
-
-
-    <div
-      class="final-message"
-      id="finalMessage"
-    ></div>
-
-
-    <div class="status-box">
-
-      <div>
-        &gt; Checking birthday status...
       </div>
 
-      <div>
-        &gt; +1 year successfully installed 😂
-      </div>
-
-      <div>
-        &gt; Happiness level: increasing...
-      </div>
-
-      <div class="success-text">
-        &gt; Birthday wishes deployed successfully! 🚀
-      </div>
-
-      <div>
-        &gt; Status: one year more awesome. ✨
-      </div>
-
-    </div>
+    </section>
 
 
-    <button
-      class="primary-btn finish-btn"
-      id="watchPianoBtn"
+
+    <!-- =====================================================
+         04 — ENVELOPE
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="envelopeScreen"
     >
-      🎹 One last little surprise...
-    </button>
 
-  </div>
+      <div class="envelope-container">
 
-</section>
-
-
-<!-- =====================================================
-     07 — PIANO VIDEO
-====================================================== -->
-
-<section
-  class="screen"
-  id="videoScreen"
->
-
-  <div class="video-card">
-
-    <div class="video-label">
-      🎹 final.exe
-    </div>
+        <div class="tiny-label">
+          ✨ One more little thing
+        </div>
 
 
-    <h1 class="video-title">
-      One last thing...
-    </h1>
+        <h1 class="envelope-title">
+
+          Hey
+          <span id="recipientName"></span>
+          👀
+
+        </h1>
 
 
-    <p class="video-subtitle">
-      Press play. This one is just for you. 💗
-    </p>
+        <p class="envelope-subtitle">
+          I couldn't fit everything into one birthday wish...
+        </p>
 
 
-    <div class="video-wrapper">
+        <div
+          class="envelope-wrapper"
+          id="envelopeWrapper"
+          role="button"
+          tabindex="0"
+          aria-label="Open birthday letter"
+        >
 
-      <iframe
-        id="driveVideo"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
-
-    </div>
-
-
-    <div class="video-note">
-
-      Hope this little surprise
-      made you smile. 🌸
-
-      <br><br>
-
-      Happy Birthday once again,
-      <span id="videoName"></span>! 🫶
-
-    </div>
+          <div class="envelope">
 
 
-    <!-- EXPERIENCE AGAIN -->
+            <div class="letter-preview">
 
-    <button
-      class="primary-btn experience-btn"
-      id="experienceAgainBtn"
+              <div class="preview-heart">
+                💌
+              </div>
+
+            </div>
+
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-right"></div>
+
+
+            <div class="seal">
+              💗
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="tap-text">
+          Tap the envelope to open it 🌸
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 — ONE PAPER NOTE
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="messageScreen"
     >
-      💌 Experience Again
-    </button>
 
-  </div>
+      <div class="message-container">
 
-</section>
-```
+
+        <div class="message-counter">
+          A little note for you 💌
+        </div>
+
+
+        <div class="paper-stack">
+
+
+          <article class="paper">
+
+
+            <div
+              class="paper-number"
+              id="paperNumber"
+            >
+              PAPER_01 💌
+            </div>
+
+
+            <h2
+              class="paper-title"
+              id="paperTitle"
+            >
+              A little something...
+            </h2>
+
+
+            <div
+              class="paper-message"
+              id="paperMessage"
+            ></div>
+
+
+            <button
+              class="next-btn"
+              id="nextMessageBtn"
+            >
+              One final thing... 💝
+            </button>
+
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 — FINAL BIRTHDAY MESSAGE
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="finalScreen"
+    >
+
+      <div class="final-card">
+
+
+        <div class="final-cake">
+          🎂
+        </div>
+
+
+        <h1 class="final-title">
+
+          Happy Birthday,
+
+          <br>
+
+          <span id="finalName"></span>! ✨
+
+        </h1>
+
+
+        <div
+          class="final-message"
+          id="finalMessage"
+        ></div>
+
+
+        <div class="status-box">
+
+          <div>
+            &gt; Checking birthday status...
+          </div>
+
+          <div>
+            &gt; +1 year successfully installed 😂
+          </div>
+
+          <div>
+            &gt; Happiness level: increasing...
+          </div>
+
+          <div class="success-text">
+            &gt; Birthday wishes deployed successfully! 🚀
+          </div>
+
+          <div>
+            &gt; Status: one year more awesome. ✨
+          </div>
+
+        </div>
+
+
+        <button
+          class="primary-btn finish-btn"
+          id="watchPianoBtn"
+        >
+          🎹 One last little surprise...
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 — PIANO VIDEO
+    ====================================================== -->
+
+    <section
+      class="screen"
+      id="videoScreen"
+    >
+
+      <div class="video-card">
+
+
+        <div class="video-label">
+          🎹 final.exe
+        </div>
+
+
+        <h1 class="video-title">
+          One last thing...
+        </h1>
+
+
+        <p class="video-subtitle">
+          Press play. This one is just for you. 💗
+        </p>
+
+
+        <div class="video-wrapper">
+
+          <iframe
+            id="driveVideo"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            title="Birthday piano video"
+          ></iframe>
+
+        </div>
+
+
+        <div class="video-note">
+
+          Hope this little surprise made you smile. 🌸
+
+          <br><br>
+
+          Happy Birthday once again,
+
+          <span id="videoName"></span>! 🫶
+
+        </div>
+
+
+        <button
+          class="primary-btn experience-btn"
+          id="experienceAgainBtn"
+        >
+          💌 Experience Again
+        </button>
+
+
+      </div>
+
+    </section>
+
 
   </main>
 
+
+
   <script>
 
-
     /* =========================================================
-       💗 PERSONALIZATION
+       ✏️ PERSONALIZATION
        
-       EDIT ONLY THIS SECTION
+       CHANGE ONLY THIS SECTION
     ========================================================= */
 
     const CONFIG = {
 
+      /*
+        Example:
+        name: "Ananya"
+      */
 
-      /* -------------------------------------------------------
-         NAME
-      ------------------------------------------------------- */
-
-      name:
-        "{{NAME}}",
-
-
-      /* -------------------------------------------------------
-         FIRST BIRTHDAY GREETING
-      ------------------------------------------------------- */
-
-      greeting:
-        `{{GREETING_MESSAGE}}`,
+      name: "{{NAME}}",
 
 
-      /* -------------------------------------------------------
-         ONE SINGLE HANDWRITTEN NOTE
-      ------------------------------------------------------- */
+      /*
+        Main birthday greeting.
+      */
+
+      greeting: `{{GREETING_MESSAGE}}`,
+
+
+      /*
+        The ONE paper note.
+      */
 
       note: {
 
-        title:
-          "{{NOTE_TITLE}}",
+        title: "{{NOTE_TITLE}}",
 
-        message:
-          `{{NOTE_MESSAGE}}`
+        message: `{{NOTE_MESSAGE}}`
 
       },
 
 
-      /* -------------------------------------------------------
-         FINAL BIRTHDAY MESSAGE
-      ------------------------------------------------------- */
+      /*
+        Final birthday message.
+      */
 
-      finalMessage:
-        `{{FINAL_MESSAGE}}
+      finalMessage: `{{FINAL_MESSAGE}}
 
 Keep being awesome,
 keep smiling,
@@ -2752,50 +2007,40 @@ our codebases crossed paths. 🫶`
     };
 
 
+
     /* =========================================================
-       🎹 VIDEO CONFIGURATION
-       
-       USE EITHER GOOGLE DRIVE OR YOUTUBE
+       🎹 VIDEO SETTINGS
+
+       OPTION 1 — GOOGLE DRIVE
+
+       Put the FILE ID here.
+
+       Example Google Drive URL:
+
+       https://drive.google.com/file/d/ABC123XYZ/view
+
+       File ID = ABC123XYZ
+
+
+       OPTION 2 — YOUTUBE
+
+       Put YouTube video ID in youtubeId.
+
+       Example:
+
+       https://www.youtube.com/watch?v=ABC123
+
+       YouTube ID = ABC123
     ========================================================= */
 
     const VIDEO = {
 
+      driveId: "YOUR_GOOGLE_DRIVE_FILE_ID",
 
-      /*
-       * OPTION 1 — GOOGLE DRIVE
-       *
-       * Example Drive URL:
-       *
-       * https://drive.google.com/file/d/ABC123XYZ/view
-       *
-       * File ID:
-       *
-       * ABC123XYZ
-       */
-
-      driveId:
-        "YOUR_GOOGLE_DRIVE_FILE_ID",
-
-
-      /*
-       * OPTION 2 — YOUTUBE
-       *
-       * Example:
-       *
-       * https://www.youtube.com/watch?v=ABC123
-       *
-       * Video ID:
-       *
-       * ABC123
-       *
-       * If youtubeId is filled,
-       * YouTube will be used instead of Drive.
-       */
-
-      youtubeId:
-        ""
+      youtubeId: ""
 
     };
+
 
 
     /* =========================================================
@@ -2803,157 +2048,100 @@ our codebases crossed paths. 🫶`
     ========================================================= */
 
     const loadingScreen =
-      document.getElementById(
-        "loadingScreen"
-      );
+      document.getElementById("loadingScreen");
 
     const cakeScreen =
-      document.getElementById(
-        "cakeScreen"
-      );
+      document.getElementById("cakeScreen");
 
     const greetingScreen =
-      document.getElementById(
-        "greetingScreen"
-      );
+      document.getElementById("greetingScreen");
 
     const envelopeScreen =
-      document.getElementById(
-        "envelopeScreen"
-      );
+      document.getElementById("envelopeScreen");
 
     const messageScreen =
-      document.getElementById(
-        "messageScreen"
-      );
+      document.getElementById("messageScreen");
 
     const finalScreen =
-      document.getElementById(
-        "finalScreen"
-      );
+      document.getElementById("finalScreen");
 
     const videoScreen =
-      document.getElementById(
-        "videoScreen"
-      );
+      document.getElementById("videoScreen");
 
 
     const terminalContent =
-      document.getElementById(
-        "terminalContent"
-      );
+      document.getElementById("terminalContent");
 
     const progressBar =
-      document.getElementById(
-        "progressBar"
-      );
+      document.getElementById("progressBar");
 
     const openSurpriseBtn =
-      document.getElementById(
-        "openSurpriseBtn"
-      );
+      document.getElementById("openSurpriseBtn");
 
 
     const cakeArea =
-      document.getElementById(
-        "cakeArea"
-      );
+      document.getElementById("cakeArea");
 
     const cakeComplete =
-      document.getElementById(
-        "cakeComplete"
-      );
+      document.getElementById("cakeComplete");
 
     const wishBtn =
-      document.getElementById(
-        "wishBtn"
-      );
+      document.getElementById("wishBtn");
 
 
     const greetingName =
-      document.getElementById(
-        "greetingName"
-      );
+      document.getElementById("greetingName");
 
     const greetingMessage =
-      document.getElementById(
-        "greetingMessage"
-      );
+      document.getElementById("greetingMessage");
 
     const greetingContinueBtn =
-      document.getElementById(
-        "greetingContinueBtn"
-      );
+      document.getElementById("greetingContinueBtn");
 
 
     const recipientName =
-      document.getElementById(
-        "recipientName"
-      );
-
+      document.getElementById("recipientName");
 
     const envelopeWrapper =
-      document.getElementById(
-        "envelopeWrapper"
-      );
+      document.getElementById("envelopeWrapper");
 
 
     const paperNumber =
-      document.getElementById(
-        "paperNumber"
-      );
+      document.getElementById("paperNumber");
 
     const paperTitle =
-      document.getElementById(
-        "paperTitle"
-      );
+      document.getElementById("paperTitle");
 
     const paperMessage =
-      document.getElementById(
-        "paperMessage"
-      );
+      document.getElementById("paperMessage");
 
     const nextMessageBtn =
-      document.getElementById(
-        "nextMessageBtn"
-      );
+      document.getElementById("nextMessageBtn");
 
 
     const finalName =
-      document.getElementById(
-        "finalName"
-      );
+      document.getElementById("finalName");
 
     const finalMessage =
-      document.getElementById(
-        "finalMessage"
-      );
+      document.getElementById("finalMessage");
 
     const watchPianoBtn =
-      document.getElementById(
-        "watchPianoBtn"
-      );
+      document.getElementById("watchPianoBtn");
 
 
     const driveVideo =
-      document.getElementById(
-        "driveVideo"
-      );
+      document.getElementById("driveVideo");
 
     const videoName =
-      document.getElementById(
-        "videoName"
-      );
-
+      document.getElementById("videoName");
 
     const experienceAgainBtn =
-      document.getElementById(
-        "experienceAgainBtn"
-      );
+      document.getElementById("experienceAgainBtn");
+
 
 
     /* =========================================================
-       BASIC TEXT
+       PERSONALIZED TEXT
     ========================================================= */
 
     greetingName.textContent =
@@ -2973,10 +2161,6 @@ our codebases crossed paths. 🫶`
       `A Little Surprise for ${CONFIG.name} 💌`;
 
 
-    /* =========================================================
-       NAME REPLACEMENT
-    ========================================================= */
-
     function replaceName(text) {
 
       return text.replaceAll(
@@ -2987,8 +2171,9 @@ our codebases crossed paths. 🫶`
     }
 
 
+
     /* =========================================================
-       SCREEN SWITCH
+       SCREEN SWITCHING
     ========================================================= */
 
     function showScreen(screen) {
@@ -2997,28 +2182,28 @@ our codebases crossed paths. 🫶`
         .querySelectorAll(".screen")
         .forEach(item => {
 
-          item.classList.remove(
-            "active"
-          );
+          item.classList.remove("active");
 
         });
 
 
-      screen.classList.add(
-        "active"
-      );
+      screen.classList.add("active");
 
 
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
     }
 
 
+
     /* =========================================================
-       01 — FAKE COMPILATION
+       💻 FAKE COMPILATION
     ========================================================= */
 
     const loadingLines = [
@@ -3044,7 +2229,14 @@ our codebases crossed paths. 🫶`
     ];
 
 
+    let loadingRunId = 0;
+
+
     function runLoadingScreen() {
+
+      const runId =
+        ++loadingRunId;
+
 
       terminalContent.innerHTML =
         "";
@@ -3062,10 +2254,12 @@ our codebases crossed paths. 🫶`
 
           setTimeout(() => {
 
+            if (runId !== loadingRunId)
+              return;
+
+
             const lineElement =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
 
             lineElement.className =
@@ -3106,7 +2300,7 @@ our codebases crossed paths. 🫶`
 
             const progress =
               ((index + 1) /
-                loadingLines.length) *
+              loadingLines.length) *
               100;
 
 
@@ -3121,9 +2315,15 @@ our codebases crossed paths. 🫶`
 
               setTimeout(() => {
 
-                openSurpriseBtn.classList.add(
-                  "show"
-                );
+                if (
+                  runId === loadingRunId
+                ) {
+
+                  openSurpriseBtn.classList.add(
+                    "show"
+                  );
+
+                }
 
               }, 600);
 
@@ -3132,22 +2332,22 @@ our codebases crossed paths. 🫶`
           }, index * 600);
 
         }
+
       );
 
     }
 
 
+
     /* =========================================================
-       02 — OPEN SURPRISE → CAKE
+       💻 -> 🎂
     ========================================================= */
 
     openSurpriseBtn.addEventListener(
       "click",
       () => {
 
-        showScreen(
-          cakeScreen
-        );
+        showScreen(cakeScreen);
 
         startCakeCreation();
 
@@ -3155,100 +2355,101 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       CAKE CREATION
+       🎂 CAKE CREATION
     ========================================================= */
 
+    let cakeRunId = 0;
+
+
     function startCakeCreation() {
+
+      const runId =
+        ++cakeRunId;
+
 
       cakeArea.className =
         "cake-area";
 
+
       cakeComplete.classList.remove(
         "show"
       );
+
 
       wishBtn.classList.remove(
         "show"
       );
 
 
-      setTimeout(() => {
+      const steps = [
 
-        cakeArea.classList.add(
-          "build-1"
-        );
+        [500, "build-1"],
 
-      }, 500);
+        [1300, "build-2"],
 
+        [2100, "build-3"],
 
-      setTimeout(() => {
+        [2900, "build-4"],
 
-        cakeArea.classList.add(
-          "build-2"
-        );
+        [3700, "build-5"],
 
-      }, 1300);
+        [4400, "build-6"]
 
-
-      setTimeout(() => {
-
-        cakeArea.classList.add(
-          "build-3"
-        );
-
-      }, 2100);
+      ];
 
 
-      setTimeout(() => {
+      steps.forEach(
+        ([delay, className]) => {
 
-        cakeArea.classList.add(
-          "build-4"
-        );
+          setTimeout(() => {
 
-      }, 2900);
+            if (runId === cakeRunId) {
 
+              cakeArea.classList.add(
+                className
+              );
 
-      setTimeout(() => {
+            }
 
-        cakeArea.classList.add(
-          "build-5"
-        );
+          }, delay);
 
-      }, 3700);
+        }
+      );
 
 
       setTimeout(() => {
 
-        cakeArea.classList.add(
-          "build-6"
-        );
+        if (runId === cakeRunId) {
 
-      }, 4400);
+          cakeComplete.classList.add(
+            "show"
+          );
 
-
-      setTimeout(() => {
-
-        cakeComplete.classList.add(
-          "show"
-        );
+        }
 
       }, 5000);
 
 
       setTimeout(() => {
 
-        wishBtn.classList.add(
-          "show"
-        );
+        if (runId === cakeRunId) {
+
+          wishBtn.classList.add(
+            "show"
+          );
+
+        }
 
       }, 5500);
 
     }
 
 
+
     /* =========================================================
-       03 — MAKE A WISH
+       🎉 MAKE A WISH
     ========================================================= */
 
     wishBtn.addEventListener(
@@ -3272,8 +2473,9 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       04 — GREETING → ENVELOPE
+       💗 GREETING -> 💌 ENVELOPE
     ========================================================= */
 
     greetingContinueBtn.addEventListener(
@@ -3288,21 +2490,23 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       05 — OPEN ENVELOPE
+       💌 ENVELOPE
     ========================================================= */
+
+    let envelopeOpened =
+      false;
+
 
     function openEnvelope() {
 
-      if (
-        envelopeWrapper.classList.contains(
-          "open"
-        )
-      ) {
-
+      if (envelopeOpened)
         return;
 
-      }
+
+      envelopeOpened =
+        true;
 
 
       envelopeWrapper.classList.add(
@@ -3349,8 +2553,9 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       06 — ONE PAPER NOTE
+       📜 ONE PAPER NOTE
     ========================================================= */
 
     function renderSingleNote() {
@@ -3394,8 +2599,9 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       07 — FINAL → PIANO
+       💝 FINAL -> 🎹 PIANO
     ========================================================= */
 
     watchPianoBtn.addEventListener(
@@ -3412,16 +2618,16 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       VIDEO SETUP
+       🎹 VIDEO
     ========================================================= */
 
     function setupVideo() {
 
-
       /*
-       * YOUTUBE
-       */
+        YouTube gets priority if supplied.
+      */
 
       if (
         VIDEO.youtubeId &&
@@ -3439,13 +2645,13 @@ our codebases crossed paths. 🫶`
 
 
       /*
-       * GOOGLE DRIVE
-       */
+        Otherwise use Google Drive.
+      */
 
       if (
         VIDEO.driveId &&
         VIDEO.driveId !==
-        "YOUR_GOOGLE_DRIVE_FILE_ID"
+          "YOUR_GOOGLE_DRIVE_FILE_ID"
       ) {
 
         driveVideo.src =
@@ -3459,8 +2665,8 @@ our codebases crossed paths. 🫶`
 
 
       /*
-       * NO VIDEO
-       */
+        No video configured yet.
+      */
 
       driveVideo.src =
         "about:blank";
@@ -3468,10 +2674,23 @@ our codebases crossed paths. 🫶`
     }
 
 
+
     /* =========================================================
-       08 — EXPERIENCE AGAIN
+       💌 EXPERIENCE AGAIN
        
-       Completely resets the experience.
+       IMPORTANT:
+       This resets the ENTIRE experience.
+       
+       It does NOT simply go to the first page.
+       
+       It resets:
+       - video
+       - compilation
+       - cake
+       - envelope
+       - note
+       - final message
+       - animations
     ========================================================= */
 
     experienceAgainBtn.addEventListener(
@@ -3479,88 +2698,84 @@ our codebases crossed paths. 🫶`
       () => {
 
 
-        /*
-         * Stop the video completely.
-         */
+        /* Stop video */
 
         driveVideo.src =
           "about:blank";
 
 
-        /*
-         * Reset envelope.
-         */
+        /* Invalidate animations */
+
+        loadingRunId++;
+
+        cakeRunId++;
+
+
+        /* Reset envelope */
+
+        envelopeOpened =
+          false;
+
 
         envelopeWrapper.classList.remove(
           "open"
         );
 
 
-        /*
-         * Reset cake.
-         */
+        /* Reset cake */
 
         cakeArea.className =
           "cake-area";
 
+
         cakeComplete.classList.remove(
           "show"
         );
+
 
         wishBtn.classList.remove(
           "show"
         );
 
 
-        /*
-         * Reset greeting.
-         */
+        /* Reset messages */
 
         greetingMessage.textContent =
           "";
 
 
-        /*
-         * Reset note.
-         */
-
         paperNumber.textContent =
           "PAPER_01 💌";
 
+
         paperTitle.textContent =
           "A little something...";
+
 
         paperMessage.textContent =
           "";
 
 
-        /*
-         * Reset final message.
-         */
-
         finalMessage.textContent =
           "";
 
 
-        /*
-         * Reset compilation screen.
-         */
+        /* Reset compilation */
 
         terminalContent.innerHTML =
           "";
 
+
         progressBar.style.width =
           "0%";
+
 
         openSurpriseBtn.classList.remove(
           "show"
         );
 
 
-        /*
-         * Go all the way back
-         * to the beginning.
-         */
+        /* Go ALL THE WAY BACK */
 
         showScreen(
           loadingScreen
@@ -3568,8 +2783,8 @@ our codebases crossed paths. 🫶`
 
 
         /*
-         * Restart compilation.
-         */
+          Restart compilation.
+        */
 
         setTimeout(() => {
 
@@ -3581,8 +2796,9 @@ our codebases crossed paths. 🫶`
     );
 
 
+
     /* =========================================================
-       CONFETTI
+       🎉 CONFETTI
     ========================================================= */
 
     function createConfetti() {
@@ -3607,9 +2823,7 @@ our codebases crossed paths. 🫶`
       ) {
 
         const item =
-          document.createElement(
-            "div"
-          );
+          document.createElement("div");
 
 
         item.className =
@@ -3647,19 +2861,19 @@ our codebases crossed paths. 🫶`
         );
 
 
-        setTimeout(() => {
-
-          item.remove();
-
-        }, 6500);
+        setTimeout(
+          () => item.remove(),
+          6500
+        );
 
       }
 
     }
 
 
+
     /* =========================================================
-       SPARKLES
+       ✨ SPARKLES
     ========================================================= */
 
     function createSparkles() {
@@ -3681,9 +2895,7 @@ our codebases crossed paths. 🫶`
       ) {
 
         const item =
-          document.createElement(
-            "div"
-          );
+          document.createElement("div");
 
 
         item.className =
@@ -3715,19 +2927,19 @@ our codebases crossed paths. 🫶`
         );
 
 
-        setTimeout(() => {
-
-          item.remove();
-
-        }, 4500);
+        setTimeout(
+          () => item.remove(),
+          4500
+        );
 
       }
 
     }
 
 
+
     /* =========================================================
-       START EXPERIENCE
+       🚀 START
     ========================================================= */
 
     runLoadingScreen();
@@ -3735,5 +2947,4 @@ our codebases crossed paths. 🫶`
   </script>
 
 </body>
-
 </html>
