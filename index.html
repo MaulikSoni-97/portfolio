@@ -1,18 +1,28 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
 
   <title>A Little Birthday Surprise 💌</title>
 
-  <!-- Cute handwritten + clean font -->
+  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
@@ -33,10 +43,12 @@
     html,
     body {
       margin: 0;
+      padding: 0;
       min-height: 100%;
     }
 
     body {
+
       overflow-x: hidden;
 
       font-family: "Nunito", sans-serif;
@@ -66,12 +78,15 @@
       font: inherit;
     }
 
+
     /* =========================================================
-       FLOATING BACKGROUND
+       BACKGROUND DECORATION
     ========================================================= */
 
     .background-decoration {
+
       position: fixed;
+
       inset: 0;
 
       overflow: hidden;
@@ -82,6 +97,7 @@
     }
 
     .floating-item {
+
       position: absolute;
 
       opacity: 0.65;
@@ -150,26 +166,32 @@
       }
     }
 
+
     /* =========================================================
        APP / SCREENS
     ========================================================= */
 
     .app {
+
       position: relative;
+
       z-index: 1;
 
       min-height: 100vh;
     }
 
     .screen {
+
       display: none;
 
       min-height: 100vh;
+
       width: 100%;
 
       padding: 24px;
 
       align-items: center;
+
       justify-content: center;
     }
 
@@ -177,11 +199,13 @@
       display: flex;
     }
 
+
     /* =========================================================
        COMMON BUTTON
     ========================================================= */
 
     .primary-btn {
+
       border: none;
 
       cursor: pointer;
@@ -189,11 +213,13 @@
       padding:
         15px 25px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       color: white;
 
       font-weight: 800;
+
       font-size: 15px;
 
       background:
@@ -213,20 +239,28 @@
     }
 
     .primary-btn:hover {
+
       transform:
         translateY(-2px);
+
+      box-shadow:
+        0 15px 32px
+        rgba(200, 110, 150, 0.3);
     }
 
     .primary-btn:active {
+
       transform:
         scale(0.96);
     }
 
+
     /* =========================================================
-       01 — COMPILATION
+       01 — COMPILATION SCREEN
     ========================================================= */
 
     .terminal-card {
+
       width:
         min(620px, 100%);
 
@@ -252,6 +286,7 @@
     }
 
     .terminal-top {
+
       display: flex;
 
       gap: 8px;
@@ -261,7 +296,9 @@
     }
 
     .dot {
+
       width: 11px;
+
       height: 11px;
 
       border-radius:
@@ -282,6 +319,7 @@
     }
 
     .terminal-content {
+
       min-height:
         240px;
 
@@ -299,6 +337,7 @@
     }
 
     .terminal-line {
+
       opacity: 0;
 
       transform:
@@ -316,6 +355,7 @@
     }
 
     .terminal-line.highlight {
+
       color:
         #d06f91;
 
@@ -326,7 +366,9 @@
     @keyframes showLine {
 
       to {
-        opacity: 1;
+
+        opacity:
+          1;
 
         transform:
           translateY(0);
@@ -334,7 +376,9 @@
     }
 
     .progress-container {
+
       width: 100%;
+
       height: 10px;
 
       margin:
@@ -351,7 +395,9 @@
     }
 
     .progress-bar {
+
       width: 0%;
+
       height: 100%;
 
       border-radius:
@@ -370,7 +416,9 @@
     }
 
     .open-surprise-btn {
-      display: none;
+
+      display:
+        none;
 
       width: 100%;
 
@@ -411,7 +459,9 @@
     }
 
     .open-surprise-btn.show {
-      display: block;
+
+      display:
+        block;
 
       animation:
         popIn
@@ -420,11 +470,13 @@
         forwards;
     }
 
+
     /* =========================================================
-       02 — CAKE
+       02 — CAKE SCREEN
     ========================================================= */
 
     .cake-screen {
+
       text-align:
         center;
 
@@ -433,6 +485,7 @@
     }
 
     .cake-label {
+
       display:
         inline-block;
 
@@ -456,7 +509,9 @@
     }
 
     .cake-title {
-      margin: 0;
+
+      margin:
+        0;
 
       font-family:
         "Caveat",
@@ -473,6 +528,7 @@
     }
 
     .cake-subtitle {
+
       margin:
         14px 0 35px;
 
@@ -484,6 +540,7 @@
     }
 
     .cake-area {
+
       position:
         relative;
 
@@ -507,6 +564,7 @@
     }
 
     .cake-shadow {
+
       position:
         absolute;
 
@@ -532,6 +590,7 @@
     .cake-base,
     .cake-middle,
     .cake-top {
+
       position:
         absolute;
 
@@ -551,6 +610,7 @@
     }
 
     .cake-base {
+
       bottom:
         40px;
 
@@ -576,6 +636,7 @@
     }
 
     .cake-middle {
+
       bottom:
         125px;
 
@@ -598,6 +659,7 @@
     }
 
     .cake-top {
+
       bottom:
         190px;
 
@@ -623,6 +685,7 @@
     }
 
     .icing {
+
       position:
         absolute;
 
@@ -652,6 +715,7 @@
     }
 
     .candles {
+
       position:
         absolute;
 
@@ -675,6 +739,7 @@
     }
 
     .candle {
+
       position:
         relative;
 
@@ -698,6 +763,7 @@
     }
 
     .flame {
+
       position:
         absolute;
 
@@ -739,6 +805,7 @@
     @keyframes flame {
 
       from {
+
         transform:
           translateX(-50%)
           scale(1)
@@ -746,6 +813,7 @@
       }
 
       to {
+
         transform:
           translateX(-50%)
           scale(1.1)
@@ -755,6 +823,7 @@
 
     .cake-area.build-1
     .cake-base {
+
       opacity:
         1;
 
@@ -765,6 +834,7 @@
 
     .cake-area.build-2
     .cake-middle {
+
       opacity:
         1;
 
@@ -775,6 +845,7 @@
 
     .cake-area.build-3
     .cake-top {
+
       opacity:
         1;
 
@@ -785,6 +856,7 @@
 
     .cake-area.build-4
     .icing {
+
       opacity:
         1;
 
@@ -794,6 +866,7 @@
 
     .cake-area.build-5
     .candles {
+
       opacity:
         1;
 
@@ -803,11 +876,13 @@
 
     .cake-area.build-6
     .flame {
+
       opacity:
         1;
     }
 
     .cake-sprinkle {
+
       position:
         absolute;
 
@@ -825,6 +900,7 @@
     }
 
     .sprinkle-1 {
+
       left:
         34%;
 
@@ -836,6 +912,7 @@
     }
 
     .sprinkle-2 {
+
       left:
         55%;
 
@@ -847,6 +924,7 @@
     }
 
     .sprinkle-3 {
+
       left:
         45%;
 
@@ -858,6 +936,7 @@
     }
 
     .cake-complete {
+
       margin-top:
         12px;
 
@@ -882,6 +961,7 @@
     }
 
     .cake-complete.show {
+
       opacity:
         1;
 
@@ -890,6 +970,7 @@
     }
 
     .wish-btn {
+
       display:
         none;
 
@@ -898,6 +979,7 @@
     }
 
     .wish-btn.show {
+
       display:
         inline-block;
 
@@ -910,6 +992,7 @@
     @keyframes wishPop {
 
       0% {
+
         opacity:
           0;
 
@@ -919,11 +1002,13 @@
       }
 
       70% {
+
         transform:
           scale(1.08);
       }
 
       100% {
+
         opacity:
           1;
 
@@ -932,11 +1017,13 @@
       }
     }
 
+
     /* =========================================================
        03 — GREETING
     ========================================================= */
 
     .greeting-card {
+
       width:
         min(600px, 100%);
 
@@ -966,6 +1053,7 @@
     }
 
     .greeting-icon {
+
       font-size:
         64px;
 
@@ -977,18 +1065,21 @@
 
     @keyframes heartbeat {
 
-      0%, 100% {
+      0%,
+      100% {
         transform:
           scale(1);
       }
 
       50% {
+
         transform:
           scale(1.12);
       }
     }
 
     .greeting-title {
+
       margin:
         18px 0 15px;
 
@@ -1007,6 +1098,7 @@
     }
 
     .greeting-message {
+
       max-width:
         500px;
 
@@ -1028,6 +1120,7 @@
     }
 
     .greeting-hint {
+
       margin-top:
         25px;
 
@@ -1038,11 +1131,13 @@
         0.65;
     }
 
+
     /* =========================================================
        04 — ENVELOPE
     ========================================================= */
 
     .envelope-container {
+
       width:
         100%;
 
@@ -1054,6 +1149,7 @@
     }
 
     .tiny-label {
+
       display:
         inline-block;
 
@@ -1077,6 +1173,7 @@
     }
 
     .envelope-title {
+
       margin:
         8px 0;
 
@@ -1095,6 +1192,7 @@
     }
 
     .envelope-subtitle {
+
       margin:
         0 0 35px;
 
@@ -1106,6 +1204,7 @@
     }
 
     .envelope-wrapper {
+
       position:
         relative;
 
@@ -1129,11 +1228,13 @@
     }
 
     .envelope-wrapper:hover {
+
       transform:
         translateY(-5px);
     }
 
     .envelope {
+
       position:
         absolute;
 
@@ -1155,6 +1256,7 @@
     }
 
     .letter-preview {
+
       position:
         absolute;
 
@@ -1188,6 +1290,7 @@
     }
 
     .preview-heart {
+
       font-size:
         30px;
 
@@ -1198,6 +1301,7 @@
     }
 
     .envelope-front {
+
       position:
         absolute;
 
@@ -1215,6 +1319,7 @@
     }
 
     .envelope-front::before {
+
       content:
         "";
 
@@ -1244,6 +1349,7 @@
     }
 
     .envelope-front::after {
+
       content:
         "";
 
@@ -1273,6 +1379,7 @@
     }
 
     .envelope-right {
+
       position:
         absolute;
 
@@ -1302,6 +1409,7 @@
     }
 
     .envelope-flap {
+
       position:
         absolute;
 
@@ -1338,6 +1446,7 @@
     }
 
     .seal {
+
       position:
         absolute;
 
@@ -1381,6 +1490,7 @@
 
     .envelope-wrapper.open
     .envelope-flap {
+
       transform:
         rotateX(180deg);
 
@@ -1390,17 +1500,20 @@
 
     .envelope-wrapper.open
     .letter-preview {
+
       transform:
         translateY(-115px);
     }
 
     .envelope-wrapper.open
     .seal {
+
       opacity:
         0;
     }
 
     .tap-text {
+
       font-size:
         14px;
 
@@ -1419,16 +1532,19 @@
     @keyframes bounceText {
 
       50% {
+
         transform:
           translateY(-5px);
       }
     }
+
 
     /* =========================================================
        05 — ONE PAPER NOTE
     ========================================================= */
 
     .message-container {
+
       width:
         min(560px,100%);
 
@@ -1437,6 +1553,7 @@
     }
 
     .message-counter {
+
       margin-bottom:
         14px;
 
@@ -1457,6 +1574,7 @@
     }
 
     .paper-stack {
+
       position:
         relative;
 
@@ -1474,6 +1592,7 @@
     }
 
     .paper {
+
       position:
         relative;
 
@@ -1521,6 +1640,7 @@
 
     .paper::before,
     .paper::after {
+
       content:
         "";
 
@@ -1549,6 +1669,7 @@
     }
 
     .paper::after {
+
       right:
         25px;
 
@@ -1559,6 +1680,7 @@
     @keyframes paperAppear {
 
       to {
+
         opacity:
           1;
 
@@ -1569,6 +1691,7 @@
     }
 
     .paper-number {
+
       margin-bottom:
         12px;
 
@@ -1583,6 +1706,7 @@
     }
 
     .paper-title {
+
       margin:
         0 0 24px;
 
@@ -1601,6 +1725,7 @@
     }
 
     .paper-message {
+
       max-width:
         450px;
 
@@ -1625,6 +1750,7 @@
     }
 
     .next-btn {
+
       margin-top:
         30px;
 
@@ -1654,11 +1780,13 @@
         rgba(170,100,125,0.12);
     }
 
+
     /* =========================================================
        06 — FINAL BIRTHDAY NOTE
     ========================================================= */
 
     .final-card {
+
       width:
         min(620px,100%);
 
@@ -1688,6 +1816,7 @@
     }
 
     .final-cake {
+
       font-size:
         64px;
 
@@ -1699,6 +1828,7 @@
     @keyframes bounceCake {
 
       50% {
+
         transform:
           translateY(-8px)
           rotate(2deg);
@@ -1706,6 +1836,7 @@
     }
 
     .final-title {
+
       margin:
         16px 0 12px;
 
@@ -1724,6 +1855,7 @@
     }
 
     .final-message {
+
       margin:
         25px auto;
 
@@ -1745,6 +1877,7 @@
     }
 
     .status-box {
+
       margin-top:
         30px;
 
@@ -1774,6 +1907,7 @@
     }
 
     .success-text {
+
       color:
         #6aa37e;
 
@@ -1781,11 +1915,19 @@
         bold;
     }
 
+    .finish-btn {
+
+      margin-top:
+        24px;
+    }
+
+
     /* =========================================================
        07 — PIANO VIDEO
     ========================================================= */
 
     .video-card {
+
       width:
         min(760px,100%);
 
@@ -1815,6 +1957,7 @@
     }
 
     .video-label {
+
       display:
         inline-block;
 
@@ -1841,6 +1984,7 @@
     }
 
     .video-title {
+
       margin:
         5px 0 8px;
 
@@ -1859,6 +2003,7 @@
     }
 
     .video-subtitle {
+
       margin:
         0 0 25px;
 
@@ -1870,6 +2015,7 @@
     }
 
     .video-wrapper {
+
       position:
         relative;
 
@@ -1893,8 +2039,8 @@
         rgba(90,55,75,0.2);
     }
 
-    .video-wrapper iframe,
-    .video-wrapper video {
+    .video-wrapper iframe {
+
       width:
         100%;
 
@@ -1909,6 +2055,7 @@
     }
 
     .video-note {
+
       margin:
         20px auto 0;
 
@@ -1926,18 +2073,21 @@
         1.25;
     }
 
-    .finish-btn {
+    .experience-btn {
+
       margin-top:
-        22px;
+        25px;
     }
 
+
     /* =========================================================
-       POP IN
+       ANIMATIONS
     ========================================================= */
 
     @keyframes popIn {
 
       from {
+
         opacity:
           0;
 
@@ -1947,6 +2097,7 @@
       }
 
       to {
+
         opacity:
           1;
 
@@ -1956,11 +2107,13 @@
       }
     }
 
+
     /* =========================================================
        CONFETTI
     ========================================================= */
 
     .confetti {
+
       position:
         fixed;
 
@@ -1982,11 +2135,13 @@
     @keyframes confettiFall {
 
       to {
+
         transform:
           translateY(110vh)
           rotate(720deg);
       }
     }
+
 
     /* =========================================================
        MOBILE
@@ -2010,6 +2165,7 @@
       }
 
       .cake-area {
+
         transform:
           scale(0.88);
 
@@ -2018,6 +2174,7 @@
       }
 
       .paper {
+
         min-height:
           430px;
 
@@ -2026,6 +2183,7 @@
       }
 
       .envelope-wrapper {
+
         height:
           200px;
 
@@ -2037,11 +2195,13 @@
       }
 
       .envelope-wrapper:hover {
+
         transform:
           scale(0.92);
       }
 
       .video-card {
+
         padding:
           25px 14px;
       }
@@ -2049,498 +2209,498 @@
     }
 
   </style>
+
 </head>
 
 <body>
 
   <!-- =======================================================
-       BACKGROUND
+       FLOATING BACKGROUND
   ======================================================== -->
 
   <div class="background-decoration">
 
-    <div class="floating-item">💗</div>
-    <div class="floating-item">✨</div>
-    <div class="floating-item">🌸</div>
-    <div class="floating-item">💫</div>
-    <div class="floating-item">♡</div>
+```
+<div class="floating-item">💗</div>
+
+<div class="floating-item">✨</div>
+
+<div class="floating-item">🌸</div>
+
+<div class="floating-item">💫</div>
+
+<div class="floating-item">♡</div>
+```
 
   </div>
 
-
   <main class="app">
 
+```
+<!-- =====================================================
+     01 — COMPILATION
+====================================================== -->
 
-    <!-- =====================================================
-         01 — COMPILATION
-    ====================================================== -->
+<section
+  class="screen active"
+  id="loadingScreen"
+>
 
-    <section
-      class="screen active"
-      id="loadingScreen"
+  <div class="terminal-card">
+
+    <div class="terminal-top">
+
+      <span class="dot"></span>
+
+      <span class="dot"></span>
+
+      <span class="dot"></span>
+
+    </div>
+
+
+    <div
+      class="terminal-content"
+      id="terminalContent"
+    ></div>
+
+
+    <div class="progress-container">
+
+      <div
+        class="progress-bar"
+        id="progressBar"
+      ></div>
+
+    </div>
+
+
+    <button
+      class="open-surprise-btn"
+      id="openSurpriseBtn"
+    >
+      Start the surprise 🎁
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     02 — CAKE
+====================================================== -->
+
+<section
+  class="screen"
+  id="cakeScreen"
+>
+
+  <div class="cake-screen">
+
+    <div class="cake-label">
+      🎂 birthday.exe
+    </div>
+
+
+    <h1 class="cake-title">
+      Creating something sweet...
+    </h1>
+
+
+    <p class="cake-subtitle">
+      Please wait while your birthday cake is being assembled ✨
+    </p>
+
+
+    <div
+      class="cake-area"
+      id="cakeArea"
     >
 
-      <div class="terminal-card">
+      <div class="cake-shadow"></div>
 
-        <div class="terminal-top">
+      <div class="cake-base"></div>
 
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+      <div class="cake-middle"></div>
 
+      <div class="cake-top"></div>
+
+      <div class="icing"></div>
+
+
+      <div class="cake-sprinkle sprinkle-1"></div>
+
+      <div class="cake-sprinkle sprinkle-2"></div>
+
+      <div class="cake-sprinkle sprinkle-3"></div>
+
+
+      <div class="candles">
+
+        <div class="candle">
+          <div class="flame"></div>
         </div>
 
-        <div
-          class="terminal-content"
-          id="terminalContent"
-        ></div>
-
-        <div class="progress-container">
-
-          <div
-            class="progress-bar"
-            id="progressBar"
-          ></div>
-
+        <div class="candle">
+          <div class="flame"></div>
         </div>
 
-        <button
-          class="open-surprise-btn"
-          id="openSurpriseBtn"
-        >
-          Start the surprise 🎁
-        </button>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
 
       </div>
 
-    </section>
+    </div>
 
 
-    <!-- =====================================================
-         02 — CAKE
-    ====================================================== -->
+    <div
+      class="cake-complete"
+      id="cakeComplete"
+    >
+      ✨ Cake successfully created ✨
+    </div>
 
-    <section
-      class="screen"
-      id="cakeScreen"
+
+    <button
+      class="primary-btn wish-btn"
+      id="wishBtn"
+    >
+      🎉 Make a Wish 🎉
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     03 — BIRTHDAY GREETING
+====================================================== -->
+
+<section
+  class="screen"
+  id="greetingScreen"
+>
+
+  <div class="greeting-card">
+
+    <div class="greeting-icon">
+      🎂
+    </div>
+
+
+    <h1 class="greeting-title">
+
+      Happy Birthday,
+      <br>
+
+      <span id="greetingName"></span>! 💗
+
+    </h1>
+
+
+    <div
+      class="greeting-message"
+      id="greetingMessage"
+    ></div>
+
+
+    <button
+      class="primary-btn"
+      id="greetingContinueBtn"
+    >
+      I have something else for you... 💌
+    </button>
+
+
+    <div class="greeting-hint">
+      Okay... maybe this isn't the whole surprise 👀
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     04 — ENVELOPE
+====================================================== -->
+
+<section
+  class="screen"
+  id="envelopeScreen"
+>
+
+  <div class="envelope-container">
+
+    <div class="tiny-label">
+      ✨ One more little thing
+    </div>
+
+
+    <h1 class="envelope-title">
+
+      Hey
+      <span id="recipientName"></span> 👀
+
+    </h1>
+
+
+    <p class="envelope-subtitle">
+      I couldn't fit everything into one birthday wish...
+    </p>
+
+
+    <div
+      class="envelope-wrapper"
+      id="envelopeWrapper"
+      role="button"
+      tabindex="0"
+      aria-label="Open birthday letter"
     >
 
-      <div class="cake-screen">
+      <div class="envelope">
 
-        <div class="cake-label">
-          🎂 birthday.exe
-        </div>
+        <div class="letter-preview">
 
-        <h1 class="cake-title">
-          Creating something sweet...
-        </h1>
-
-        <p class="cake-subtitle">
-          Please wait while your birthday cake is being assembled ✨
-        </p>
-
-
-        <div
-          class="cake-area"
-          id="cakeArea"
-        >
-
-          <div class="cake-shadow"></div>
-
-          <div class="cake-base"></div>
-
-          <div class="cake-middle"></div>
-
-          <div class="cake-top"></div>
-
-          <div class="icing"></div>
-
-          <div class="cake-sprinkle sprinkle-1"></div>
-          <div class="cake-sprinkle sprinkle-2"></div>
-          <div class="cake-sprinkle sprinkle-3"></div>
-
-          <div class="candles">
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
+          <div class="preview-heart">
+            💌
           </div>
 
         </div>
 
 
-        <div
-          class="cake-complete"
-          id="cakeComplete"
-        >
-          ✨ Cake successfully created ✨
-        </div>
+        <div class="envelope-flap"></div>
+
+        <div class="envelope-front"></div>
+
+        <div class="envelope-right"></div>
 
 
-        <button
-          class="primary-btn wish-btn"
-          id="wishBtn"
-        >
-          🎉 Make a Wish 🎉
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         03 — BIRTHDAY GREETING
-    ====================================================== -->
-
-    <section
-      class="screen"
-      id="greetingScreen"
-    >
-
-      <div class="greeting-card">
-
-        <div class="greeting-icon">
-          🎂
-        </div>
-
-        <h1 class="greeting-title">
-
-          Happy Birthday,
-          <br>
-
-          <span id="greetingName"></span>! 💗
-
-        </h1>
-
-        <div
-          class="greeting-message"
-          id="greetingMessage"
-        ></div>
-
-        <button
-          class="primary-btn"
-          id="greetingContinueBtn"
-        >
-          I have something else for you... 💌
-        </button>
-
-        <div class="greeting-hint">
-          Okay... maybe this isn't the whole surprise 👀
+        <div class="seal">
+          💗
         </div>
 
       </div>
 
-    </section>
+    </div>
 
 
-    <!-- =====================================================
-         04 — ENVELOPE
-    ====================================================== -->
+    <div class="tap-text">
+      Tap the envelope to open it 🌸
+    </div>
 
-    <section
-      class="screen"
-      id="envelopeScreen"
-    >
+  </div>
 
-      <div class="envelope-container">
+</section>
 
-        <div class="tiny-label">
-          ✨ One more little thing
-        </div>
 
-        <h1 class="envelope-title">
+<!-- =====================================================
+     05 — ONE PAPER NOTE
+====================================================== -->
 
-          Hey
-          <span id="recipientName"></span> 👀
+<section
+  class="screen"
+  id="messageScreen"
+>
 
-        </h1>
+  <div class="message-container">
 
-        <p class="envelope-subtitle">
+    <div class="message-counter">
+      A little note for you 💌
+    </div>
 
-          I couldn't fit everything into one birthday wish...
 
-        </p>
+    <div class="paper-stack">
 
+      <article class="paper">
 
         <div
-          class="envelope-wrapper"
-          id="envelopeWrapper"
-          role="button"
-          tabindex="0"
-          aria-label="Open birthday letter"
+          class="paper-number"
+          id="paperNumber"
         >
-
-          <div class="envelope">
-
-            <div class="letter-preview">
-
-              <div class="preview-heart">
-                💌
-              </div>
-
-            </div>
-
-            <div class="envelope-flap"></div>
-
-            <div class="envelope-front"></div>
-
-            <div class="envelope-right"></div>
-
-            <div class="seal">
-              💗
-            </div>
-
-          </div>
-
+          PAPER_01 💌
         </div>
 
 
-        <div class="tap-text">
-          Tap the envelope to open it 🌸
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         05 — ONE HANDWRITTEN NOTE
-    ====================================================== -->
-
-    <section
-      class="screen"
-      id="messageScreen"
-    >
-
-      <div class="message-container">
-
-        <div class="message-counter">
-          A little note for you 💌
-        </div>
-
-
-        <div class="paper-stack">
-
-          <article class="paper">
-
-            <div
-              class="paper-number"
-              id="paperNumber"
-            >
-              PAPER_01 💌
-            </div>
-
-            <h2
-              class="paper-title"
-              id="paperTitle"
-            >
-              A little something...
-            </h2>
-
-            <div
-              class="paper-message"
-              id="paperMessage"
-            ></div>
-
-            <button
-              class="next-btn"
-              id="nextMessageBtn"
-            >
-              One final thing... 💝
-            </button>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         06 — FINAL BIRTHDAY NOTE
-    ====================================================== -->
-
-    <section
-      class="screen"
-      id="finalScreen"
-    >
-
-      <div class="final-card">
-
-        <div class="final-cake">
-          🎂
-        </div>
-
-        <h1 class="final-title">
-
-          Happy Birthday,
-          <br>
-
-          <span id="finalName"></span>! ✨
-
-        </h1>
+        <h2
+          class="paper-title"
+          id="paperTitle"
+        >
+          A little something...
+        </h2>
 
 
         <div
-          class="final-message"
-          id="finalMessage"
+          class="paper-message"
+          id="paperMessage"
         ></div>
 
 
-        <div class="status-box">
-
-          <div>
-            &gt; Checking birthday status...
-          </div>
-
-          <div>
-            &gt; +1 year successfully installed 😂
-          </div>
-
-          <div>
-            &gt; Happiness level: increasing...
-          </div>
-
-          <div class="success-text">
-            &gt; Birthday wishes deployed successfully! 🚀
-          </div>
-
-          <div>
-            &gt; Status: one year more awesome. ✨
-          </div>
-
-        </div>
-
-
         <button
-          class="primary-btn finish-btn"
-          id="watchPianoBtn"
+          class="next-btn"
+          id="nextMessageBtn"
         >
-          🎹 One last little surprise...
+          One final thing... 💝
         </button>
 
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     06 — FINAL BIRTHDAY NOTE
+====================================================== -->
+
+<section
+  class="screen"
+  id="finalScreen"
+>
+
+  <div class="final-card">
+
+    <div class="final-cake">
+      🎂
+    </div>
+
+
+    <h1 class="final-title">
+
+      Happy Birthday,
+      <br>
+
+      <span id="finalName"></span>! ✨
+
+    </h1>
+
+
+    <div
+      class="final-message"
+      id="finalMessage"
+    ></div>
+
+
+    <div class="status-box">
+
+      <div>
+        &gt; Checking birthday status...
       </div>
 
-    </section>
+      <div>
+        &gt; +1 year successfully installed 😂
+      </div>
+
+      <div>
+        &gt; Happiness level: increasing...
+      </div>
+
+      <div class="success-text">
+        &gt; Birthday wishes deployed successfully! 🚀
+      </div>
+
+      <div>
+        &gt; Status: one year more awesome. ✨
+      </div>
+
+    </div>
 
 
-    <!-- =====================================================
-         07 — PIANO VIDEO
-    ====================================================== -->
-
-    <section
-      class="screen"
-      id="videoScreen"
+    <button
+      class="primary-btn finish-btn"
+      id="watchPianoBtn"
     >
+      🎹 One last little surprise...
+    </button>
 
-      <div class="video-card">
+  </div>
 
-        <div class="video-label">
-          🎹 final.exe
-        </div>
-
-        <h1 class="video-title">
-          One last thing...
-        </h1>
-
-        <p class="video-subtitle">
-          Press play. This one is just for you. 💗
-        </p>
+</section>
 
 
-        <div class="video-wrapper">
+<!-- =====================================================
+     07 — PIANO VIDEO
+====================================================== -->
 
-          <!--
-            VIDEO OPTION 1 — GOOGLE DRIVE
+<section
+  class="screen"
+  id="videoScreen"
+>
 
-            Put your Google Drive FILE ID below.
+  <div class="video-card">
 
-            Example:
-
-            https://drive.google.com/file/d/ABC123XYZ/view
-
-            The ID is:
-
-            ABC123XYZ
-
-            Then set:
-
-            VIDEO.driveId = "ABC123XYZ";
-
-            Make sure the file is:
-            Anyone with the link → Viewer
-          -->
-
-          <iframe
-            id="driveVideo"
-            allow="autoplay"
-            allowfullscreen
-          ></iframe>
+    <div class="video-label">
+      🎹 final.exe
+    </div>
 
 
-          <!--
-            VIDEO OPTION 2 — YOUTUBE
-
-            If you prefer YouTube, put the video ID below.
-
-            Example:
-
-            https://www.youtube.com/watch?v=ABC123
-
-            ID = ABC123
-
-            Then set:
-
-            VIDEO.youtubeId = "ABC123";
-
-            The JavaScript will automatically
-            use YouTube instead of Google Drive.
-          -->
-
-        </div>
+    <h1 class="video-title">
+      One last thing...
+    </h1>
 
 
-        <div class="video-note">
+    <p class="video-subtitle">
+      Press play. This one is just for you. 💗
+    </p>
 
-          Hope this little surprise
-          made you smile. 🌸
 
-          <br><br>
+    <div class="video-wrapper">
 
-          Happy Birthday once again,
-          <span id="videoName"></span>! 🫶
+      <iframe
+        id="driveVideo"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
 
-        </div>
+    </div>
 
-      </div>
 
-    </section>
+    <div class="video-note">
+
+      Hope this little surprise
+      made you smile. 🌸
+
+      <br><br>
+
+      Happy Birthday once again,
+      <span id="videoName"></span>! 🫶
+
+    </div>
+
+
+    <!-- EXPERIENCE AGAIN -->
+
+    <button
+      class="primary-btn experience-btn"
+      id="experienceAgainBtn"
+    >
+      💌 Experience Again
+    </button>
+
+  </div>
+
+</section>
+```
 
   </main>
 
-
   <script>
+
 
     /* =========================================================
        💗 PERSONALIZATION
        
-       EDIT THIS SECTION ONLY
+       EDIT ONLY THIS SECTION
     ========================================================= */
 
     const CONFIG = {
+
 
       /* -------------------------------------------------------
          NAME
@@ -2589,27 +2749,28 @@ And yes...
 I'm genuinely glad
 our codebases crossed paths. 🫶`
 
-
     };
 
 
     /* =========================================================
        🎹 VIDEO CONFIGURATION
        
-       CHOOSE ONE
+       USE EITHER GOOGLE DRIVE OR YOUTUBE
     ========================================================= */
 
     const VIDEO = {
 
+
       /*
-       * OPTION A
+       * OPTION 1 — GOOGLE DRIVE
        *
-       * Google Drive file ID.
+       * Example Drive URL:
        *
-       * Example:
+       * https://drive.google.com/file/d/ABC123XYZ/view
        *
-       * driveId:
-       * "1AbCdEfGhIjKlMnOp"
+       * File ID:
+       *
+       * ABC123XYZ
        */
 
       driveId:
@@ -2617,16 +2778,18 @@ our codebases crossed paths. 🫶`
 
 
       /*
-       * OPTION B
-       *
-       * YouTube video ID.
+       * OPTION 2 — YOUTUBE
        *
        * Example:
        *
-       * youtubeId:
-       * "dQw4w9WgXcQ"
+       * https://www.youtube.com/watch?v=ABC123
        *
-       * Leave empty if using Google Drive.
+       * Video ID:
+       *
+       * ABC123
+       *
+       * If youtubeId is filled,
+       * YouTube will be used instead of Drive.
        */
 
       youtubeId:
@@ -2783,6 +2946,12 @@ our codebases crossed paths. 🫶`
       );
 
 
+    const experienceAgainBtn =
+      document.getElementById(
+        "experienceAgainBtn"
+      );
+
+
     /* =========================================================
        BASIC TEXT
     ========================================================= */
@@ -2798,6 +2967,7 @@ our codebases crossed paths. 🫶`
 
     videoName.textContent =
       CONFIG.name;
+
 
     document.title =
       `A Little Surprise for ${CONFIG.name} 💌`;
@@ -2876,7 +3046,8 @@ our codebases crossed paths. 🫶`
 
     function runLoadingScreen() {
 
-      terminalContent.innerHTML = "";
+      terminalContent.innerHTML =
+        "";
 
       progressBar.style.width =
         "0%";
@@ -2967,7 +3138,7 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       02 — CAKE
+       02 — OPEN SURPRISE → CAKE
     ========================================================= */
 
     openSurpriseBtn.addEventListener(
@@ -2983,6 +3154,10 @@ our codebases crossed paths. 🫶`
       }
     );
 
+
+    /* =========================================================
+       CAKE CREATION
+    ========================================================= */
 
     function startCakeCreation() {
 
@@ -3114,7 +3289,7 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       05 — ENVELOPE
+       05 — OPEN ENVELOPE
     ========================================================= */
 
     function openEnvelope() {
@@ -3175,7 +3350,7 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       06 — SINGLE PAPER
+       06 — ONE PAPER NOTE
     ========================================================= */
 
     function renderSingleNote() {
@@ -3220,7 +3395,7 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       07 — FINAL → VIDEO
+       07 — FINAL → PIANO
     ========================================================= */
 
     watchPianoBtn.addEventListener(
@@ -3243,9 +3418,9 @@ our codebases crossed paths. 🫶`
 
     function setupVideo() {
 
+
       /*
-       * If YouTube ID exists,
-       * use YouTube.
+       * YOUTUBE
        */
 
       if (
@@ -3264,7 +3439,7 @@ our codebases crossed paths. 🫶`
 
 
       /*
-       * Otherwise use Google Drive.
+       * GOOGLE DRIVE
        */
 
       if (
@@ -3284,13 +3459,126 @@ our codebases crossed paths. 🫶`
 
 
       /*
-       * No video configured.
+       * NO VIDEO
        */
 
       driveVideo.src =
         "about:blank";
 
     }
+
+
+    /* =========================================================
+       08 — EXPERIENCE AGAIN
+       
+       Completely resets the experience.
+    ========================================================= */
+
+    experienceAgainBtn.addEventListener(
+      "click",
+      () => {
+
+
+        /*
+         * Stop the video completely.
+         */
+
+        driveVideo.src =
+          "about:blank";
+
+
+        /*
+         * Reset envelope.
+         */
+
+        envelopeWrapper.classList.remove(
+          "open"
+        );
+
+
+        /*
+         * Reset cake.
+         */
+
+        cakeArea.className =
+          "cake-area";
+
+        cakeComplete.classList.remove(
+          "show"
+        );
+
+        wishBtn.classList.remove(
+          "show"
+        );
+
+
+        /*
+         * Reset greeting.
+         */
+
+        greetingMessage.textContent =
+          "";
+
+
+        /*
+         * Reset note.
+         */
+
+        paperNumber.textContent =
+          "PAPER_01 💌";
+
+        paperTitle.textContent =
+          "A little something...";
+
+        paperMessage.textContent =
+          "";
+
+
+        /*
+         * Reset final message.
+         */
+
+        finalMessage.textContent =
+          "";
+
+
+        /*
+         * Reset compilation screen.
+         */
+
+        terminalContent.innerHTML =
+          "";
+
+        progressBar.style.width =
+          "0%";
+
+        openSurpriseBtn.classList.remove(
+          "show"
+        );
+
+
+        /*
+         * Go all the way back
+         * to the beginning.
+         */
+
+        showScreen(
+          loadingScreen
+        );
+
+
+        /*
+         * Restart compilation.
+         */
+
+        setTimeout(() => {
+
+          runLoadingScreen();
+
+        }, 400);
+
+      }
+    );
 
 
     /* =========================================================
@@ -3377,10 +3665,12 @@ our codebases crossed paths. 🫶`
     function createSparkles() {
 
       const emojis = [
+
         "✨",
         "💗",
         "🌸",
         "💫"
+
       ];
 
 
@@ -3437,7 +3727,7 @@ our codebases crossed paths. 🫶`
 
 
     /* =========================================================
-       START
+       START EXPERIENCE
     ========================================================= */
 
     runLoadingScreen();
@@ -3445,5 +3735,5 @@ our codebases crossed paths. 🫶`
   </script>
 
 </body>
+
 </html>
-```
