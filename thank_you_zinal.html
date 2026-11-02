@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6eee8">
+<title>A little thank you for Zinal ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;overflow-x:hidden;display:grid;place-items:center;padding:24px;color:#51443f;font-family:"Nunito",sans-serif;background:radial-gradient(circle at 15% 15%,#fff 0,transparent 30%),radial-gradient(circle at 85% 80%,#f4dfe0 0,transparent 32%),linear-gradient(135deg,#f8f0e8,#f5e8e7 52%,#eee9f4)}
+.decor{position:fixed;inset:0;overflow:hidden;pointer-events:none}.float{position:absolute;opacity:.55;font-size:20px;animation:drift 8s ease-in-out infinite}.float:nth-child(1){top:12%;left:9%}.float:nth-child(2){top:19%;right:12%;animation-delay:-2s}.float:nth-child(3){bottom:15%;left:14%;animation-delay:-4s}.float:nth-child(4){bottom:12%;right:10%;animation-delay:-1s}@keyframes drift{50%{transform:translateY(-16px) rotate(12deg)}}
+.wrap{width:min(560px,100%);position:relative;z-index:1}.card{text-align:center;padding:clamp(28px,7vw,54px) clamp(22px,6vw,48px);border:1px solid rgba(255,255,255,.8);border-radius:30px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);box-shadow:0 24px 70px rgba(104,76,73,.13)}
+.eyebrow{display:inline-block;padding:8px 14px;border-radius:999px;background:#fff3ed;color:#a66f60;font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}h1{margin:18px 0 8px;font:700 clamp(48px,11vw,70px)/.95 "Caveat",cursive;color:#76594f}.intro{margin:14px auto 28px;max-width:390px;line-height:1.7;color:#7d6b64}
+.keychain-scene{width:190px;height:165px;margin:8px auto 28px;position:relative;display:grid;place-items:center}.ring{width:54px;height:54px;border:7px solid #c7c5c2;border-radius:50%;position:absolute;top:0;left:50%;transform:translateX(-50%);box-shadow:inset 0 1px 3px #fff,0 3px 6px #b5aaa4}.chain{position:absolute;top:47px;width:5px;height:25px;background:linear-gradient(90deg,#aaa,#f8f5ed,#aaa);border-radius:5px}.tag{position:absolute;top:66px;width:142px;height:82px;display:grid;place-items:center;transform:rotate(-5deg);border-radius:18px 18px 22px 22px;color:#fffaf4;font-weight:800;letter-spacing:.5px;background:linear-gradient(145deg,#b77e65,#8e5e50);box-shadow:0 12px 20px rgba(111,72,57,.25),inset 0 2px 3px rgba(255,255,255,.35);border:3px solid rgba(255,255,255,.55)}.tag:before{content:"";position:absolute;width:11px;height:11px;top:7px;border:2px solid rgba(255,255,255,.8);border-radius:50%}.tag span{margin-top:14px;font-size:13px}
+.button{border:0;border-radius:999px;padding:15px 25px;cursor:pointer;color:white;font:800 15px "Nunito",sans-serif;background:linear-gradient(135deg,#bd8875,#d6a49a);box-shadow:0 10px 24px rgba(163,111,96,.25);transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(163,111,96,.3)}.button:active{transform:scale(.97)}
+.message{display:none;margin:28px auto 0;padding:24px 22px;max-width:430px;border-radius:20px;text-align:left;background:#fffaf5;border:1px solid #f1e5dc;animation:reveal .65s cubic-bezier(.2,.8,.2,1) both}.message.show{display:block}@keyframes reveal{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}.message p{margin:0;white-space:pre-line;font:600 25px/1.38 "Caveat",cursive;color:#66534b}.signoff{margin-top:18px!important;color:#a36f60!important}.footer{margin-top:22px;font-size:12px;color:#9a8981}
+.sparkle{position:fixed;z-index:5;pointer-events:none;font-size:18px;animation:burst 1.3s ease-out forwards}@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(100deg) scale(.3);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="decor" aria-hidden="true"><span class="float">✦</span><span class="float">♡</span><span class="float">✧</span><span class="float">🌿</span></div>
+<main class="wrap"><section class="card">
+<div class="eyebrow">A small note of appreciation</div>
+<h1>Thank you, Zinal! 💛</h1>
+<p class="intro">Some little things turn out to mean a whole lot. I made this tiny page to say thank you for one of them.</p>
+<div class="keychain-scene" aria-label="Illustration of a custom keychain"><div class="ring"></div><div class="chain"></div><div class="tag"><span>APACHE 180</span></div></div>
+<button class="button" id="revealBtn" type="button" aria-expanded="false">Tap for a little thank you ✨</button>
+<div class="message" id="message" aria-live="polite">
+<p>Zinal,
+
+Thank you so much for making a customized keychain for my TVS Apache 180! 🏍️
+
+It may look like a small accessory, but to me it means so much. You took the time and care to make something personal for my bike, and that makes it genuinely special.
+
+Every time I see it on my bike, I'll be reminded of your thoughtful gesture. It has found a special place—not just on my Apache, but in my collection of things that make me smile.
+
+Really appreciate your effort, creativity, and kindness. Thank you for making my ride feel a little more personal! 💛</p>
+<p class="signoff">With lots of appreciation,<br>— [Your Name]</p>
+</div>
+<div class="footer">Made with gratitude, and a little Apache love. 🏍️</div>
+</section></main>
+<script>
+const button=document.getElementById("revealBtn");
+const message=document.getElementById("message");
+button.addEventListener("click",()=>{
+ message.classList.add("show");
+ button.textContent="A little more appreciation, just for you 💛";
+ button.disabled=true;
+ button.style.opacity=".8";
+ button.setAttribute("aria-expanded","true");
+ const symbols=["✨","💛","✦","🌸"];
+ for(let i=0;i<18;i++){
+  const spark=document.createElement("span");
+  spark.className="sparkle";
+  spark.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  spark.style.left=(window.innerWidth/2)+"px";
+  spark.style.top=(window.innerHeight/2)+"px";
+  spark.style.setProperty("--x",(Math.random()*260-130)+"px");
+  spark.style.setProperty("--y",(Math.random()*220-110)+"px");
+  document.body.appendChild(spark);
+  setTimeout(()=>spark.remove(),1400);
+ }
+});
+</script>
+</body>
+</html>
