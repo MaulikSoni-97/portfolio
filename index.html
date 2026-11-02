@@ -4,200 +4,539 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You!</title>
+<meta name="theme-color" content="#fff0f5">
+
+<title>A Little Thank You for Zinal Soni 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+box-sizing:border-box;
 }
 
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background: #f8f5f0;
-    color: #292929;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
+body{
+margin:0;
+min-height:100vh;
+overflow-x:hidden;
+display:grid;
+place-items:center;
+padding:24px;
+color:#765665;
+font-family:"Nunito",sans-serif;
+background:
+radial-gradient(circle at 15% 15%,#fff 0,transparent 35%),
+radial-gradient(circle at 85% 85%,#ffdce9 0,transparent 35%),
+linear-gradient(135deg,#ffffff,#fff0f5 50%,#fce4ef);
 }
 
-.container {
-    background: #ffffff;
-    max-width: 850px;
-    width: 100%;
-    padding: 65px 35px;
-    text-align: center;
-    border-radius: 24px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.07);
-    position: relative;
-    overflow: hidden;
+/* FLOATING DECORATIONS */
+
+.decor{
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:0;
 }
 
-.top-line {
-    width: 65px;
-    height: 4px;
-    background: #c69b62;
-    margin: 0 auto 30px;
-    border-radius: 10px;
+.float{
+position:absolute;
+font-size:22px;
+opacity:.65;
+animation:drift 7s ease-in-out infinite;
 }
 
-.icon {
-    width: 85px;
-    height: 85px;
-    background: #f4eadc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 38px;
+.float:nth-child(1){top:9%;left:8%}
+.float:nth-child(2){top:16%;right:10%;animation-delay:-2s}
+.float:nth-child(3){bottom:16%;left:12%;animation-delay:-3s}
+.float:nth-child(4){bottom:10%;right:9%;animation-delay:-1s}
+.float:nth-child(5){top:45%;left:4%;animation-delay:-4s}
+.float:nth-child(6){top:55%;right:5%;animation-delay:-2s}
+
+@keyframes drift{
+50%{
+transform:translateY(-18px) rotate(15deg);
+}
 }
 
-h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(36px, 6vw, 54px);
-    font-weight: 500;
-    margin-bottom: 18px;
-    color: #292929;
+/* MAIN CARD */
+
+.wrap{
+width:min(570px,100%);
+position:relative;
+z-index:1;
 }
 
-.highlight {
-    color: #b58a55;
+.card{
+text-align:center;
+padding:clamp(28px,7vw,52px) clamp(22px,6vw,46px);
+border:2px solid rgba(255,255,255,.95);
+border-radius:32px;
+background:rgba(255,255,255,.87);
+backdrop-filter:blur(16px);
+box-shadow:
+0 25px 75px rgba(210,115,155,.16),
+inset 0 0 25px rgba(255,230,240,.35);
+position:relative;
 }
 
-.subtitle {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #777;
-    max-width: 580px;
-    margin: 0 auto 35px;
+/* TOP RIBBON */
+
+.ribbon{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(135deg,#f6a9c5,#e77fa7);
+color:white;
+padding:9px 22px;
+border-radius:30px;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+box-shadow:0 5px 15px rgba(220,120,160,.2);
+white-space:nowrap;
 }
 
-.message {
-    background: #faf7f2;
-    padding: 25px;
-    border-radius: 15px;
-    margin: 30px auto;
-    max-width: 600px;
+.eyebrow{
+display:inline-block;
+margin-top:15px;
+padding:8px 15px;
+border-radius:999px;
+background:#fff0f6;
+color:#cf7298;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase;
 }
 
-.message h2 {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    margin-bottom: 12px;
+h1{
+margin:20px 0 8px;
+font:700 clamp(48px,11vw,70px)/.95 "Caveat",cursive;
+color:#d56e98;
 }
 
-.message p {
-    color: #777;
-    line-height: 1.7;
-    font-size: 15px;
+.intro{
+margin:14px auto 24px;
+max-width:400px;
+line-height:1.8;
+color:#927786;
+font-size:14px;
 }
 
-.button {
-    display: inline-block;
-    text-decoration: none;
-    background: #292929;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 40px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-    font-size: 15px;
+/* HEART DECORATION */
+
+.heart-line{
+font-size:21px;
+letter-spacing:8px;
+margin:12px 0;
 }
 
-.button:hover {
-    background: #b58a55;
-    transform: translateY(-3px);
+/* KEYCHAIN */
+
+.keychain-scene{
+width:190px;
+height:165px;
+margin:12px auto 25px;
+position:relative;
+display:grid;
+place-items:center;
 }
 
-.footer {
-    margin-top: 45px;
-    font-size: 13px;
-    color: #999;
+.ring{
+width:54px;
+height:54px;
+border:7px solid #d7cbd0;
+border-radius:50%;
+position:absolute;
+top:0;
+left:50%;
+transform:translateX(-50%);
+box-shadow:inset 0 1px 3px white,0 3px 6px #d3c2ca;
 }
 
-.decoration {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: #f8f1e8;
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.6;
+.chain{
+position:absolute;
+top:47px;
+width:5px;
+height:25px;
+background:linear-gradient(90deg,#c6b5bd,#fff,#c6b5bd);
+border-radius:5px;
 }
 
-.circle-one {
-    top: -110px;
-    left: -80px;
+.tag{
+position:absolute;
+top:66px;
+width:142px;
+height:82px;
+display:grid;
+place-items:center;
+transform:rotate(-5deg);
+border-radius:18px 18px 22px 22px;
+color:#fff;
+font-weight:800;
+letter-spacing:.5px;
+background:linear-gradient(145deg,#f0a0bc,#d56e98);
+box-shadow:
+0 12px 20px rgba(190,100,140,.25),
+inset 0 2px 3px rgba(255,255,255,.45);
+border:3px solid rgba(255,255,255,.75);
 }
 
-.circle-two {
-    bottom: -120px;
-    right: -80px;
+.tag:before{
+content:"";
+position:absolute;
+width:11px;
+height:11px;
+top:7px;
+border:2px solid rgba(255,255,255,.9);
+border-radius:50%;
 }
 
-.content {
-    position: relative;
-    z-index: 1;
+.tag span{
+margin-top:14px;
+font-size:13px;
 }
 
-@media(max-width:600px) {
-    .container {
-        padding: 45px 22px;
-    }
+/* BUTTON */
 
-    .subtitle {
-        font-size: 15px;
-    }
+.button{
+border:0;
+border-radius:999px;
+padding:15px 26px;
+cursor:pointer;
+color:white;
+font:800 15px "Nunito",sans-serif;
+background:linear-gradient(135deg,#f0a1bd,#d86f99);
+box-shadow:0 10px 24px rgba(190,94,132,.24);
+transition:transform .2s,box-shadow .2s;
+}
 
-    .message {
-        padding: 20px;
-    }
+.button:hover{
+transform:translateY(-3px);
+box-shadow:0 14px 28px rgba(190,94,132,.3);
+}
+
+.button:active{
+transform:scale(.96);
+}
+
+/* ENVELOPE */
+
+.envelope-area{
+margin:25px auto 10px;
+display:none;
+}
+
+.envelope-area.show{
+display:block;
+animation:reveal .6s ease both;
+}
+
+.envelope{
+width:180px;
+height:115px;
+position:relative;
+margin:auto;
+background:#f8c9da;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(195,105,145,.15);
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:90px solid transparent;
+border-right:90px solid transparent;
+border-top:65px solid #e995b4;
+transform-origin:top;
+transition:transform .7s ease;
+z-index:3;
+}
+
+.envelope.open:before{
+transform:rotateX(180deg);
+}
+
+.envelope:after{
+content:"💗";
+position:absolute;
+left:50%;
+top:40%;
+transform:translate(-50%,-50%);
+font-size:27px;
+z-index:4;
+transition:opacity .3s;
+}
+
+.envelope.open:after{
+opacity:0;
+}
+
+.envelope-flap{
+position:absolute;
+bottom:0;
+width:0;
+height:0;
+border-left:90px solid transparent;
+border-right:90px solid transparent;
+border-bottom:65px solid #f5b4cb;
+z-index:2;
+}
+
+.envelope-label{
+font:600 22px "Caveat",cursive;
+color:#c55f89;
+margin-top:12px;
+}
+
+/* MESSAGE */
+
+.message{
+display:none;
+margin:25px auto 0;
+padding:25px 22px;
+max-width:440px;
+border-radius:22px;
+text-align:left;
+background:linear-gradient(145deg,#fffafd,#fff0f5);
+border:1px solid #f7d8e5;
+box-shadow:0 8px 22px rgba(210,120,155,.08);
+}
+
+.message.show{
+display:block;
+animation:reveal .8s ease both;
+}
+
+@keyframes reveal{
+from{
+opacity:0;
+transform:translateY(20px) scale(.97);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+.message p{
+margin:0;
+white-space:pre-line;
+font:600 24px/1.42 "Caveat",cursive;
+color:#765665;
+}
+
+.signoff{
+margin-top:20px!important;
+color:#d16b94!important;
+}
+
+.footer{
+margin-top:24px;
+font-size:12px;
+color:#bd91a5;
+line-height:1.8;
+}
+
+/* HEART SPARKLES */
+
+.sparkle{
+position:fixed;
+z-index:5;
+pointer-events:none;
+font-size:20px;
+animation:burst 1.5s ease-out forwards;
+}
+
+@keyframes burst{
+to{
+transform:translate(var(--x),var(--y)) rotate(100deg) scale(.2);
+opacity:0;
+}
+}
+
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{
+animation-duration:.01ms!important;
+transition-duration:.01ms!important;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- FLOATING EMOJIS -->
 
-    <div class="decoration circle-one"></div>
-    <div class="decoration circle-two"></div>
-
-    <div class="content">
-
-        <div class="top-line"></div>
-
-        <div class="icon">✓</div>
-
-        <h1>Thank <span class="highlight">You!</span></h1>
-
-        <p class="subtitle">
-            Your submission has been received successfully.
-            We're so happy you're here and truly appreciate your trust.
-        </p>
-
-        <div class="message">
-            <h2>What's Next?</h2>
-            <p>
-                We've received your details and will be in touch soon.
-                Keep an eye on your inbox for the next update!
-            </p>
-        </div>
-
-        <a href="/" class="button">
-            Back to Home →
-        </a>
-
-        <div class="footer">
-            Made with care. Thank you for being here!
-        </div>
-
-    </div>
+<div class="decor" aria-hidden="true">
+<span class="float">💗</span>
+<span class="float">🦋</span>
+<span class="float">🌸</span>
+<span class="float">💕</span>
+<span class="float">✨</span>
+<span class="float">🎀</span>
 </div>
+
+<main class="wrap">
+<section class="card">
+
+<div class="ribbon">🎀 Made with a little love 🎀</div>
+
+<div class="eyebrow">
+A sweet little thank you 💌
+</div>
+
+<h1>Thank You, Zinal! 💗</h1>
+
+<p class="intro">
+Some gestures may seem small, but the kindness behind them
+makes them truly beautiful. This little surprise is just
+my way of saying how much I appreciate yours. 🥹💕
+</p>
+
+<div class="heart-line">
+♡ 💗 ♡ 🌸 ♡
+</div>
+
+<!-- CUSTOM APACHE KEYCHAIN -->
+
+<div class="keychain-scene"
+aria-label="Illustration of a custom Apache keychain">
+
+<div class="ring"></div>
+<div class="chain"></div>
+
+<div class="tag">
+<span>APACHE 180</span>
+</div>
+
+</div>
+
+<button class="button" id="revealBtn">
+Open your little surprise 💌
+</button>
+
+<!-- ENVELOPE -->
+
+<div class="envelope-area" id="envelopeArea">
+
+<div class="envelope" id="envelope">
+<div class="envelope-flap"></div>
+</div>
+
+<div class="envelope-label">
+A little letter, just for you! 💕
+</div>
+
+</div>
+
+<!-- THANK YOU LETTER -->
+
+<div class="message" id="message" aria-live="polite">
+
+<p>Zinal Soni, 💗
+
+Thank you so much for making a customized keychain for my TVS Apache 180! 🏍️💕
+
+Honestly, it's not just about a keychain. It's about the thought, effort, creativity, and kindness you put into making something special for me.
+
+Sometimes, the smallest gestures leave the biggest smiles, and this is definitely one of those moments. 🥹
+
+Every time I see it on my bike, I'll be reminded of your thoughtful gesture and the happiness it brought me.
+
+I truly appreciate your time, your effort, and the lovely person you are. 🌸
+
+Never underestimate how much a little act of kindness can mean to someone. You made something simple feel memorable, and I'll always appreciate that.
+
+Thank you for adding a little extra happiness to my Apache and a little extra sweetness to my day! 💗✨
+
+Keep spreading your kindness and beautiful energy! 🦋💕</p>
+
+<p class="signoff">
+With lots of gratitude, smiles & appreciation,
+<br>
+— Maulik 💗🎀
+</p>
+
+</div>
+
+<div class="footer">
+Made with 🤍 kindness, 💗 gratitude & a little pink magic ✨
+<br>
+🌷 Sending smiles your way! 🦋
+</div>
+
+</section>
+</main>
+
+<script>
+
+const button = document.getElementById("revealBtn");
+const message = document.getElementById("message");
+const envelopeArea = document.getElementById("envelopeArea");
+const envelope = document.getElementById("envelope");
+
+button.addEventListener("click", () => {
+
+button.disabled = true;
+button.textContent = "A little happiness is on its way 💗";
+
+envelopeArea.classList.add("show");
+
+setTimeout(() => {
+envelope.classList.add("open");
+}, 400);
+
+setTimeout(() => {
+message.classList.add("show");
+button.textContent = "With love & gratitude, Maulik 💕";
+
+}, 1200);
+
+// Floating heart explosion
+
+const symbols = [
+"💗","💕","💖","✨","🌸","🦋","🎀","🤍","🌷","💞"
+];
+
+for(let i=0; i<35; i++){
+
+const spark = document.createElement("span");
+
+spark.className = "sparkle";
+
+spark.textContent =
+symbols[Math.floor(Math.random()*symbols.length)];
+
+spark.style.left = (window.innerWidth/2) + "px";
+spark.style.top = (window.innerHeight/2) + "px";
+
+spark.style.setProperty(
+"--x",(Math.random()*360-180)+"px"
+);
+
+spark.style.setProperty(
+"--y",(Math.random()*320-160)+"px"
+);
+
+document.body.appendChild(spark);
+
+setTimeout(() => spark.remove(),1600);
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
