@@ -1,542 +1,196 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f5">
-
-<title>A Little Thank You for Zinal Soni 💗</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+<title>For Zinu — A little thank you</title>
 <style>
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-min-height:100vh;
-overflow-x:hidden;
-display:grid;
-place-items:center;
-padding:24px;
-color:#765665;
-font-family:"Nunito",sans-serif;
-background:
-radial-gradient(circle at 15% 15%,#fff 0,transparent 35%),
-radial-gradient(circle at 85% 85%,#ffdce9 0,transparent 35%),
-linear-gradient(135deg,#ffffff,#fff0f5 50%,#fce4ef);
-}
-
-/* FLOATING DECORATIONS */
-
-.decor{
-position:fixed;
-inset:0;
-overflow:hidden;
-pointer-events:none;
-z-index:0;
-}
-
-.float{
-position:absolute;
-font-size:22px;
-opacity:.65;
-animation:drift 7s ease-in-out infinite;
-}
-
-.float:nth-child(1){top:9%;left:8%}
-.float:nth-child(2){top:16%;right:10%;animation-delay:-2s}
-.float:nth-child(3){bottom:16%;left:12%;animation-delay:-3s}
-.float:nth-child(4){bottom:10%;right:9%;animation-delay:-1s}
-.float:nth-child(5){top:45%;left:4%;animation-delay:-4s}
-.float:nth-child(6){top:55%;right:5%;animation-delay:-2s}
-
-@keyframes drift{
-50%{
-transform:translateY(-18px) rotate(15deg);
-}
-}
-
-/* MAIN CARD */
-
-.wrap{
-width:min(570px,100%);
-position:relative;
-z-index:1;
-}
-
-.card{
-text-align:center;
-padding:clamp(28px,7vw,52px) clamp(22px,6vw,46px);
-border:2px solid rgba(255,255,255,.95);
-border-radius:32px;
-background:rgba(255,255,255,.87);
-backdrop-filter:blur(16px);
-box-shadow:
-0 25px 75px rgba(210,115,155,.16),
-inset 0 0 25px rgba(255,230,240,.35);
-position:relative;
-}
-
-/* TOP RIBBON */
-
-.ribbon{
-position:absolute;
-top:-14px;
-left:50%;
-transform:translateX(-50%);
-background:linear-gradient(135deg,#f6a9c5,#e77fa7);
-color:white;
-padding:9px 22px;
-border-radius:30px;
-font-size:12px;
-font-weight:800;
-letter-spacing:1px;
-box-shadow:0 5px 15px rgba(220,120,160,.2);
-white-space:nowrap;
-}
-
-.eyebrow{
-display:inline-block;
-margin-top:15px;
-padding:8px 15px;
-border-radius:999px;
-background:#fff0f6;
-color:#cf7298;
-font-size:12px;
-font-weight:800;
-letter-spacing:1px;
-text-transform:uppercase;
-}
-
-h1{
-margin:20px 0 8px;
-font:700 clamp(48px,11vw,70px)/.95 "Caveat",cursive;
-color:#d56e98;
-}
-
-.intro{
-margin:14px auto 24px;
-max-width:400px;
-line-height:1.8;
-color:#927786;
-font-size:14px;
-}
-
-/* HEART DECORATION */
-
-.heart-line{
-font-size:21px;
-letter-spacing:8px;
-margin:12px 0;
-}
-
-/* KEYCHAIN */
-
-.keychain-scene{
-width:190px;
-height:165px;
-margin:12px auto 25px;
-position:relative;
-display:grid;
-place-items:center;
-}
-
-.ring{
-width:54px;
-height:54px;
-border:7px solid #d7cbd0;
-border-radius:50%;
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-box-shadow:inset 0 1px 3px white,0 3px 6px #d3c2ca;
-}
-
-.chain{
-position:absolute;
-top:47px;
-width:5px;
-height:25px;
-background:linear-gradient(90deg,#c6b5bd,#fff,#c6b5bd);
-border-radius:5px;
-}
-
-.tag{
-position:absolute;
-top:66px;
-width:142px;
-height:82px;
-display:grid;
-place-items:center;
-transform:rotate(-5deg);
-border-radius:18px 18px 22px 22px;
-color:#fff;
-font-weight:800;
-letter-spacing:.5px;
-background:linear-gradient(145deg,#f0a0bc,#d56e98);
-box-shadow:
-0 12px 20px rgba(190,100,140,.25),
-inset 0 2px 3px rgba(255,255,255,.45);
-border:3px solid rgba(255,255,255,.75);
-}
-
-.tag:before{
-content:"";
-position:absolute;
-width:11px;
-height:11px;
-top:7px;
-border:2px solid rgba(255,255,255,.9);
-border-radius:50%;
-}
-
-.tag span{
-margin-top:14px;
-font-size:13px;
-}
-
-/* BUTTON */
-
-.button{
-border:0;
-border-radius:999px;
-padding:15px 26px;
-cursor:pointer;
-color:white;
-font:800 15px "Nunito",sans-serif;
-background:linear-gradient(135deg,#f0a1bd,#d86f99);
-box-shadow:0 10px 24px rgba(190,94,132,.24);
-transition:transform .2s,box-shadow .2s;
-}
-
-.button:hover{
-transform:translateY(-3px);
-box-shadow:0 14px 28px rgba(190,94,132,.3);
-}
-
-.button:active{
-transform:scale(.96);
-}
-
-/* ENVELOPE */
-
-.envelope-area{
-margin:25px auto 10px;
-display:none;
-}
-
-.envelope-area.show{
-display:block;
-animation:reveal .6s ease both;
-}
-
-.envelope{
-width:180px;
-height:115px;
-position:relative;
-margin:auto;
-background:#f8c9da;
-border-radius:8px;
-box-shadow:0 10px 25px rgba(195,105,145,.15);
-}
-
-.envelope:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:0;
-height:0;
-border-left:90px solid transparent;
-border-right:90px solid transparent;
-border-top:65px solid #e995b4;
-transform-origin:top;
-transition:transform .7s ease;
-z-index:3;
-}
-
-.envelope.open:before{
-transform:rotateX(180deg);
-}
-
-.envelope:after{
-content:"💗";
-position:absolute;
-left:50%;
-top:40%;
-transform:translate(-50%,-50%);
-font-size:27px;
-z-index:4;
-transition:opacity .3s;
-}
-
-.envelope.open:after{
-opacity:0;
-}
-
-.envelope-flap{
-position:absolute;
-bottom:0;
-width:0;
-height:0;
-border-left:90px solid transparent;
-border-right:90px solid transparent;
-border-bottom:65px solid #f5b4cb;
-z-index:2;
-}
-
-.envelope-label{
-font:600 22px "Caveat",cursive;
-color:#c55f89;
-margin-top:12px;
-}
-
-/* MESSAGE */
-
-.message{
-display:none;
-margin:25px auto 0;
-padding:25px 22px;
-max-width:440px;
-border-radius:22px;
-text-align:left;
-background:linear-gradient(145deg,#fffafd,#fff0f5);
-border:1px solid #f7d8e5;
-box-shadow:0 8px 22px rgba(210,120,155,.08);
-}
-
-.message.show{
-display:block;
-animation:reveal .8s ease both;
-}
-
-@keyframes reveal{
-from{
-opacity:0;
-transform:translateY(20px) scale(.97);
-}
-to{
-opacity:1;
-transform:translateY(0) scale(1);
-}
-}
-
-.message p{
-margin:0;
-white-space:pre-line;
-font:600 24px/1.42 "Caveat",cursive;
-color:#765665;
-}
-
-.signoff{
-margin-top:20px!important;
-color:#d16b94!important;
-}
-
-.footer{
-margin-top:24px;
-font-size:12px;
-color:#bd91a5;
-line-height:1.8;
-}
-
-/* HEART SPARKLES */
-
-.sparkle{
-position:fixed;
-z-index:5;
-pointer-events:none;
-font-size:20px;
-animation:burst 1.5s ease-out forwards;
-}
-
-@keyframes burst{
-to{
-transform:translate(var(--x),var(--y)) rotate(100deg) scale(.2);
-opacity:0;
-}
-}
-
-@media(prefers-reduced-motion:reduce){
-*,*:before,*:after{
-animation-duration:.01ms!important;
-transition-duration:.01ms!important;
-}
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@500;600;700&display=swap');
+:root{--ink:#493d43;--muted:#88777f;--rose:#c77e91;--cream:#fffaf5;--line:#eadbd8;--plum:#795b70}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7eee9;color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#d7b6bd 1px,transparent 1px);background-size:24px 24px}
+main{position:relative;z-index:1}.page{min-height:100svh;padding:34px 18px;display:none;align-items:center;justify-content:center}.page.active{display:flex;animation:enter .7s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.sheet{width:min(760px,100%);background:rgba(255,252,248,.94);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:clamp(28px,6vw,58px);box-shadow:0 24px 70px #76545a1c;position:relative;overflow:hidden}
+.sheet:after{content:"✿";position:absolute;right:24px;top:18px;color:#d9aeb8;font-size:25px;line-height:1;opacity:.55;pointer-events:none;z-index:0}.sheet>*{position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:700;color:var(--rose)}
+h1,h2{font-family:'Playfair Display',serif;font-weight:500;line-height:1.12;margin:12px 0;color:#55414b}
+h1{font-size:clamp(39px,7vw,64px)}h2{font-size:clamp(30px,5vw,43px)}
+.script{font-family:'Caveat',cursive;font-size:clamp(25px,4vw,34px);line-height:1.35;color:#765767}
+p{line-height:1.85;font-size:15px;color:#6f6268}
+.lead{font-size:16px;max-width:620px}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:28px 0}
+.signature{font-family:'Caveat',cursive;font-size:30px;color:var(--plum);margin-top:18px}
+.heart{color:#c77e91}.tag{display:inline-block;padding:8px 13px;background:#f8ecee;border-radius:99px;color:#9d6578;font-size:12px;font-weight:700;margin:4px}
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:18px}
+.memory{background:#fff7f3;border:1px solid #f0e3df;border-radius:16px;padding:15px 16px}
+.memory b{display:block;font-size:13px;color:#a16b7d;margin-bottom:5px}.memory span{font-size:14px;line-height:1.55;color:#665961}
+.food-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.food{background:#f6f0eb;border:1px solid #eee2dc;border-radius:99px;padding:8px 12px;font-size:13px;color:#65565e}
+.food-add{background:#f8ecee;border:1px dashed #d396a6;border-radius:99px;padding:7px 13px;font:600 13px 'DM Sans',sans-serif;color:#9d6578;cursor:pointer;transition:.2s}
+.food-add:hover{background:#f2dfe3;transform:translateY(-1px)}
+.food-input-wrap{display:inline-flex;align-items:center;gap:6px}
+.food-input{background:#fff;border:1px solid #d396a6;border-radius:99px;padding:6px 12px;font:500 13px 'DM Sans',sans-serif;color:#493d43;outline:none;width:155px}
+.food-input::placeholder{color:#b19ca4}
+.food-save{background:#936d82;color:#fff;border:0;border-radius:99px;padding:6px 12px;font:700 12px 'DM Sans',sans-serif;cursor:pointer}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px}
+button{border:0;border-radius:99px;padding:13px 21px;font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:.2s}
+button:hover{transform:translateY(-2px)}.primary{background:#936d82;color:white;box-shadow:0 8px 20px #936d8233}.quiet{background:#f5e9e8;color:#8e6474}
+.page-no{font-size:11px;color:#a7959b;letter-spacing:.14em}
+.request{text-align:center;max-width:620px;margin:auto}
+.request .flower{font-size:48px;margin-bottom:12px}
+.request p{font-size:16px}
+.gift-stage{text-align:center;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gift-wrap{width:190px;height:165px;position:relative;margin:35px auto 25px;cursor:pointer;filter:drop-shadow(0 18px 18px #77526022);outline:none}
+.gift-box{position:absolute;bottom:0;left:10px;width:170px;height:118px;background:linear-gradient(135deg,#d99baa,#bd7e94);border-radius:8px 8px 14px 14px;overflow:hidden}
+.gift-box:before{content:"";position:absolute;left:70px;top:0;width:30px;height:100%;background:#f7e5c9}
+.gift-lid{position:absolute;left:0;top:35px;width:190px;height:34px;background:#e8b7bf;border-radius:7px;z-index:3;transform-origin:12% 80%;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.ribbon-top{position:absolute;left:79px;top:0;width:32px;height:165px;background:#f7e5c9;z-index:4}
+.bow{position:absolute;z-index:5;top:0;left:70px;width:52px;height:30px}
+.bow:before,.bow:after{content:"";position:absolute;width:30px;height:22px;border:8px solid #f7e5c9;border-radius:70% 70% 20% 70%;top:0}
+.bow:before{left:-10px;transform:rotate(25deg)}.bow:after{right:-10px;transform:scaleX(-1) rotate(25deg)}
+.gift-wrap.open .gift-lid{transform:translate(-35px,-85px) rotate(-28deg)}
+.gift-wrap.open .bow{animation:bowAway .8s forwards}
+@keyframes bowAway{to{transform:translate(35px,-90px) rotate(30deg);opacity:0}}
+.gift-wrap.open{animation:giftPop .7s .35s both}
+@keyframes giftPop{50%{transform:scale(1.08)}100%{transform:scale(.94)}}
+.gift-message{opacity:0;transform:translateY(15px);transition:all .8s .65s;max-width:530px}
+.gift-message.show{opacity:1;transform:none}
+.gift-message h2{font-size:clamp(30px,6vw,45px)}
+.sparkle{position:fixed;pointer-events:none;z-index:5;animation:fall 2.8s ease-out forwards;font-size:20px}
+@keyframes fall{to{transform:translate(var(--x),90vh) rotate(500deg);opacity:0}}
+.hint{font-size:13px;color:#9a858e}
+@media(max-width:520px){.memory-grid{grid-template-columns:1fr}.sheet{border-radius:22px}.actions{align-items:stretch}.actions button{padding:12px 15px}.page{padding:18px 12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
-
 <body>
+<main>
+  <section class="page active" id="page1">
+    <article class="sheet">
+      <div class="eyebrow">A little note of gratitude 🫶</div>
+      <h1>Hi Zinu, <span class="heart">♡</span></h1>
+      <p class="script">Some people make a season feel lighter. You made these four months feel beautiful.</p>
+      <div class="rule"></div>
+      <p class="lead">I wanted to give you this little present as a thank-you for being such a lovely part of my Chaturmas. One meal a day for four months sounded like a long journey, but somehow it never felt quite so difficult with you around.💖</p>
+      <p>Journey from casual walks to having a lunch together became the favourite moments of the my days. The conversations, the small check-ins, the food you shared, and simply having you beside me turned ordinary office days into memories I’ll keep close.😍</p>
+      <p>And when Dad was away and there was no one at home to prepare food, you thought of me and brought something along. That kindness meant more than I can properly put into words. You made sure I never felt alone in those moments.🫂</p>
+      <p class="lead">I feel genuinely grateful and blessed to have you in my life. Thank you for making this Chaturmas easier, warmer, and so much more memorable.🥰</p>
+      <div class="signature">With lots of gratitude, always <span class="heart">♡</span></div>
+      <div class="actions"><span class="page-no">01 / 03</span><button class="primary" onclick="go(2)">A few memories… →</button></div>
+    </article>
+  </section>
 
-<!-- FLOATING EMOJIS -->
+  <section class="page" id="page2">
+    <article class="sheet">
+      <div class="eyebrow">The little things I’ll remember</div>
+      <h2>A Zinu-shaped collection of kindness</h2>
+      <p>Here are a few of the many ways you showed up for me. Every item came with something even better than food: your thoughtfulness.</p>
+      <div class="eyebrow" style="margin-top:25px">A menu of care</div>
+      <div class="food-list" id="foodList">
+        <span class="food">Pulav</span><span class="food">Chole-Puri</span><span class="food">Aloo Paratha</span>
+        <span class="food">Siro</span><span class="food">Pav Bhaji</span><span class="food">Pizza</span>
+        <span class="food">Moraiyo</span><span class="food">Fruits</span><span class="food">Tea-Coffee</span>
+        <span class="food">Sev</span><span class="food">Chocolate</span><span class="food">A full Farali thali</span>
+        <button type="button" class="food-add" id="addFoodBtn" onclick="showAddFood()">+ If I missed plese add🫣</button>
+      </div>
+      <div class="rule"></div>
+      <div class="eyebrow">A few dates worth keeping</div>
+      <div class="memory-grid">
+        <div class="memory"><b>2 April</b><span>The day you messaged me. 💬 A small beginning that became something special.</span></div>
+        <div class="memory"><b>27 July</b><span>Our first time in the canteen — and yes, you messaged me! 💬</span></div>
+        <div class="memory"><b>19 August</b><span>Pav Bhaji by You. A very delicious memory. 😋</span></div>
+        <div class="memory"><b>2 October</b><span>Solo movie day: <i>Drishyam</i>, courtesy of You. 📽️</span></div>
+	<div class="memory"><b>25 October</b><span>Dual Solo movie day: <i>Drishyam</i>, Your Presence makes it spcial. 📽️</span></div>
+        <div class="memory"><b>2 November</b><span>A lovely keychain from you — a little keepsake I’ll treasure.🎁</span></div>
+        <div class="memory"><b>Countless days</b><span>All those walks to lunch together. No date needed; they’re already memories.💗</span></div>
+      </div>
+      <p class="script" style="margin-top:26px">It was never just about what you brought. It was the care behind it. ♡</p>
+      <div class="actions"><button class="quiet" onclick="go(1)">← Back</button><span class="page-no">02 / 03</span><button class="primary" onclick="go(3)">One small request… →</button></div>
+    </article>
+  </section>
 
-<div class="decor" aria-hidden="true">
-<span class="float">💗</span>
-<span class="float">🦋</span>
-<span class="float">🌸</span>
-<span class="float">💕</span>
-<span class="float">✨</span>
-<span class="float">🎀</span>
-</div>
-
-<main class="wrap">
-<section class="card">
-
-<div class="ribbon">🎀 Made with a little love 🎀</div>
-
-<div class="eyebrow">
-A sweet little thank you 💌
-</div>
-
-<h1>Thank You, Zinal! 💗</h1>
-
-<p class="intro">
-Some gestures may seem small, but the kindness behind them
-makes them truly beautiful. This little surprise is just
-my way of saying how much I appreciate yours. 🥹💕
-</p>
-
-<div class="heart-line">
-♡ 💗 ♡ 🌸 ♡
-</div>
-
-<!-- CUSTOM APACHE KEYCHAIN -->
-
-<div class="keychain-scene"
-aria-label="Illustration of a custom Apache keychain">
-
-<div class="ring"></div>
-<div class="chain"></div>
-
-<div class="tag">
-<span>APACHE 180</span>
-</div>
-
-</div>
-
-<button class="button" id="revealBtn">
-Open your little surprise 💌
-</button>
-
-<!-- ENVELOPE -->
-
-<div class="envelope-area" id="envelopeArea">
-
-<div class="envelope" id="envelope">
-<div class="envelope-flap"></div>
-</div>
-
-<div class="envelope-label">
-A little letter, just for you! 💕
-</div>
-
-</div>
-
-<!-- THANK YOU LETTER -->
-
-<div class="message" id="message" aria-live="polite">
-
-<p>Zinal Soni, 💗
-
-Thank you so much for making a customized keychain for my TVS Apache 180! 🏍️💕
-
-Honestly, it's not just about a keychain. It's about the thought, effort, creativity, and kindness you put into making something special for me.
-
-Sometimes, the smallest gestures leave the biggest smiles, and this is definitely one of those moments. 🥹
-
-Every time I see it on my bike, I'll be reminded of your thoughtful gesture and the happiness it brought me.
-
-I truly appreciate your time, your effort, and the lovely person you are. 🌸
-
-Never underestimate how much a little act of kindness can mean to someone. You made something simple feel memorable, and I'll always appreciate that.
-
-Thank you for adding a little extra happiness to my Apache and a little extra sweetness to my day! 💗✨
-
-Keep spreading your kindness and beautiful energy! 🦋💕</p>
-
-<p class="signoff">
-With lots of gratitude, smiles & appreciation,
-<br>
-— Maulik 💗🎀
-</p>
-
-</div>
-
-<div class="footer">
-Made with 🤍 kindness, 💗 gratitude & a little pink magic ✨
-<br>
-🌷 Sending smiles your way! 🦋
-</div>
-
-</section>
+  <section class="page" id="page3">
+    <article class="sheet">
+      <div class="request">
+        <div class="flower">🌷</div>
+        <div class="eyebrow">Before you open the little surprise</div>
+        <h2>One gentle request, Zinu</h2>
+        <p class="script">Please accept this little gift.</p>
+        <p>I know a gift can never match the kindness you’ve shown me, and this is only a small way of saying thank you. But I chose it with a lot of warmth and appreciation.</p>
+        <p>So please, accept it — not because you did anything for a return, but because you deserve to be appreciated too. I hope it brings a smile to your face, just as your thoughtfulness brought so many smiles to mine.</p>
+        <p>Thank you for being you, Zinu. I’m lucky our paths crossed. <span class="heart">♡</span></p>
+        <div class="signature">A grateful friend</div>
+      </div>
+      <div class="rule"></div>
+      <div class="gift-stage">
+        <div class="eyebrow">A tiny interactive surprise</div>
+        <h2 style="margin-bottom:0">There’s something waiting for you…</h2>
+        <p class="hint">Tap the gift to unwrap it.</p>
+        <div class="gift-wrap" id="gift" role="button" tabindex="0" aria-label="Unwrap your gift" onclick="unwrap()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();unwrap()}">
+          <div class="gift-box"></div><div class="ribbon-top"></div><div class="gift-lid"></div><div class="bow"></div>
+        </div>
+        <div class="gift-message" id="giftMessage" aria-live="polite">
+          <div class="eyebrow">A little message for you</div>
+          <h2>You can now open the actual gift! 🎁</h2>
+          <p class="script">This one is from my heart to you. Thank you for making my Chaturmas — and so many ordinary days — special. ♡</p>
+          <p>Go on, Zinu… the real present is waiting in your hands. 😊</p>
+        </div>
+      </div>
+      <div class="actions"><button class="quiet" onclick="go(2)">← Memories</button><span class="page-no">03 / 03</span><span class="hint">Made with gratitude ♡</span></div>
+    </article>
+  </section>
 </main>
-
 <script>
-
-const button = document.getElementById("revealBtn");
-const message = document.getElementById("message");
-const envelopeArea = document.getElementById("envelopeArea");
-const envelope = document.getElementById("envelope");
-
-button.addEventListener("click", () => {
-
-button.disabled = true;
-button.textContent = "A little happiness is on its way 💗";
-
-envelopeArea.classList.add("show");
-
-setTimeout(() => {
-envelope.classList.add("open");
-}, 400);
-
-setTimeout(() => {
-message.classList.add("show");
-button.textContent = "With love & gratitude, Maulik 💕";
-
-}, 1200);
-
-// Floating heart explosion
-
-const symbols = [
-"💗","💕","💖","✨","🌸","🦋","🎀","🤍","🌷","💞"
-];
-
-for(let i=0; i<35; i++){
-
-const spark = document.createElement("span");
-
-spark.className = "sparkle";
-
-spark.textContent =
-symbols[Math.floor(Math.random()*symbols.length)];
-
-spark.style.left = (window.innerWidth/2) + "px";
-spark.style.top = (window.innerHeight/2) + "px";
-
-spark.style.setProperty(
-"--x",(Math.random()*360-180)+"px"
-);
-
-spark.style.setProperty(
-"--y",(Math.random()*320-160)+"px"
-);
-
-document.body.appendChild(spark);
-
-setTimeout(() => spark.remove(),1600);
-
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-
-});
-
+function showAddFood(){
+  const btn=document.getElementById('addFoodBtn');
+  if(document.getElementById('foodInputWrap'))return;
+  const wrap=document.createElement('span');
+  wrap.className='food-input-wrap';
+  wrap.id='foodInputWrap';
+  wrap.innerHTML='<input type="text" class="food-input" id="foodInput" placeholder="Something I missed…" aria-label="Add a treat"><button type="button" class="food-save" onclick="saveFood()">Add</button>';
+  btn.style.display='none';
+  btn.parentNode.insertBefore(wrap,btn);
+  const input=document.getElementById('foodInput');
+  input.focus();
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){e.preventDefault();saveFood();}
+    if(e.key==='Escape'){wrap.remove();btn.style.display='';}
+  });
+}
+function saveFood(){
+  const input=document.getElementById('foodInput');
+  const wrap=document.getElementById('foodInputWrap');
+  const btn=document.getElementById('addFoodBtn');
+  const val=input?input.value.trim():'';
+  if(val){
+    const pill=document.createElement('span');
+    pill.className='food';
+    pill.textContent=val;
+    btn.parentNode.insertBefore(pill,wrap);
+  }
+  if(wrap)wrap.remove();
+  btn.style.display='';
+}
+let opened=false;
+function unwrap(){
+  if(opened)return; opened=true;
+  document.getElementById('gift').classList.add('open');
+  setTimeout(()=>document.getElementById('giftMessage').classList.add('show'),450);
+  const symbols=['✦','♡','✧','✿','♥'];
+  for(let i=0;i<24;i++){
+    const s=document.createElement('span');s.className='sparkle';s.textContent=symbols[i%symbols.length];
+    s.style.left=(10+Math.random()*80)+'vw';s.style.top='15vh';
+    s.style.setProperty('--x',(Math.random()*180-90)+'px');
+    s.style.animationDelay=(Math.random()*.55)+'s';document.body.appendChild(s);
+    setTimeout(()=>s.remove(),3500);
+  }
+}
 </script>
-
 </body>
 </html>
